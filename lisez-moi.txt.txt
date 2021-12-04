@@ -1,0 +1,3 @@
+Nous avons opté pour une approche objet du jeux, nous aurions pu crée deux tableaux, un de 6 cases pour les 1,2,3.. 
+et un autre pour les figures ou le brelan serait à la 1ère position, le carré à la deuxième etc
+Mais nous avons préféré crée un vecteur et associer des noms à nos figures pour les reconnaitres

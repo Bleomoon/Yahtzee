@@ -1,0 +1,63 @@
+﻿  player.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(7,19): error C2253: 'figure' : spécificateur pure ou spécificateur de substitution abstrait uniquement autorisé sur une fonction virtuelle
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(7,19): error C2633: 'figure' : 'inline' est la seule classe de stockage autorisée pour les constructeurs
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(4,1): error C2011: 'figure' : redéfinition du type 'class'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3): message : voir la déclaration de 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(12,13): error C2027: utilisation du type non défini 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3): message : voir la déclaration de 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(14,12): error C2065: 'score' : identificateur non déclaré
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\carre.hpp(6,1): error C2504: 'figure' : classe de base non définie
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(12,13): error C2027: utilisation du type non défini 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3): message : voir la déclaration de 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(12,22): error C2084: la fonction 'int get_score(void)' a déjà un corps
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(12): message : voir la définition précédente de 'get_score'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(14,12): error C2065: 'score' : identificateur non déclaré
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\brelan.hpp(6,1): error C2504: 'figure' : classe de base non définie
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(12,13): error C2027: utilisation du type non défini 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3): message : voir la déclaration de 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(14,12): error C2065: 'score' : identificateur non déclaré
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\chance.hpp(6,1): error C2504: 'figure' : classe de base non définie
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(12,13): error C2027: utilisation du type non défini 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3): message : voir la déclaration de 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(14,12): error C2065: 'score' : identificateur non déclaré
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\grande_suite.hpp(6,1): error C2504: 'figure' : classe de base non définie
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(12,13): error C2027: utilisation du type non défini 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3): message : voir la déclaration de 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(14,12): error C2065: 'score' : identificateur non déclaré
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\petite_suite.hpp(6,1): error C2504: 'figure' : classe de base non définie
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3,1): error C2236: jeton 'class' inattendu. N'auriez-vous pas oublié un ';' ?
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(12,13): error C2027: utilisation du type non défini 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3): message : voir la déclaration de 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(14,12): error C2065: 'score' : identificateur non déclaré
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\yahtzee.hpp(6,1): error C2504: 'figure' : classe de base non définie
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3,1): error C2236: jeton 'class' inattendu. N'auriez-vous pas oublié un ';' ?
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(12,13): error C2027: utilisation du type non défini 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3): message : voir la déclaration de 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(14,12): error C2065: 'score' : identificateur non déclaré
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\full.hpp(6,1): error C2504: 'figure' : classe de base non définie
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.hpp(15,25): error C2092: le type d'élément de tableau 'all_figure' ne peut pas être une fonction ou un type classe abstraite
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.hpp(15,12): error C2079: 'player::all_figure' utilise une class de 'figure' non défini
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(3,9): error C2533: 'player::{ctor}' : type de retour non autorisé pour les constructeurs
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(7,27): error C2109: un indice requiert un type tableau ou pointeur
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(18,29): error C2589: 'sizeof' : jeton non conforme à droite de '::'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(18): error C2062: type 'unknown-type' inattendu
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(18,58): error C2059: erreur de syntaxe : ')'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(20,34): error C2109: un indice requiert un type tableau ou pointeur
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(20,35): error C2059: erreur de syntaxe : ';'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(22,1): error C2059: erreur de syntaxe : '}'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(22,1): error C2143: erreur de syntaxe : absence de ';' avant '}'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(25,1): error C2143: erreur de syntaxe : absence de ';' avant '{'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(25,1): error C2447: '{' : en-tête de fonction manquant (liste formelle à l'ancien format ?)
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(30,1): error C2511: 'bool player::add_combinaison(int,int)' : impossible de trouver la fonction membre surchargée dans 'player'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.hpp(12): message : voir la déclaration de 'player'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(31,7): error C2671: 'player::add_combinaison' : les fonctions membres static n'ont pas de pointeurs 'this'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(34,9): error C2671: 'player::add_combinaison' : les fonctions membres static n'ont pas de pointeurs 'this'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(38,14): error C2027: utilisation du type non défini 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3): message : voir la déclaration de 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(39,1): error C2027: utilisation du type non défini 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\figure.hpp(3): message : voir la déclaration de 'figure'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(52,13): error C2227: la partie gauche de '->sum_combinaison' doit pointer vers un type class/struct/union/générique
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(55,30): error C2589: 'sizeof' : jeton non conforme à droite de '::'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(55): error C2062: type 'unknown-type' inattendu
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(55,61): error C2059: erreur de syntaxe : ')'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yams\player.cpp(56,9): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'sum'

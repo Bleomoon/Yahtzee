@@ -4,9 +4,9 @@ class figure
 {
     int score;
 public:
-    figure();
-    virtual ~figure();
-    virtual int get_score();
+    virtual figure() = 0;
+    virtual ~figure() = 0;
+    virtual int get_score() = 0;
 };
 
 int figure::get_score()
