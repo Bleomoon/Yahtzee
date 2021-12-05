@@ -13,7 +13,7 @@ class Lancer
 public:
     Lancer();
     ~Lancer();
-    std::vector<Figure>& possibilite(Joueur *j);
+    std::vector<Figure*>& possibilite(Joueur *j);
     void lance(int* indiceslances);
 };
 #endif
