@@ -5,7 +5,7 @@
 #include "Figure.hpp"
 #include "Valeur.h"
 
-template<Valeur v, int rep>
+template<typename T, Valeur v, int rep>
 class Combinaison : public Figure
 {
 public:
