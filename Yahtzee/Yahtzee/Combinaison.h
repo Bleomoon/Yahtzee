@@ -8,7 +8,6 @@
 template<Valeur v, int rep>
 class Combinaison : public Figure
 {
-    int score;
 public:
     Combinaison(bool abandonne, int score);
     ~Combinaison();

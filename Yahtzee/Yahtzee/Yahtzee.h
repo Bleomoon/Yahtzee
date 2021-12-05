@@ -6,10 +6,8 @@
 
 class Yahtzee : public Figure
 {
-    int score;
 public:
-    Yahtzee();
+    Yahtzee(bool abandonne, int score);
     ~Yahtzee();
-    int get_score();
 };
 #endif

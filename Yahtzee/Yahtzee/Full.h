@@ -6,7 +6,6 @@
 
 class Full: public Figure
 {
-    int score;
 public:
     Full(bool abandonne, int score);
     ~Full();
