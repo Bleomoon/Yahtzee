@@ -21,12 +21,15 @@ class Joueur
     Yahtzee_game* yahtzee_g;
 public:
     Joueur(Yahtzee_game* jeu, std::string nom);
+    Joueur(const Joueur& copy);
     ~Joueur();
+    Joueur& operator=(const Joueur& copy);
     int get_total_score();
     void ajouter_superieurs(const Combinaison<De*> *c);
     void ajouter_inferieurs(const Figure *f);
     void tour_joueur(Lancer& l);
     void afficher_possibilite(std::string possibilite[]);
+    std::string get_nom();
 };
 
 #endif
