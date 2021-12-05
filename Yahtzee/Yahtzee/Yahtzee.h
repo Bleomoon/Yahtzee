@@ -2,7 +2,7 @@
 #define _YAHTZEE_H_
 
 
-#include "Figure.hpp"
+#include Figure.h"
 
 class Yahtzee : public Figure
 {

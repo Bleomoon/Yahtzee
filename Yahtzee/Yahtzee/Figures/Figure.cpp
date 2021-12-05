@@ -1,4 +1,4 @@
-#include "Figure.hpp"
+#include "Figure.h"
 
 Figure::Figure(bool abandonne, int score) : abandonne(abandonne), score(score) {};
 

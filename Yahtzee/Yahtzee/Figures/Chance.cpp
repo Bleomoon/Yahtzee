@@ -1,4 +1,4 @@
-#include "Chance.hpp"
+#include "Chance.h"
 
 Chance::Chance(bool abandonne, int score) : Figure(abandonne, score) {};
 

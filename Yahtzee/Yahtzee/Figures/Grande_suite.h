@@ -2,7 +2,7 @@
 #define _GRANDE_SUITE_H_
 
 
-#include "Figure.hpp"
+#include "Figure.h"
 
 class Grande_suite: public Figure
 {

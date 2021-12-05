@@ -2,7 +2,7 @@
 #define _FULL_H_
 
 
-#include "Figure.hpp"
+#include "Figure.h"
 
 class Full: public Figure
 {

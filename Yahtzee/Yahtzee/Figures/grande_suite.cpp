@@ -1,5 +1,5 @@
-#include "Grande_suite.hpp"
-#include "Figure.hpp"
+#include "Grande_suite.h"
+#include "Figure.h"
 
 
 Grande_suite::Grande_suite(bool abandonne, int score) : Figure(abandonne, 40) {};
