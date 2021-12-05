@@ -2,7 +2,7 @@
 #define _CHANCE_H_
 
 
-#include "Figure.hpp"
+#include "Figure.h"
 
 class Chance: public Figure
 {

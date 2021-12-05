@@ -2,7 +2,7 @@
 #define _CARRE_H_
 
 
-#include "Figure.hpp"
+#include "Figure.h"
 
 class Carre: public Figure
 {

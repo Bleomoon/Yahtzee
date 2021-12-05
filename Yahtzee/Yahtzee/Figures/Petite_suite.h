@@ -2,7 +2,7 @@
 #define _PETITE_SUITE_H_
 
 
-#include "Figure.hpp"
+#include "Figure.h"
 
 class Petite_suite : public Figure
 {

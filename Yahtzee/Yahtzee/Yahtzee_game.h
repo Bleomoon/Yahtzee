@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "Joueur.hpp"
+#include "Joueur.h"
 #include "Lancer.h"
 
 class Yahtzee_game

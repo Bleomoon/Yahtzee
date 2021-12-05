@@ -2,7 +2,7 @@
 #define _COMBINAISON_H_
 
 
-#include "Figure.hpp"
+#include "Figure.h"
 #include "Valeur.h"
 
 template<typename T, Valeur v, int rep>

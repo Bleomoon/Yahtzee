@@ -1,4 +1,4 @@
-#include "Joueur.hpp"
+#include "Joueur.h"
 
 Joueur::Joueur(Yahtzee_game* jeu)
 {
