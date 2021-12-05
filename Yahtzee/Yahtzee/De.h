@@ -1,14 +1,14 @@
-#ifndef _VALEUR_H_
-#define _VALEUR_H_
+#ifndef _DE_H_
+#define _DE_H_
 
 #include <string>
 
-class Valeur
+class De
 {
     int val;
 public:
-    Valeur(int v);
-    ~Valeur();
+    De();
+    ~De();
     void lance();
     std::string to_String();
 };

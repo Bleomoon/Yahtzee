@@ -147,7 +147,7 @@
     <ClCompile Include="Figures\Grande_suite.cpp" />
     <ClCompile Include="Figures\Petite_suite.cpp" />
     <ClCompile Include="Joueur.cpp" />
-    <ClCompile Include="Valeur.cpp" />
+    <ClCompile Include="De.cpp" />
     <ClCompile Include="Yahtzee.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -42,7 +42,7 @@
     <ClCompile Include="Figures\Grande_suite.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Figures\Petite_suite.cpp">
+    <ClCompile Include="De.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,7 +74,7 @@
     <ClInclude Include="Figures\Full.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\Grande_suite.h">
+    <ClInclude Include="De.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Figures\Petite_suite.h">
