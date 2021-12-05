@@ -25,6 +25,6 @@ public:
     void ajouter_inferieurs(Figure f);
     void tour_joueur(Lancer& l);
     void afficher_possibilite(std::string possibilite);
-}
+};
 
 #endif
