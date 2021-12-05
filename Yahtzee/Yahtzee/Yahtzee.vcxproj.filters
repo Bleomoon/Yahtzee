@@ -21,6 +21,9 @@
     <ClCompile Include="Yahtzee.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="De.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
     <ClCompile Include="Figures\Brelan.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -39,7 +42,7 @@
     <ClCompile Include="Figures\Grande_suite.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="De.cpp">
+    <ClCompile Include="Figures\Petite_suite.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Figures\Petite_suite.cpp">
@@ -56,16 +59,16 @@
     <ClInclude Include="Lancer.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Valeur.h">
+    <ClInclude Include="De.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\Brelan.h">
+    <ClInclude Include="Figures\brelan.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\Carre.h">
+    <ClInclude Include="Figures\carre.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\Chance.h">
+    <ClInclude Include="Figures\chance.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Figures\Combinaison.h">
@@ -77,10 +80,13 @@
     <ClInclude Include="Figures\Full.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Figures\Grande_suite.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
     <ClInclude Include="Figures\Petite_suite.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\Grande_suite.h">
+    <ClInclude Include="Yahtzee.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Joueur.h">

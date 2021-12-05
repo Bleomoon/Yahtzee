@@ -10,21 +10,23 @@
 #include "Yahtzee_game.h"
 #include "Lancer.h"
 #include "Figures/Combinaison.h"
+#include "De.h"
 
 class Joueur
 {
     int totalScore;
-    //std::vector<Combinaison<> superieurs;
-    std::vector<Figure> inferieurs;
+    std::string nom;
+    std::vector<const Combinaison<De*>*> superieurs;
+    std::vector<const Figure*> inferieurs;
     Yahtzee_game* yahtzee_g;
 public:
-    Joueur(Yahtzee_game* jeu, std::string nom_joueur);
+    Joueur(Yahtzee_game* jeu, std::string nom);
     ~Joueur();
     int get_total_score();
-    void ajouter_superieurs(Figure f);
-    void ajouter_inferieurs(Figure f);
+    void ajouter_superieurs(const Combinaison<De*> *c);
+    void ajouter_inferieurs(const Figure *f);
     void tour_joueur(Lancer& l);
-    void afficher_possibilite(std::string possibilite);
+    void afficher_possibilite(std::string possibilite[]);
 };
 
 #endif
