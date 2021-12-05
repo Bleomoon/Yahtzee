@@ -28,8 +28,12 @@ public:
     void ajouter_superieurs(const Combinaison<De*> *c);
     void ajouter_inferieurs(const Figure *f);
     void tour_joueur(Lancer& l);
-    void afficher_possibilite(std::string possibilite[]);
+    void afficher_possibilite(std::vector<std::string> possibilite);
     std::string get_nom();
+    std::vector<const Figure*> figure_restante();
+    
+private:
+    int is_correct_choice(std::string selected, int max);
 };
 
 #endif

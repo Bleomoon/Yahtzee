@@ -14,3 +14,5 @@ std::string Figure::get_name()
 {
     return this->name;
 }
+
+//redéfinir l'affichage avec ostream

@@ -12,7 +12,7 @@ class Lancer
 public:
     Lancer();
     ~Lancer();
-    std::vector<std::string> possibilite(Joueur *j);
+    std::vector<std::string> possibilite(const Joueur *j);
     int* lance(int* indiceslances);
 };
 #endif

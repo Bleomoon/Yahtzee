@@ -3,11 +3,11 @@
 Lancer::Lancer() {};
 Lancer::~Lancer() {};
 
-std::vector<std::string> Lancer::possibilite(Joueur* j)
+std::vector<std::string> Lancer::possibilite(const Joueur* j)
 {
-	std::vector<std::string> all_possibilite;
-
-	return all_possibilite;
+	std::vector<std::string> all_possibilites;
+	
+	return all_possibilites;
 }
 
 int* Lancer::lance(int* indiceslances)
