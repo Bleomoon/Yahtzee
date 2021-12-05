@@ -12,7 +12,7 @@ class Yahtzee_game
     Joueur** joueurs;
     int nb_joueur;
     int numero_tour;
-    Lance* lance;
+    Lancer* lancer;
 public:
     Yahtzee_game(int nb_joueurs, std::string nom_joueurs[], int nb_lancer_par_tours);
     Yahtzee_game(int nb_lancer_par_tours);

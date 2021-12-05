@@ -6,8 +6,6 @@
 Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
 	int nb_lancer_par_tours) : nb_joueur(nb_joueurs), nb_lancer(nb_lancer_par_tours)
 {
-	initialise();
-
 	joueurs = new Joueur * [nb_joueur];
 
 	for (int i = 0; i < nb_joueur; i++) {
