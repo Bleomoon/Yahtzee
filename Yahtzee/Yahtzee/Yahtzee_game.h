@@ -9,10 +9,13 @@
 class Yahtzee_game
 {
     const int nb_lancer;
-    Joueur nb_joueurs[];
-    int numero_out;
+    Joueur** joueurs;
+    int nb_joueur;
+    int numero_tour;
+    Lance* lance;
 public:
-    Yahtzee_game(int nb_joueurs, std::string nom_joueurs[]);
+    Yahtzee_game(int nb_joueurs, std::string nom_joueurs[], int nb_lancer_par_tours);
+    Yahtzee_game(int nb_lancer_par_tours);
     ~Yahtzee_game();
     void jouer();
 };

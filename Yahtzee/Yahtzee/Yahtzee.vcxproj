@@ -149,11 +149,12 @@
     <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="De.cpp" />
     <ClCompile Include="Yahtzee.cpp" />
+    <ClCompile Include="Yahtzee_game.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Figures\brelan.h" />
-    <ClInclude Include="Figures\carre.h" />
-    <ClInclude Include="Figures\chance.h" />
+    <ClInclude Include="Figures\Brelan.h" />
+    <ClInclude Include="Figures\Carre.h" />
+    <ClInclude Include="Figures\Chance.h" />
     <ClInclude Include="Figures\Combinaison.h" />
     <ClInclude Include="Figures\Figure.h" />
     <ClInclude Include="Figures\Full.h" />

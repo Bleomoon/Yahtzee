@@ -8,7 +8,6 @@ class Brelan: public Figure
 {
 public:
     Brelan(bool abandonne, int score);
-    ~Brelan();
 };
 
 #endif
