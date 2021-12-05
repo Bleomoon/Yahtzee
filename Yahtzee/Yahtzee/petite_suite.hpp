@@ -6,7 +6,6 @@
 
 class Petite_suite : public Figure
 {
-    int score;
 public:
     Petite_suite(bool abandonne, int score);
     ~Petite_suite();

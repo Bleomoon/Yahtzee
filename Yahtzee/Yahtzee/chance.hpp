@@ -6,7 +6,6 @@
 
 class Chance: public Figure
 {
-    int score;
 public:
     Chance(bool abandonne, int score);
     ~Chance();

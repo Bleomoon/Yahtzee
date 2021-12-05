@@ -147,6 +147,7 @@
     <ClCompile Include="Grande_suite.cpp" />
     <ClCompile Include="Petite_suite.cpp" />
     <ClCompile Include="Joueur.cpp" />
+    <ClCompile Include="Yahtzee.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Brelan.hpp" />
