@@ -1,13 +1,7 @@
-#include "grande_suite.hpp"
-#include "figure.hpp"
+#include "Grande_suite.hpp"
+#include "Figure.hpp"
 
 
-grande_suite::grande_suite(bool abandonne, int score) : figure(abandonne, 40)
-{
+Grande_suite::Grande_suite(bool abandonne, int score) : Figure(abandonne, 40){}
 
-}
-
-grande_suite::~grande_suite()
-{
-
-}
+Grande_suite::~Grande_suite(){}

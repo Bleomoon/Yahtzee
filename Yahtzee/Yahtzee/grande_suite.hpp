@@ -1,12 +1,14 @@
-#include <iostream>
+#ifndef _GRANDE_SUITE_H_
+#define _GRANDE_SUITE_H_
 
-#include "figure.hpp"
 
-class grande_suite: public Figure
+#include "Figure.hpp"
+
+class Grande_suite: public Figure
 {
     int score = 40;
 public:
-    grande_suite(bool abandonne, int score);
-    ~grande_suite();
-    int get_score();
+    Grande_suite(bool abandonne, int score);
+    ~Grande_suite();
 };
+#endif

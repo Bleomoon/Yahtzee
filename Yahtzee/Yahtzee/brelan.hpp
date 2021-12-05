@@ -1,12 +1,14 @@
-#include <iostream>
+#ifndef _BRELAN_H_
+#define _BRELAN_H_
 
-#include "figure.hpp"
 
-class brelan: public figure
+#include "Figure.hpp"
+
+class Brelan: public Figure
 {
-    int score;
 public:
-    brelan(int d1, int d2, int d3) { this->score = d1+d2+d3; };
-    ~brelan();
-    int get_score();
+    Brelan(bool abandonne, int score);
+    ~Brelan();
 };
+
+#endif

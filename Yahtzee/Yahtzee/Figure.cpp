@@ -9,3 +9,8 @@ int Figure::get_score()
     else
         return score;
 }
+
+std::string Figure::get_name()
+{
+    return this->name;
+}

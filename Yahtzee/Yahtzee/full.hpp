@@ -1,12 +1,14 @@
-#include <iostream>
+#ifndef _FULL_H_
+#define _FULL_H_
 
-#include "figure.hpp"
 
-class full: public figure
+#include "Figure.hpp"
+
+class Full: public Figure
 {
     int score;
 public:
-    full() { this->score = 25; };
-    ~full();
-    int get_score();
+    Full(bool abandonne, int score);
+    ~Full();
 };
+#endif

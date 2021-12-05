@@ -139,20 +139,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Brelan.cpp" />
+    <ClCompile Include="Carre.cpp" />
+    <ClCompile Include="Chance.cpp" />
     <ClCompile Include="Figure.cpp" />
-    <ClCompile Include="grande_suite.cpp" />
-    <ClCompile Include="player.cpp" />
+    <ClCompile Include="Full.cpp" />
+    <ClCompile Include="Grande_suite.cpp" />
+    <ClCompile Include="Petite_suite.cpp" />
+    <ClCompile Include="Joueur.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="brelan.hpp" />
-    <ClInclude Include="carre.hpp" />
-    <ClInclude Include="chance.hpp" />
+    <ClInclude Include="Brelan.hpp" />
+    <ClInclude Include="Carre.hpp" />
+    <ClInclude Include="Chance.hpp" />
+    <ClInclude Include="Combinaison.h" />
     <ClInclude Include="Figure.hpp" />
-    <ClInclude Include="full.hpp" />
-    <ClInclude Include="grande_suite.hpp" />
-    <ClInclude Include="petite_suite.hpp" />
-    <ClInclude Include="player.hpp" />
+    <ClInclude Include="Full.hpp" />
+    <ClInclude Include="Grande_suite.hpp" />
+    <ClInclude Include="Lancer.h" />
+    <ClInclude Include="Petite_suite.hpp" />
+    <ClInclude Include="Joueur.hpp" />
+    <ClInclude Include="Valeur.h" />
     <ClInclude Include="Yahtzee.hpp" />
+    <ClInclude Include="Yahtzee_game.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

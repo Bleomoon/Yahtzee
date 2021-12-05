@@ -1,12 +1,14 @@
-#include <iostream>
+#ifndef _PETITE_SUITE_H_
+#define _PETITE_SUITE_H_
 
-#include "figure.hpp"
 
-class petite_suite: public figure
+#include "Figure.hpp"
+
+class Petite_suite : public Figure
 {
     int score;
 public:
-    petite_suite() { this->score = 30; };
-    ~petite_suite();
-    int get_score();
-}
+    Petite_suite(bool abandonne, int score);
+    ~Petite_suite();
+};
+#endif
