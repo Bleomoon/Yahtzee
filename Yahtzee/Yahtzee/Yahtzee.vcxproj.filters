@@ -21,9 +21,6 @@
     <ClCompile Include="Yahtzee.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Valeur.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Figures\Brelan.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -43,6 +40,12 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="De.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Figures\Petite_suite.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Yahtzee_game.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,10 +77,13 @@
     <ClInclude Include="Figures\Full.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="De.h">
+    <ClInclude Include="Figures\Petite_suite.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\Petite_suite.h">
+    <ClInclude Include="Figures\Grande_suite.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Joueur.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

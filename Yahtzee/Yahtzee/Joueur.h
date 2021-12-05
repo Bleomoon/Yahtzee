@@ -6,19 +6,19 @@
 #include <string>
 #include <vector>
 
-#include "Figure.hpp"
+#include "Figures/Figure.h"
 #include "Yahtzee_game.h"
 #include "Lancer.h"
-#include "Combinaison.h"
+#include "Figures/Combinaison.h"
 
 class Joueur
 {
     int totalScore;
-    std::vector<Combinaison> superieurs;
+    //std::vector<Combinaison<> superieurs;
     std::vector<Figure> inferieurs;
     Yahtzee_game* yahtzee_g;
 public:
-    Joueur(Yahtzee_game* jeu);
+    Joueur(Yahtzee_game* jeu, std::string nom_joueur);
     ~Joueur();
     int get_total_score();
     void ajouter_superieurs(Figure f);
