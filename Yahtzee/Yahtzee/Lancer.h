@@ -5,14 +5,15 @@
 #include <vector>
 #include "De.h"
 #include "Joueur.h"
+#include "Yahtzee_game.h"
 
 class Lancer
 {
-    De des[5];
+    De* des;
 public:
     Lancer();
     ~Lancer();
-    std::vector<std::string> possibilite(Joueur *j);
-    int* lance(int* indiceslances);
+    std::vector<Figure>& possibilite(Joueur *j);
+    void lance(int* indiceslances);
 };
 #endif

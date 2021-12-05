@@ -2,15 +2,15 @@
 
 De::De()
 {
-	this->val = rand() % 6 + 1;
-};
-
-De::~De() {};
+	this->val = 0;
+}
 
 void De::lance()
 {
 	this->val = rand() % 6 + 1;
-};
+}
+
+int De::get_val() { return val; }
 
 std::string De::to_String()
 {
