@@ -12,7 +12,7 @@ class Yahtzee_game
     Joueur nb_joueurs[];
     int numero_out;
 public:
-    Yahtzee_game();
+    Yahtzee_game(int nb_joueurs, std::string nom_joueurs[]);
     ~Yahtzee_game();
     void jouer();
 };
