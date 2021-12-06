@@ -99,3 +99,8 @@ void Yahtzee_game::jouer()
 		}
 	}
 }
+
+int Yahtzee_game::get_nb_lancer()
+{
+	return nb_lancer;
+}

@@ -14,6 +14,6 @@ public:
     Lancer();
     ~Lancer();
     std::vector<Figure*>& possibilite(Joueur *j);
-    void lance(int* indiceslances);
+    int* lance(int* indiceslances);
 };
 #endif

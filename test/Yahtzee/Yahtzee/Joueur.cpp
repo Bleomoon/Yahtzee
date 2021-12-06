@@ -119,15 +119,15 @@ void Joueur::ajouter_inferieurs(std::string nom)
 */
 void Joueur::tour_joueur(Lancer& l)
 {
-    std::cout << "Start of turn for " << this->nom << std::endl;
+    std::cout << "Debut du tour de " << this->nom << std::endl;
     std::string selected;
     int choice = -1;
     bool garde = false;
     int cpt_tour = 0;
     int valD[5] = { 1, 2, 3, 4, 5 };
-    int *des =  l.lance(valD) ;
+    int* valeur_des = l.lance(valD) ;
     
-    while (!garde || cpt_tour < 3)
+    for (int i = 0; i < yahtzee_g->get_nb_lancer(); i++)
     {
         std::vector<const Figure f*> all_possibilites = l.possibilite(this);
         afficher_possibilite(all_possibilites);
@@ -193,6 +193,13 @@ void Joueur::tour_joueur(Lancer& l)
     }
 
     std::cout << "End of turn for " << this->nom << std::endl;
+}
+
+bool choix_de_des_correct(int* des)
+{
+    // TODO
+
+    return false;
 }
 
 //affiche les possibilités en fonction des dés

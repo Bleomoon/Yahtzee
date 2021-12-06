@@ -30,9 +30,9 @@ std::vector<Figure*>& Lancer::possibilite(Joueur* j)
 	const int values[6] = { 1, 2, 3, 4 ,5 ,6 };
 	int possibilites_index = 0;
 	// combinaison sup�rieurs
-	for (int value = 0; value < 6; value++) {
+	/*for (int value = 0; value < 6; value++) {
 		auto current_combi = new Combinaison<const_cast<int&>(values[value])>(false);
-	}
+	}*/
 
 
 	return toutes_possibilites;
