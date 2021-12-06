@@ -1,0 +1,14 @@
+﻿  Brelan.cpp
+  Carre.cpp
+  Chance.cpp
+  Figure.cpp
+  Full.cpp
+  Grande_suite.cpp
+  Petite_suite.cpp
+  Joueur.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Lancer.h(4,10): fatal error C1083: Impossible d'ouvrir le fichier include : 'Valeur.h' : No such file or directory
+  De.cpp
+  Yahtzee.cpp
+c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : 'Yahtzee.cpp' : No such file or directory
+  Génération de code en cours...
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\De.cpp(40): warning C4715: 'De::to_String' : les chemins de contrôle ne retournent pas tous une valeur
