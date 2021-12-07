@@ -12,12 +12,15 @@
 #include "Figures/Combinaison.h"
 #include "De.h"
 
+const int NB_SUPERIEURS = 6;
+const int NB_INFERIEURS = 7;
+
 class Joueur
 {
     int totalScore;
     std::string nom;
-    std::vector<const Combinaison<De*>*> superieurs;
-    std::vector<const Figure*> inferieurs;
+    std::vector<Figure*> superieurs;
+    std::vector<Figure*> inferieurs;
     Yahtzee_game* yahtzee_g;
 public:
     Joueur(Yahtzee_game* jeu, std::string nom);
@@ -25,15 +28,17 @@ public:
     ~Joueur();
     Joueur& operator=(const Joueur& copy);
     int get_total_score();
-    void ajouter_superieurs(const Combinaison<De*> *c);
-    void ajouter_inferieurs(const Figure *f);
+    void ajouter_superieurs(int valeur_de);
+    void ajouter_inferieurs(std::string nom);
     void tour_joueur(Lancer& l);
-    void afficher_possibilite(std::vector<std::string> possibilite);
+    void afficher_possibilite(std::vector<Figure*>& possibilite);
     std::string get_nom();
-    std::vector<const Figure*> figure_restante();
-    
+    std::vector<Figure*>& superieurs_restante();
+    std::vector<Figure*>& inferieurs_restante();
+    int abandonne();
+    int relancer_des(Lancer& l);
 private:
-    int is_correct_choice(std::string selected, int max);
+    int choix_correct(std::string selected, int max);
 };
 
 #endif

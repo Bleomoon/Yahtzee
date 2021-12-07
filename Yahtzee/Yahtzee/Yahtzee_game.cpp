@@ -18,18 +18,12 @@ Yahtzee_game::Yahtzee_game(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_to
 {
 	nb_joueur = 0;
 
-	Combinaison<1> un;
-	Combinaison<2> deux;
-	Combinaison<3> trois;
-	Combinaison<4> quatre;
-	Combinaison<5> cinq;
-	Combinaison<6> six;
 
 	// demande le nombre de joueur
 	do {
 		std::cout << "A combien voulez-vous jouer ? (entre 2 et 8)" << std::endl;
 		scanf("%d", &nb_joueur);
-	} while (nb_joueur < 2 || nb_joueur > 8); 
+	} while (nb_joueur < 2 || nb_joueur > 8);
 
 	// allocation de la mémoire pour le tableau de joueur
 	joueurs = new Joueur * [nb_joueur];
@@ -67,7 +61,7 @@ Yahtzee_game::~Yahtzee_game()
 	delete[] joueurs;
 
 	// destruction des dés
-	delete lancer; 
+	delete lancer;
 }
 
 Yahtzee_game& Yahtzee_game::operator=(const Yahtzee_game& copy)
@@ -104,4 +98,9 @@ void Yahtzee_game::jouer()
 			joueurs[index_joueur]->tour_joueur(lancer);
 		}
 	}
+}
+
+int Yahtzee_game::get_nb_lancer()
+{
+	return nb_lancer;
 }

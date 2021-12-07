@@ -6,7 +6,7 @@
 #include "Joueur.h"
 #include "Lancer.h"
 
-const int NB_DE = 5; 
+const int NB_DE = 5;
 
 class Yahtzee_game
 {
@@ -22,5 +22,6 @@ public:
     ~Yahtzee_game(); // desctructeur
     Yahtzee_game& operator=(const Yahtzee_game& copy); // 
     void jouer();
+    int get_nb_lancer();
 };
 #endif

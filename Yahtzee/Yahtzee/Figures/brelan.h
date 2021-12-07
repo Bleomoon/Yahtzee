@@ -7,7 +7,13 @@
 class Brelan: public Figure
 {
 public:
-    Brelan(bool abandonne, int score);
+    Brelan();
+    bool set_figure(int* recap);
+    bool is_figure(int* recap);
+
+    std::string get_name();
 };
+
+std::ostream& operator<<(std::ostream& out, Brelan& figure);
 
 #endif

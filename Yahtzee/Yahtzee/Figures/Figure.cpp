@@ -1,18 +1,33 @@
 #include "Figure.h"
 
-Figure::Figure(bool abandonne, int score) : abandonne(abandonne), score(score) {};
+std::ostream& operator<<(std::ostream& out, Figure& figure)
+{
+	out << "figure ";
+	if (figure.assigner) {
+		if (figure.abandonne)
+			out << "est abandonné !";
+		else
+			out << "a pour score " << figure.score;
+	}
+	else
+		out << " n'est pas assigné !";
+
+	return out;
+}
+
+Figure::Figure()
+{
+	abandonne = false;
+	assigner = false;
+	score = 0;
+}
 
 int Figure::get_score()
 {
-    if (this->abandonne)
-        return 0;
-    else
-        return score;
+	return score;
 }
 
-std::string Figure::get_name()
+bool Figure::is_assigner()
 {
-    return this->name;
+	return assigner;
 }
-
-//redéfinir l'affichage avec ostream

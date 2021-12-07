@@ -7,7 +7,11 @@
 class Carre: public Figure
 {
 public:
-    Carre(bool abandonne, int score);
-    ~Carre();
+    bool set_figure(int* recap);
+    bool is_figure(int* recap);
+
+    std::string get_name();
 };
+
+std::ostream& operator<<(std::ostream& out, Carre& figure);
 #endif

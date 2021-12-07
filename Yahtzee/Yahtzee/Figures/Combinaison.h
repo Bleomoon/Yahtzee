@@ -7,24 +7,65 @@
 template<int valeur>
 class Combinaison : public Figure
 {
-    int repetition;
+	int repetitions;
 public:
-    Combinaison(int rep) : repetition(rep), Figure(false, valeur * rep)
-    {
-        // TODO EXCEPTION
-        // verification de la conformité des information entrées
-        if (valeur < 1 || valeur > 6) {
-            std::cerr << "Valeur incorect " << std::endl;
-        }
+	Combinaison() : Figure() 
+	{ 
+		repetitions = 0; 
+	}
 
-        if (repetition < 0 || repetition > NB_DE) {
-            std::cerr << "Nombre de répetition incorect " << std::endl;
-        }
+    bool set_figure(int* recap) 
+    {
+		score = recap[valeur - 1];
+		assigner = true;
     }
 
-    int get_score() {
-        return valeur * repetition;
+    bool is_figure(int* recap)
+    {
+        return true;
+    }
+
+    std::string get_name()
+    {
+		switch (valeur)
+		{
+		case 1:
+			return "un";
+			break;
+		case 2:
+			return "deux";
+			break;
+		case 3:
+			return "trois";
+			break;
+		case 4:
+			return "quatre";
+			break;
+		case 5:
+			return "cinq";
+			break;
+		case 6:
+			return "six";
+			break;
+		}
+    }
+    
+    int get_score()
+    {
+        return this->score;
     }
 };
+
+template<int valeur> 
+std::ostream& operator<<(const std::ostream& out, Combinaison<valeur>& figure)
+{
+	out << "Combinaison de " << valeur; 
+	if (figure.assigner)
+		" répété " << figure.repetitions << " fois pour un score de " << figure.score;
+	else
+		" n'est pas assigné !";
+
+	return out;
+}
 
 #endif

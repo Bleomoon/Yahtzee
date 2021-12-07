@@ -47,3 +47,8 @@ int* Lancer::lance(int* indiceslances)
 		des[indiceslances[index_de]].lance();
 	}
 }
+
+De* Lancer::get_des()
+{
+	return this->des;
+}

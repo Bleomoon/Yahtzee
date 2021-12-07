@@ -7,13 +7,23 @@
 
 class Figure
 {
-    const bool abandonne;
-    const int score;
-    std::string name;
+protected:
+    bool abandonne;
+    bool assigner; // si le joueur a ajouter la figure
+    int score;
 public:
-    Figure(bool abandonne, int score);
-    virtual ~Figure() = 0;
-    virtual std::string get_name();
-    virtual int get_score() = 0;
+    Figure();
+    virtual bool set_figure(int* recap) = 0; // recap = le récapitulatif des dés 
+    virtual bool is_figure(int* recap) = 0; // recap = le récapitulatif des dés 
+
+    virtual std::string get_name() = 0;
+    int get_score();
+    bool is_assigner();
+
+    friend std::ostream& operator<<(std::ostream& out, Figure& figure);
 };
+
+std::ostream& operator<<(std::ostream& out, Figure& figure);
+
+
 #endif

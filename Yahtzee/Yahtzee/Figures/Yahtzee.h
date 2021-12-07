@@ -1,13 +1,17 @@
-#ifndef _YAHTZEE_H_
-#define _YAHTZEE_H_
+#ifndef _YATHZEE_H_
+#define _YATHZEE_H_
 
 
-#include "Figure.hpp"
+#include "Figure.h"
 
 class Yahtzee : public Figure
 {
 public:
-    Yahtzee(bool abandonne, int score);
-    ~Yahtzee();
+    bool set_figure(int* recap);
+    bool is_figure(int* recap);
+
+    std::string get_name();
 };
+
+std::ostream& operator<<(std::ostream& out, Yahtzee& figure);
 #endif

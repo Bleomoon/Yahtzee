@@ -7,7 +7,11 @@
 class Full: public Figure
 {
 public:
-    Full(bool abandonne, int score);
-    ~Full();
+    bool set_figure(int* recap);
+    bool is_figure(int* recap);
+
+    std::string get_name();
 };
+
+std::ostream& operator<<(std::ostream& out, Full& figure);
 #endif
