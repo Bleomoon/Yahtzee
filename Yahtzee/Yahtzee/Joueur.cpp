@@ -1,11 +1,9 @@
 #include "Joueur.h"
+#include "Yahtzee_game.h"
 
 //le joueur re�oit un nom et l'adresse du jeu pour jouer son tour au moment ou on l'appel et avoir ainsi acc�s au d�s
-Joueur::Joueur(Yahtzee_game* jeu, std::string nom)
+Joueur::Joueur(Yahtzee_game* jeu, std::string nom) : nom(nom), yahtzee_g(jeu), totalScore(0)
 {
-    // initialisation de joueur
-    this->nom = nom;
-    this->yahtzee_g = jeu;
 
     // reserve de la m�moire
     superieurs.reserve(NB_SUPERIEURS);
@@ -77,7 +75,7 @@ int Joueur::get_total_score()
 
     // si le le total des combinaison est �gale a 63 le score passe 98
     if (totalScore == 63)
-        totalScore == 98;
+        totalScore = 98;
 
     // compter les points pour les combinaison sup�rieurs
     for (auto it : inferieurs) {
@@ -171,7 +169,7 @@ int Joueur::afficher_possibilite(int* recap, int cpt_tour)
 
     std::cout << "Selectionnez ce que vous voulez valider : " << std::endl;
     //boucle sur les indexs_inferieurs pour l'affichage
-    for (int i = 0; i < indexs_superieurs.size(); i++)
+    for (unsigned int i = 0; i < indexs_superieurs.size(); i++)
     {
         std::cout << val << ". " << this->inferieurs.at(indexs_superieurs.at(i))->get_name() << std::endl;
         val++;
@@ -179,7 +177,7 @@ int Joueur::afficher_possibilite(int* recap, int cpt_tour)
 
     //boucle sur les indexs_superieurs pour essayer de set_figure des cpy avec les dés existant
     //si le joueur décide de faire un indexs superieur en exemple de 6 alors qu'il n'a aucun dés de 6 ça met 0 dedans
-    for (int i = indexs_superieurs.size(); i < (indexs_inferieurs.size()+ indexs_superieurs.size()); i++)
+    for (unsigned int i = indexs_superieurs.size(); i < (indexs_inferieurs.size()+ indexs_superieurs.size()); i++)
     {
         if (this->inferieurs.at(indexs_inferieurs.at(i))->is_figure(recap))
         {
@@ -203,7 +201,7 @@ std::string Joueur::get_nom()
 // sup�rieurs non r�alis�
 void Joueur::superieurs_restante(std::vector<int>* indexs)
 {
-    for (int index = 0; index < superieurs.size(); index++) {
+    for (unsigned int index = 0; index < superieurs.size(); index++) {
         if (!superieurs.at(index)->is_assigner())
             indexs->push_back(index);
     }
@@ -216,7 +214,7 @@ void Joueur::superieurs_restante(std::vector<int>* indexs)
 // inf�rieurs non r�alis�
 void Joueur::inferieurs_restante(std::vector<int>* indexs)
 {
-    for (int index = 0; index < inferieurs.size(); index++) {
+    for (unsigned int index = 0; index < inferieurs.size(); index++) {
         if (!inferieurs.at(index)->is_assigner())
             indexs->push_back(index);
     }
@@ -250,7 +248,7 @@ int Joueur::abandonne(int *recap)
     std::cout << "Voici toutes les figures que vous pouvez abandonn� (stop pour revenir en arri�re):" << std::endl;
     std::vector<int> indexAbandonner;
     indexAbandonner.reserve(7);
-    for (int index = 0; index < inferieurs.size(); index++) {
+    for (unsigned int index = 0; index < inferieurs.size(); index++) {
         Figure* current = inferieurs.at(index);
         if (!current->is_figure(recap)) {
             indexAbandonner.push_back(index);
@@ -327,7 +325,7 @@ int* Joueur::des_relance(std::string des_r)
     else
     {
         int number;
-        for (int i = 0; i < des_r.size(); i++)
+        for (unsigned int i = 0; i < des_r.size(); i++)
         {
             number = this->choix_correct(std::string(1, des_r[i]), 5);
             if (number == -1)
@@ -337,10 +335,10 @@ int* Joueur::des_relance(std::string des_r)
         }
 
         //v�rifie les doublons
-        for (int i = 0; i < des_r.size(); i++)
+        for (unsigned int i = 0; i < des_r.size(); i++)
         {
             number = relance[i];
-            for (int j = i; j < des_r.size(); j++)
+            for (unsigned int j = i; j < des_r.size(); j++)
             {
                 if (number == relance[j])
                     return nullptr;
@@ -359,7 +357,7 @@ int* Joueur::get_recapitulatif(De* des)
         current = 0;
     }
 
-    for (int index = 0; index < 6; index++) {
+    for (unsigned int index = 0; index < 6; index++) {
         recap[des[index].get_val() - 1] ++;
     }
     return recap;

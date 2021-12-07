@@ -4,10 +4,11 @@
 #include <iostream>
 #include <vector>
 
-#include "Joueur.h"
 #include "Lancer.h"
 
 const int NB_DE = 5;
+
+class Joueur;
 
 class Yahtzee_game
 {

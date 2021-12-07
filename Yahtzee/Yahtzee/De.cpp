@@ -35,7 +35,7 @@ std::string De::to_String()
 		return "6";
 		break;
 	default:
-		break;
+		return "";
 	}
 };
 

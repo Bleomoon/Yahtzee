@@ -1,4 +1,5 @@
 #include "Yahtzee_game.h"
+#include "Joueur.h"
 
 // constructeur ou on connais deja le nom de joureur a l'avance
 Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
@@ -7,8 +8,8 @@ Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
 	joueurs = new std::vector<Joueur*>;
 
 	for (int i = 0; i < nb_joueur; i++) {
-		Joueur j = Joueur(this, nom_joueurs[i]);
-		joueurs->push_back(&j);
+		Joueur* j = new Joueur(this, nom_joueurs[i]);
+		joueurs->push_back(j);
 	}
 	numero_tour = 0;
 	lancer = new Lancer(NB_DE);
@@ -104,11 +105,11 @@ void Yahtzee_game::jouer()
 		bool operator()(Joueur a, Joueur b) const { return (a.get_total_score() < b.get_total_score()); }
 	} customLess;
 	
-	std::sort(joueurs->begin(), joueurs->end(), customLess);
+	//std::sort(joueurs->begin(), joueurs->end(), customLess);
 
 	// affichage des joueurs
 	std::cout << "rang : nom score" << std::endl;
-	for (int index = 0; index < joueurs->size(); index++) {
+	for (unsigned int index = 0; index < joueurs->size(); index++) {
 		auto current = joueurs->at(index);
 		std::cout << (index + 1) << ": " << current->get_nom() << " " << current->get_total_score() << std::endl;
 	}

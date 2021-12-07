@@ -14,12 +14,12 @@
 #include "Figures/Grande_suite.h"
 #include "Figures/Petite_suite.h"
 #include "Figures/Yahtzee.h"
-#include "Yahtzee_game.h"
 #include "Lancer.h"
 #include "De.h"
 
 const int NB_SUPERIEURS = 6;
 const int NB_INFERIEURS = 7;
+class Yahtzee_game;
 
 class Joueur
 {
