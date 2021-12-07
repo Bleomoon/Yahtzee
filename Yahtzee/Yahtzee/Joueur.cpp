@@ -116,7 +116,7 @@ void Joueur::tour_joueur(Lancer& l)
     std::string selected;
     int choice = -1, cpt_tour = 0, nb_possibilite;
     int valD[5] = { 1, 2, 3, 4, 5 };
-    int* des =  l.lance(valD) ;
+    int* des =  l.lance(valD);
     int* recap = this->get_recapitulatif(l.get_des());
     bool garde = false;
   

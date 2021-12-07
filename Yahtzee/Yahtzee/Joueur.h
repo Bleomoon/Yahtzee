@@ -35,18 +35,18 @@ public:
     ~Joueur();
     Joueur& operator=(const Joueur& copy);
     int get_total_score();
+    void tour_joueur(Lancer& l);
+    std::string get_nom();
+
+private:
+    int afficher_possibilite(int* recap, int cpt_tour);
     void ajouter_superieurs(int* recap, int valeur);
     void ajouter_inferieurs(int* recap, int valeur);
-    void tour_joueur(Lancer& l);
-    int afficher_possibilite(int* recap, int cpt_tour);
-    std::string get_nom();
     void superieurs_restante(std::vector<int>* indexs);
     void inferieurs_restante(std::vector<int>* indexs);
     int abandonne(int* recap);
     int relancer_des(Lancer& l);
     int* get_recapitulatif(De* des);
-
-private:
     int choix_correct(std::string selected, int max);
     int* des_relance(std::string des_r);
 };
