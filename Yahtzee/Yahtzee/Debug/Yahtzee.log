@@ -1,10 +1,1 @@
-﻿  Joueur.cpp
-C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(353): warning C4172: retourne l'adresse d'une variable locale ou : relance temporaire
-C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(368): warning C4172: retourne l'adresse d'une variable locale ou : recap temporaire
-C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(52): warning C4715: 'Combinaison<1>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(52): warning C4715: 'Combinaison<2>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(52): warning C4715: 'Combinaison<3>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(52): warning C4715: 'Combinaison<4>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(52): warning C4715: 'Combinaison<5>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(52): warning C4715: 'Combinaison<6>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-  Yahtzee.vcxproj -> C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Debug\Yahtzee.exe
+﻿  Yahtzee.vcxproj -> C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Debug\Yahtzee.exe

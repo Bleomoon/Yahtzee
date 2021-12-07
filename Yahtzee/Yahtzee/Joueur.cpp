@@ -108,7 +108,7 @@ void Joueur::tour_joueur(Lancer& l)
     std::string selected;
     int choice = -1, cpt_tour = 0, nb_possibilite;
     int des[5] = { 1, 2, 3, 4, 5 };
-    l.lance(des);;
+    l.lance(des, NB_DE);
     int* recap = this->get_recapitulatif(l.get_des());
     bool garde = false;
   
@@ -117,9 +117,12 @@ void Joueur::tour_joueur(Lancer& l)
 
     while (!garde && cpt_tour < 3)
     {
-        // affichage des des    
-        for (unsigned int i = 0; i < sizeof(recap); i++)
-            std::cout << recap[i] << " " << std::endl;
+        // affichage des des 
+        De** des = l.get_des();
+        for (unsigned int i = 0; i < 5; i++)
+            std::cout << des[i]->get_val() << " ";
+
+        std::cout << std::endl;
 
         nb_possibilite = afficher_possibilite(recap, cpt_tour);
         
@@ -130,14 +133,14 @@ void Joueur::tour_joueur(Lancer& l)
         }
         if (choice <= 6) //combinaison sup�rieur
         {
-            this->ajouter_superieurs(recap,choice);
+            this->ajouter_superieurs(recap,choice-1);// TODO changer il faut regarde la valeur corespondante dans le tableau d'index
             garde = true;
         }
         else if(choice <= 13)//combinaison inf�rieur (-6 pour les inferieurs en moins)
         {
-            this->ajouter_inferieurs(recap, choice-6);
+            this->ajouter_inferieurs(recap, choice-6); // TODO changer il faut regarde la valeur corespondante dans le tableau d'index
             garde = true;
-        }
+        }// changer pas vraiment choice a 15 ca depend de la taille 
         else if (choice == 15 && cpt_tour < 2)//Relancer les d�s si il peux encore les relancés max de 2
         {
             choice = this->relancer_des(l);
@@ -175,7 +178,7 @@ int Joueur::afficher_possibilite(int* recap, int cpt_tour)
     //boucle sur les indexs_inferieurs pour l'affichage
     for (unsigned int i = 0; i < indexs_superieurs.size(); i++)
     {
-        std::cout << val << ". " << this->inferieurs.at(indexs_superieurs.at(i))->get_name() << std::endl;
+        std::cout << val << ". " << this->superieurs.at(indexs_superieurs.at(i))->get_name() << std::endl;
         val++;
     }
 
@@ -305,14 +308,14 @@ int Joueur::relancer_des(Lancer &l)
         }
         catch (...)
         {
-
+            // TODO
         }
         des_r = this->des_relance(selected);
         std::cin >> selected;
     } while (des_r == nullptr);
 
     if(des_r != nullptr)
-        l.lance(des_r);
+        l.lance(des_r, std::strlen(selected.c_str()));
     return 0;
 }
 
