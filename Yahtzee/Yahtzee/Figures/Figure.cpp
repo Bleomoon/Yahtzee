@@ -1,20 +1,5 @@
 #include "Figure.h"
 
-std::ostream& operator<<(std::ostream& out, Figure& figure)
-{
-	out << "figure ";
-	if (figure.assigner) {
-		if (figure.abandonne)
-			out << "est abandonné !";
-		else
-			out << "a pour score " << figure.score;
-	}
-	else
-		out << " n'est pas assigné !";
-
-	return out;
-}
-
 Figure::Figure()
 {
 	abandonne = false;
@@ -30,4 +15,19 @@ int Figure::get_score()
 bool Figure::is_assigner()
 {
 	return assigner;
+}
+
+std::ostream& operator<<(std::ostream& out, const Figure& figure)
+{
+	out << "figure ";
+	if (figure.assigner) {
+		if (figure.abandonne)
+			out << "est abandonné !";
+		else
+			out << "a pour score " << figure.score;
+	}
+	else
+		out << " n'est pas assigné !";
+
+	return out;
 }

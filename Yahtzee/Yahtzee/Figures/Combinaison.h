@@ -57,7 +57,7 @@ public:
 };
 
 template<int valeur> 
-std::ostream& operator<<(const std::ostream& out, Combinaison<valeur>& figure)
+std::ostream& operator<<(std::ostream& out, const Combinaison<valeur>& figure)
 {
 	out << "Combinaison de " << valeur; 
 	if (figure.assigner)

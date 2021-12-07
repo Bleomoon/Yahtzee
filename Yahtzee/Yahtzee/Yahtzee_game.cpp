@@ -10,7 +10,7 @@ Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
 		joueurs->push_back(new Joueur(this, nom_joueurs[i]));
 	}
 	numero_tour = 0;
-	lancer = new Lancer;
+	lancer = new Lancer(NB_DE);
 }
 
 // constructeur on ne connais pas le nom des joureur, un scanner le demande le nombre de joueur pour la partie et leur nom
@@ -23,7 +23,6 @@ Yahtzee_game::Yahtzee_game(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_to
 	do {
 		std::cout << "A combien voulez-vous jouer ? (entre 2 et 8)" << std::endl;
 		std::cin >> nb_joueur;
-		//scanf("%d", &nb_joueur);
 	} while (nb_joueur < 2 || nb_joueur > 8);
 
 	// allocation de la mémoire pour le tableau de joueur
@@ -34,8 +33,7 @@ Yahtzee_game::Yahtzee_game(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_to
 	std::string nom_joueur;
 	for (int i = 0; i < nb_joueur; i++) {
 		std::cin >> nom_joueur;
-		//scanf("%s", &nom_joueur);
-		joueurs->push_back( new Joueur(this, nom_joueur));
+		joueurs->push_back(new Joueur(this, nom_joueur));
 	}
 
 	numero_tour = 0;
@@ -47,11 +45,6 @@ Yahtzee_game::Yahtzee_game(const Yahtzee_game& copy)
 	: nb_joueur(copy.nb_joueur), nb_lancer(copy.nb_lancer)
 {
 	joueurs = copy.joueurs;
-
-	/*
-	for (int i = 0; i < nb_joueur; i++) {
-		joueurs->push_back(new Joueur(this, copy.joueurs->at(i)->get_nom()));
-	}*/
 	numero_tour = copy.numero_tour;
 	lancer = new Lancer;
 }
@@ -84,11 +77,7 @@ Yahtzee_game& Yahtzee_game::operator=(const Yahtzee_game& copy)
 		nb_joueur = copy.nb_joueur;
 		nb_lancer = copy.nb_lancer;
 		numero_tour = copy.numero_tour;
-		joueurs = new std::vector<Joueur*>;
-
-		for (int i = 0; i < nb_joueur; i++) {
-			joueurs->push_back(new Joueur(this, copy.joueurs->at(i)->get_nom()));
-		}
+		joueurs = copy.joueurs;
 
 		// on ne copie pas lancer car elle son contenue nous interesse pas TODO
 	}

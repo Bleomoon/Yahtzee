@@ -13,5 +13,5 @@ public:
     std::string get_name();
 };
 
-std::ostream& operator<<(std::ostream& out, Grande_suite& figure);
+std::ostream& operator<<(std::ostream& out, const Grande_suite& figure);
 #endif

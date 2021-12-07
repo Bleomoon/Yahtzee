@@ -36,7 +36,7 @@ std::string Brelan::get_name()
 	return "Brelan";
 }
 
-std::ostream& operator<<(std::ostream& out, Brelan& figure)
+std::ostream& operator<<(std::ostream& out, const Brelan& figure)
 {
 	out << "Brelan";
 

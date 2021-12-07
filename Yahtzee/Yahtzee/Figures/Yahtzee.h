@@ -13,5 +13,5 @@ public:
     std::string get_name();
 };
 
-std::ostream& operator<<(std::ostream& out, Yahtzee& figure);
+std::ostream& operator<<(std::ostream& out, const Yahtzee& figure);
 #endif

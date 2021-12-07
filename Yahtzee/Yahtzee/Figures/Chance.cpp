@@ -1,12 +1,5 @@
 #include "Chance.h"
 
-std::ostream& operator<<(std::ostream& out, Chance& figure)
-{
-	out << "Chance";
-
-	return out;
-}
-
 Chance::Chance() : Figure() { }
 
 bool Chance::set_figure(int* des)
@@ -34,4 +27,11 @@ bool Chance::is_figure(int* des)
 std::string Chance::get_name()
 {
 	return "Chance";
+}
+
+std::ostream& operator<<(std::ostream& out, const Chance& figure)
+{
+	out << "Chance";
+
+	return out;
 }

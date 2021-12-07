@@ -110,15 +110,13 @@ void Joueur::tour_joueur(Lancer& l)
     std::cout << "D�but du tour de " << this->nom << std::endl;
     std::string selected;
     int choice = -1, cpt_tour = 0, nb_possibilite;
-    int valD[5];
+    int des[5] = {};
     int* recap = this->get_recapitulatif(l.get_des());
     bool garde = false;
   
     
     //initialise des
-    for (int i = 1; i < 6; i++)
-        valD[i] = i;
-    int* des = l.lance(valD);
+    l.lance(des);
 
     while (!garde && cpt_tour < 3)
     {
@@ -127,7 +125,6 @@ void Joueur::tour_joueur(Lancer& l)
         while (choice == -1)
         {
             std::cin >> selected;
-            //std::scanf("%s", &selected);
             choice = choix_correct(selected, nb_possibilite);
         }
         if (choice <= 6) //combinaison sup�rieur
@@ -271,7 +268,6 @@ int Joueur::abandonne(int *recap)
 
     while (choice == -1)
     {
-        //std::scanf("%s", &selected);
         std::cin >> selected;
         if (std::strcmp(selected.c_str(), "stop"))
             return -1;
@@ -312,7 +308,6 @@ int Joueur::relancer_des(Lancer &l)
         }
         des_r = this->des_relance(selected);
         std::cin >> selected;
-        //std::scanf("%s", &selected);
     } while (des_r == nullptr);
 
     if(des_r != nullptr)

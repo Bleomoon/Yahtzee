@@ -34,7 +34,7 @@ std::string Grande_suite::get_name()
 	return "Grande Suite";
 }
 
-std::ostream& operator<<(std::ostream& out, Grande_suite& figure)
+std::ostream& operator<<(std::ostream& out, const Grande_suite& figure)
 {
 	out << "Grande Suite";
 

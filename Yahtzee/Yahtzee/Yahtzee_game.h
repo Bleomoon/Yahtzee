@@ -2,6 +2,7 @@
 #define _YAHTZEE_GAME_H_
 
 #include <iostream>
+#include <vector>
 
 #include "Joueur.h"
 #include "Lancer.h"

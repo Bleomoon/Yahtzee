@@ -16,5 +16,5 @@ public:
     friend std::ostream& operator<<(std::ostream& out, Chance& figure);
 };
 
-std::ostream& operator<<(std::ostream& out, Chance& figure);
+std::ostream& operator<<(std::ostream& out, const Chance& figure);
 #endif

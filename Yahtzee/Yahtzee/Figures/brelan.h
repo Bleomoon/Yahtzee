@@ -14,6 +14,6 @@ public:
     std::string get_name();
 };
 
-std::ostream& operator<<(std::ostream& out, Brelan& figure);
+std::ostream& operator<<(std::ostream& out, const Brelan& figure);
 
 #endif

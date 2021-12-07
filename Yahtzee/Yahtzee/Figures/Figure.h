@@ -20,10 +20,10 @@ public:
     int get_score();
     bool is_assigner();
 
-    friend std::ostream& operator<<(std::ostream& out, Figure& figure);
+    friend std::ostream& operator<<(std::ostream& out, const Figure& figure);
 };
 
-std::ostream& operator<<(std::ostream& out, Figure& figure);
+std::ostream& operator<<(std::ostream& out, const Figure& figure);
 
 
 #endif

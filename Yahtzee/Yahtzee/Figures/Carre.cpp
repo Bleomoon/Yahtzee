@@ -33,7 +33,7 @@ std::string Carre::get_name()
 	return "Carre";
 }
 
-std::ostream& operator<<(std::ostream& out, Carre& figure)
+std::ostream& operator<<(std::ostream& out, const Carre& figure)
 {
 	out << "Carre";
 

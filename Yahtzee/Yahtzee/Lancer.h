@@ -4,18 +4,15 @@
 #include <string>
 #include <vector>
 #include "De.h"
-#include "Joueur.h"
-#include "Yahtzee_game.h"
 
 class Lancer
 {
     De* des;
 public:
-    Lancer();
+    Lancer(const int NB_DE);
     ~Lancer();
     Lancer& operator=(const Lancer& copy);
-    //std::vector<Figure*>& possibilite(Joueur* j);
-    void lance(int* indiceslances);
+    void lance(int* indiceslances) const;
     De* get_des();
 };
 #endif

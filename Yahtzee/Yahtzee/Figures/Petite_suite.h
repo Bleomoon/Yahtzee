@@ -12,5 +12,5 @@ public:
     std::string get_name();
 };
 
-std::ostream& operator<<(std::ostream& out, Petite_suite& figure);
+std::ostream& operator<<(std::ostream& out, const Petite_suite& figure);
 #endif

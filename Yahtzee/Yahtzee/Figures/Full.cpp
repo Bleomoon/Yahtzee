@@ -37,7 +37,7 @@ std::string Full::get_name()
 	return "Full";
 }
 
-std::ostream& operator<<(std::ostream& out, Full& figure)
+std::ostream& operator<<(std::ostream& out, const Full& figure)
 {
 	out << "Full ";
 

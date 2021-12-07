@@ -32,7 +32,7 @@ std::string Petite_suite::get_name()
 	return "Petite Suite";
 }
 
-std::ostream& operator<<(std::ostream& out, Petite_suite& figure)
+std::ostream& operator<<(std::ostream& out, const Petite_suite& figure)
 {
 	out << "Petite Suite";
 

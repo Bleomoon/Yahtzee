@@ -29,7 +29,7 @@ std::string Yahtzee::get_name()
     return "Yathzee";
 }
 
-std::ostream& operator<<(std::ostream& out, Yahtzee& figure)
+std::ostream& operator<<(std::ostream& out, const Yahtzee& figure)
 {
     out << "Yathzee";
 
