@@ -11,7 +11,7 @@ const int NB_DE = 5;
 class Yahtzee_game
 {
     int nb_lancer;
-    Joueur** joueurs;
+    std::vector<Joueur*>* joueurs;
     int nb_joueur;
     int numero_tour;
     Lancer* lancer;

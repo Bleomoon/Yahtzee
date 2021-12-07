@@ -4,10 +4,10 @@
 Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
 	int nb_lancer_par_tours) : nb_joueur(nb_joueurs), nb_lancer(nb_lancer_par_tours)
 {
-	joueurs = new Joueur * [nb_joueur];
+	joueurs = new std::vector<Joueur*>;
 
 	for (int i = 0; i < nb_joueur; i++) {
-		joueurs[i] = new Joueur(this, nom_joueurs[i]);
+		joueurs->push_back(new Joueur(this, nom_joueurs[i]));
 	}
 	numero_tour = 0;
 	lancer = new Lancer;
@@ -26,13 +26,14 @@ Yahtzee_game::Yahtzee_game(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_to
 	} while (nb_joueur < 2 || nb_joueur > 8);
 
 	// allocation de la mémoire pour le tableau de joueur
-	joueurs = new Joueur * [nb_joueur];
+	joueurs = new std::vector<Joueur*>;
+
 
 	// demande tous les noms de joueurs
 	std::string nom_joueur;
 	for (int i = 0; i < nb_joueur; i++) {
 		scanf("%s", &nom_joueur);
-		joueurs[i] = new Joueur(this, nom_joueur);
+		joueurs->push_back( new Joueur(this, nom_joueur));
 	}
 
 	numero_tour = 0;
@@ -42,10 +43,10 @@ Yahtzee_game::Yahtzee_game(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_to
 Yahtzee_game::Yahtzee_game(const Yahtzee_game& copy)
 	: nb_joueur(copy.nb_joueur), nb_lancer(copy.nb_lancer)
 {
-	joueurs = new Joueur * [nb_joueur];
+	joueurs = new std::vector<Joueur*>;
 
 	for (int i = 0; i < nb_joueur; i++) {
-		joueurs[i] = new Joueur(this, copy.joueurs[i]->get_nom());
+		joueurs->push_back(new Joueur(this, copy.joueurs->at(i)->get_nom()));
 	}
 	numero_tour = copy.numero_tour;
 	lancer = new Lancer;
@@ -55,8 +56,9 @@ Yahtzee_game::Yahtzee_game(const Yahtzee_game& copy)
 Yahtzee_game::~Yahtzee_game()
 {
 	// destruction de tous les joueur
-	for (int i = 0; i < nb_joueur; i++) {
-		delete joueurs[i];
+	while (!joueurs->empty()) {
+		delete &*joueurs->end();
+		joueurs->pop_back();
 	}
 	delete[] joueurs;
 
@@ -68,8 +70,9 @@ Yahtzee_game& Yahtzee_game::operator=(const Yahtzee_game& copy)
 {
 	if (this != &copy) {
 		// destruction de tous les joueur pour éviter la fuite mémoire
-		for (int i = 0; i < nb_joueur; i++) {
-			delete joueurs[i];
+		while (!joueurs->empty()) {
+			delete&* joueurs->end();
+			joueurs->pop_back();
 		}
 		delete[] joueurs;
 
@@ -77,10 +80,10 @@ Yahtzee_game& Yahtzee_game::operator=(const Yahtzee_game& copy)
 		nb_joueur = copy.nb_joueur;
 		nb_lancer = copy.nb_lancer;
 		numero_tour = copy.numero_tour;
-		joueurs = new Joueur * [nb_joueur];
+		joueurs = new std::vector<Joueur*>;
 
 		for (int i = 0; i < nb_joueur; i++) {
-			joueurs[i] = new Joueur(*copy.joueurs[i]);
+			joueurs->push_back(new Joueur(this, copy.joueurs->at(i)->get_nom()));
 		}
 
 		// on ne copie pas lancer car elle son contenue nous interesse pas TODO
@@ -89,14 +92,30 @@ Yahtzee_game& Yahtzee_game::operator=(const Yahtzee_game& copy)
 	return *this;
 }
 
+#include <algorithm>
+
 void Yahtzee_game::jouer()
 {
 	// faire tous les tours
 	for (numero_tour = 1; numero_tour <= 13; numero_tour++) {
 		// chaque joueur joue
 		for (int index_joueur = 0; index_joueur < nb_joueur; index_joueur++) {
-			joueurs[index_joueur]->tour_joueur(lancer);
+			joueurs->at(index_joueur)->tour_joueur(*lancer);
 		}
+	}
+
+	// on tri le tableau de joueurs par rapport a leurs socre
+	struct {
+		bool operator()(Joueur a, Joueur b) const { return (a.get_total_score() < b.get_total_score()); }
+	} customLess;
+	
+	std::sort(joueurs->begin(), joueurs->end(), customLess);
+
+	// affichage des joueurs
+	std::cout << "rang : nom score" << std::endl;
+	for (int index = 0; index < joueurs->size(); index++) {
+		auto current = joueurs->at(index);
+		std::cout << (index + 1) << ": " << current->get_nom() << " " << current->get_total_score() << std::endl;
 	}
 }
 
