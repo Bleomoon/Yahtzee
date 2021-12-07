@@ -10,3 +10,6 @@ Yahtzee/.vs/Yahtzee/v16/Browse.VC.db
 Yahtzee/.vs/Yahtzee/v16/.suo
 *.db
 test/Yathzee/.vs/*
+test/Yahtzee/.vs/Yahtzee/v16/Browse.VC.db-wal
+test/Yahtzee/.vs/Yahtzee/v16/Browse.VC.opendb
+test/Yahtzee/.vs/Yahtzee/v16/Browse.VC.db-shm

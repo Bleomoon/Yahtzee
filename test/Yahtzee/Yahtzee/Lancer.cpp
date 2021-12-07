@@ -27,11 +27,16 @@ std::vector<Figure*>& Lancer::possibilite(Joueur* j)
 		recap[des[index].get_val() - 1] ++;
 	}
 
-	const int values[6] = { 1, 2, 3, 4 ,5 ,6 };
+	int values[6] = { 1, 2, 3, 4 ,5 ,6 };
 	int possibilites_index = 0;
+	const int current = values[1];
+
+	/*Combinaison<current> current_combi();
+
 	// combinaison sup�rieurs
-	/*for (int value = 0; value < 6; value++) {
-		auto current_combi = new Combinaison<const_cast<int&>(values[value])>(false);
+	for (int value = 0; value < 6; value++) {
+		const int current = values[value];
+		auto current_combi = new Combinaison<current>(false);
 	}*/
 
 
