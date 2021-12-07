@@ -24,12 +24,12 @@ bool Yahtzee::is_figure(int* recap)
     return false;
 }
 
-std::string Yathzee::get_name()
+std::string Yahtzee::get_name()
 {
     return "Yathzee";
 }
 
-std::ostream& operator<<(std::ostream& out, Yathzee& figure)
+std::ostream& operator<<(std::ostream& out, Yahtzee& figure)
 {
     out << "Yathzee";
 
