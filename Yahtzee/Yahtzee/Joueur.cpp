@@ -178,16 +178,29 @@ std::string Joueur::get_nom()
     return this->nom;
 }
 
-// retourne les figure superierus encore disponible pour le joueur
-std::vector<Figure*>& Joueur::superieurs_restante()
+// remplis le vecteurs d'indexs passé en paramère apres les indexs des figures  
+// supérieurs non réalisé
+void Joueur::superieurs_restante(std::vector<int>* indexs)
 {
-    //retourne les figure encore disponible pour le joueur
+    for (int index = 0; index < superieurs.size(); index++) {
+        if (!superieurs.at(index)->is_assigner())
+            indexs->push_back(index);
+    }
+
+    indexs->shrink_to_fit();
+
 }
 
-// retourne les figure inferieurs encore disponible pour le joueur
-std::vector<Figure*>& Joueur::inferieurs_restante()
+// remplis le vecteurs d'indexs passé en paramère apres les indexs des figures  
+// inférieurs non réalisé
+void Joueur::inferieurs_restante(std::vector<int>* indexs)
 {
-    return std::vector<const Figure*>();
+    for (int index = 0; index < inferieurs.size(); index++) {
+        if (!inferieurs.at(index)->is_assigner())
+            indexs->push_back(index);
+    }
+
+    indexs->shrink_to_fit();
 }
 
 // Vérifie que le joueur ne rentre pas n'importe quoi dans ces choix, on veux un int entre 1 et max
@@ -207,33 +220,39 @@ int Joueur::choix_correct(std::string selected, int max)
     return number;
 }
 
-int Joueur::abandonne()
+int Joueur::abandonne(int *recap)
 {
+    // afficher ce qu'il peut abandonner
     int choice = -1;
     std::string selected;
 
-    std::cout << "Select what you want to drop:" << std::endl;
-    std::vector<const Figure*> fig_restante = this->figure_restante();
-
-    for (int i = 0; i < fig_restante.size(); i++)
-    {
-        std::cout << i << ". " << fig_restante.at(i) << std::endl;
+    std::cout << "Voici toutes les figures que vous pouvez abandonné (stop pour revenir en arrière):" << std::endl;
+    std::vector<int> indexAbandonner;
+    indexAbandonner.reserve(7);
+    for (int index = 0; index < inferieurs.size(); index++) {
+        Figure* current = inferieurs.at(index);
+        if (!current->is_figure(recap)) {
+            indexAbandonner.push_back(index);
+            std::cout << index << ": " << current->get_name() << " ";
+        }
     }
-    std::cout << (fig_restante.size() + 1) << ". revenir en arrière" << std::endl;
+    indexAbandonner.shrink_to_fit();
+
+    // il n'y a plus combinaison inférieur a abandonné
+    if (indexAbandonner.size() == 0) {
+        std::cout << "Vous ne pouvez plus abandonner de combinaison" << std::endl;
+        return choice;
+    }
 
     while (choice == -1)
     {
         std::scanf("%s", &selected);
-        choice = choix_correct(selected, (fig_restante.size() + 1));
+        if (std::strcmp(selected.c_str(), "stop"))
+            return -1;
+        choice = choix_correct(selected, indexAbandonner.size());
     }
-    if (choice == fig_restante.size() + 1)
-        return -1;
-    else
-    {
-        //drop the selected figure
-        //ici on set_figure
-    }
-    return choice;
+
+    return indexAbandonner.at(choice);
 }
 
 int Joueur::relancer_des(Lancer &l)
