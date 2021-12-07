@@ -38,7 +38,7 @@ std::vector<Figure*>& Lancer::possibilite(Joueur* j)
 	return toutes_possibilites;
 }
 
-int* Lancer::lance(int* indiceslances)
+void Lancer::lance(int* indiceslances)
 {
 	// on lance seulement les des d'ont l'indice est dans le tableau 
 	int nb_des_lance = sizeof(indiceslances);

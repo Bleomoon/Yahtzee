@@ -94,15 +94,15 @@ int Joueur::get_total_score()
 }
 
 //ajout d'une figure de type combinaison donc les 6 ou 5 etc
-void Joueur::ajouter_superieurs(int* valeur_de)
+void Joueur::ajouter_superieurs(int* recap, int valeur)
 {
-    this->superieurs.at(valeur_de)->set_figure();
+    this->superieurs.at(valeur)->set_figure(recap);
 }
 
 //ajout d'une figure carre, brelan etc
-void Joueur::ajouter_inferieurs(std::string nom)
+void Joueur::ajouter_inferieurs(int* recap, int valeur)
 {
-    this->inferieurs.push_back(f);
+    this->inferieurs.at(valeur)->set_figure(recap);
 }
 
 /*Affiche les possibilite, propose de :
@@ -122,13 +122,11 @@ void Joueur::tour_joueur(Lancer& l)
     
     while (!garde || cpt_tour < 3)
     {
+        // a voir ici il fait un choix d'un numéro mais quel choix le 1 pour le brelan? comment sait ton que c'est le brelan
         std::vector<const Figure f*> all_possibilites = l.possibilite(this);
         afficher_possibilite(all_possibilites);
         std::cout << (all_possibilites.size() + 1) << ". Relancer les dés" << std::endl;
         std::cout << (all_possibilites.size() + 2) << ". Abandonné une possibilité" << std::endl;
-        // a nomF
-        // v nomF
-        // r précisez les dés
         while (choice == -1)
         {
             std::scanf("%s", &selected);
@@ -136,18 +134,15 @@ void Joueur::tour_joueur(Lancer& l)
         }
         if (choice <= 6) //combinaison supérieur
         {
-            //ici on modifie en set_figure de la figure en question
-            //ici je dois récap avant
-            this->ajouter_superieurs(all_possibilites.at(choice));
+            this->ajouter_superieurs(this->get_recapitulatif(l.get_des()),choice);
         }
         else if(choice <= 13)//combinaison inférieur
         {
-            //ici on modifie en set_figure de la figure en question
-            this->ajouter_superieurs(all_possibilites.at(choice));
+            this->ajouter_inferieurs(this->get_recapitulatif(l.get_des()), choice);
         }
         else if (choice <= 13)//Relancer les dés
         {
-            choice = this->relancer_des();
+            choice = this->relancer_des(l);
             if (choice == -1)
                 cpt_tour--;
         }
@@ -164,6 +159,7 @@ void Joueur::tour_joueur(Lancer& l)
 }
 
 //affiche les possibilités en fonction des dés
+// a modifier
 void Joueur::afficher_possibilite(std::vector<Figure*>& possibilite)
 {
     std::cout << "Selectionnez ce que vous voulez valider : " << std::endl;
@@ -178,7 +174,7 @@ std::string Joueur::get_nom()
     return this->nom;
 }
 
-// retourne les figure superierus encore disponible pour le joueur
+// retourne les figure superieurs encore disponible pour le joueur
 std::vector<Figure*>& Joueur::superieurs_restante()
 {
     //retourne les figure encore disponible pour le joueur
@@ -202,7 +198,7 @@ int Joueur::choix_correct(std::string selected, int max)
     {
         std::cout << "Please enter a number !" << std::endl;
     }
-    if (number < 0 && number > max + 1)
+    if (number < 1 && number > max)
         std::cout << "Please enter a number between 1 and " << max << std::endl;
     return number;
 }
@@ -212,7 +208,7 @@ int Joueur::abandonne()
     int choice = -1;
     std::string selected;
 
-    std::cout << "Select what you want to drop:" << std::endl;
+    std::cout << "Selectionner ce que vous voulez abandonner :" << std::endl;
     std::vector<const Figure*> fig_restante = this->figure_restante();
 
     for (int i = 0; i < fig_restante.size(); i++)
@@ -232,48 +228,87 @@ int Joueur::abandonne()
     {
         //drop the selected figure
         //ici on set_figure
+
     }
     return choice;
 }
 
 int Joueur::relancer_des(Lancer &l)
 {
-    int choice = -1, cpt_d = 0;
-    bool relance = false;
-    std::vector<int> des_r;
+    int choice = -1;
+    int* des_r = nullptr;
     std::string selected;
 
-    std::cout << "Sélectionner quel dé pour voulez relancer : " << std::endl;
-    for (int i = 0; i < 5 ; i++) //boucle sur les dés pour les affichés
+    std::cout << "Sélectionner quel dés pour voulez relancer, format attendu (123456) : " << std::endl;
+    for (int i = 1; i <= 6 ; i++) //boucle sur les dés pour les affichés
     {
         std::cout << "Dé " << i << " : " << l.get_des()[i].to_String() << std::endl;
     }
-    std::cout << 6 << ". revenir en arrière" << std::endl;
+    std::cout << 7 << ". revenir en arrière" << std::endl;
 
-    //si un dés déja valider :(
-    while (relance == false && cpt_d < 5)
+    //si 7 alors sort sinon test le string en entier et boucle jusqu'a obtenir une bonne valeur
+    do
     {
-        while (choice == -1)
+        try
         {
-            std::scanf("%s", &selected);
-            choice = choix_correct(selected, (sizeof(l.get_des()) + 1));
+            int n = std::stoi(selected);
+            if (n == 7)
+            {
+                return -1;
+                break;
+            }
         }
-        des_r.push_back(choice);
-        cpt_d++;
-    }
+        catch (...)
+        {
 
-    if (choice == 6)
-        return -1;
-    else
-    {
-        int all_d[des_r]
-        //récupère des int pour les dés
-        l.lance();//les dés en question relancé
-    }
-    return choice;
+        }
+        des_r = this->des_relance(selected);
+        std::scanf("%s", &selected);
+    } while (des_r == nullptr);
+
+    if(des_r != nullptr)
+        l.lance(des_r);
+    return 0;
 }
 
-int* get_recapitulatif()
+//fonction pour avoir un tableau de int avec tout les dés et vérifié que leur formats est correct
+int* Joueur::des_relance(std::string des_r)
+{
+    int relance[sizeof(des_r)];
+    // pas de doublon, pas de dés > 5 et < 1 et pas de lettres
+    if (des_r.size() > 5)
+    {
+        std::cout << "Erreur dans la chaine envoyé, taille trop grande" << std::endl;
+        return nullptr;
+    }
+    else
+    {
+        int number;
+        for (int i = 0; i < des_r.size(); i++)
+        {
+            number = this->choix_correct(std::string(1, des_r[i]), 5);
+            if (number == -1)
+                return nullptr;
+            else
+                relance[i] = number;
+        }
+
+        //vérifie les doublons
+        for (int i = 0; i < des_r.size(); i++)
+        {
+            number = relance[i];
+            for (int j = i; j < des_r.size(); j++)
+            {
+                if (number == relance[j])
+                    return nullptr;
+            }
+        }
+    }
+    
+    return relance;
+}
+
+int* Joueur::get_recapitulatif(De* des)
 {
     // on fait le recapitulatif des valeurs obtenues
     int recap[6];
@@ -284,4 +319,5 @@ int* get_recapitulatif()
     for (int index = 0; index < 6; index++) {
         recap[des[index].get_val() - 1] ++;
     }
+    return recap;
 }

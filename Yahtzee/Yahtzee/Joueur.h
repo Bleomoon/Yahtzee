@@ -7,9 +7,16 @@
 #include <vector>
 
 #include "Figures/Figure.h"
+#include "Figures/Brelan.h"
+#include "Figures/Carre.h"
+#include "Figures/Chance.h"
+#include "Figures/Combinaison.h"
+#include "Figures/Full.h"
+#include "Figures/Grande_suite.h"
+#include "Figures/Petite_suite.h"
+#include "Figures/Yahtzee.h"
 #include "Yahtzee_game.h"
 #include "Lancer.h"
-#include "Figures/Combinaison.h"
 #include "De.h"
 
 const int NB_SUPERIEURS = 6;
@@ -28,8 +35,8 @@ public:
     ~Joueur();
     Joueur& operator=(const Joueur& copy);
     int get_total_score();
-    void ajouter_superieurs(int* valeur_de);
-    void ajouter_inferieurs(std::string nom);
+    void ajouter_superieurs(int* recap, int valeur);
+    void ajouter_inferieurs(int* recap, int valeur);
     void tour_joueur(Lancer& l);
     void afficher_possibilite(std::vector<Figure*>& possibilite);
     std::string get_nom();
@@ -37,8 +44,11 @@ public:
     std::vector<Figure*>& inferieurs_restante();
     int abandonne();
     int relancer_des(Lancer& l);
+    int* get_recapitulatif(De* des);
+
 private:
     int choix_correct(std::string selected, int max);
+    int* des_relance(std::string des_r);
 };
 
 #endif
