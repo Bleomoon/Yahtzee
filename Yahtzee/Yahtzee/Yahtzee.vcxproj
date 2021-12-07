@@ -146,10 +146,10 @@
     <ClCompile Include="Figures\Full.cpp" />
     <ClCompile Include="Figures\Grande_suite.cpp" />
     <ClCompile Include="Figures\Petite_suite.cpp" />
+    <ClCompile Include="Figures\Yahtzee.cpp" />
     <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="De.cpp" />
     <ClCompile Include="Lancer.cpp" />
-    <ClCompile Include="Yahtzee.cpp" />
     <ClCompile Include="Yahtzee_game.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -161,10 +161,10 @@
     <ClInclude Include="Figures\Full.h" />
     <ClInclude Include="Figures\Grande_suite.h" />
     <ClInclude Include="Figures\Petite_suite.h" />
+    <ClInclude Include="Figures\Yahtzee.h" />
     <ClInclude Include="Joueur.h" />
     <ClInclude Include="Lancer.h" />
     <ClInclude Include="De.h" />
-    <ClInclude Include="Yahtzee.h" />
     <ClInclude Include="Yahtzee_game.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

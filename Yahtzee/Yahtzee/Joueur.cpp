@@ -1,26 +1,26 @@
 #include "Joueur.h"
 
-//le joueur reçoit un nom et l'adresse du jeu pour jouer son tour au moment ou on l'appel et avoir ainsi accès au dés
+//le joueur reï¿½oit un nom et l'adresse du jeu pour jouer son tour au moment ou on l'appel et avoir ainsi accï¿½s au dï¿½s
 Joueur::Joueur(Yahtzee_game* jeu, std::string nom)
 {
     // initialisation de joueur
     this->nom = nom;
     this->yahtzee_g = jeu;
 
-    // reserve de la mémoire
+    // reserve de la mï¿½moire
     superieurs.reserve(NB_SUPERIEURS);
     inferieurs.reserve(NB_INFERIEURS);
 
-    // initialisation de supérieure
+    // initialisation de supï¿½rieure
     superieurs.push_back(new Combinaison<1>());
     superieurs.push_back(new Combinaison<2>());
     superieurs.push_back(new Combinaison<3>());
     superieurs.push_back(new Combinaison<4>());
     superieurs.push_back(new Combinaison<5>());
     superieurs.push_back(new Combinaison<6>());
-    superieurs.shrink_to_fit(); // on enlève le surplus en mémoire
+    superieurs.shrink_to_fit(); // on enlï¿½ve le surplus en mï¿½moire
 
-    // initialisation de inférieure
+    // initialisation de infï¿½rieure
     inferieurs.push_back(new Brelan());
     inferieurs.push_back(new Petite_suite());
     inferieurs.push_back(new Grande_suite());
@@ -28,7 +28,7 @@ Joueur::Joueur(Yahtzee_game* jeu, std::string nom)
     inferieurs.push_back(new Carre());
     inferieurs.push_back(new Yathzee());
     inferieurs.push_back(new Chance());
-    superieurs.shrink_to_fit(); // on enlève le surplus en mémoire
+    superieurs.shrink_to_fit(); // on enlï¿½ve le surplus en mï¿½moire
 }
 
 //a refaire
@@ -58,7 +58,7 @@ Joueur& Joueur::operator=(const Joueur& copy)
 {
     if (this != &copy)
     {
-        std::cout << "Supprime toute les anciennes données du joueur pour évité la fuite mémoire" << std::endl;
+        std::cout << "Supprime toute les anciennes donnï¿½es du joueur pour ï¿½vitï¿½ la fuite mï¿½moire" << std::endl;
         this->inferieurs.clear();
         this->superieurs.clear();
 
@@ -72,20 +72,20 @@ Joueur& Joueur::operator=(const Joueur& copy)
 
 int Joueur::get_total_score()
 {
-    // si le total a déjà été calculé
+    // si le total a dï¿½jï¿½ ï¿½tï¿½ calculï¿½
     if (totalScore != 0)
         return totalScore;
 
-    // compter les points pour supérieur;
+    // compter les points pour supï¿½rieur;
     for (auto it : superieurs) {
         totalScore += it->get_score();
     }
 
-    // si le le total des combinaison est égale a 63 le score passe 98
+    // si le le total des combinaison est ï¿½gale a 63 le score passe 98
     if (totalScore == 63)
         totalScore == 98;
 
-    // compter les points pour les combinaison supérieurs
+    // compter les points pour les combinaison supï¿½rieurs
     for (auto it : inferieurs) {
         totalScore += it->get_score();
     }
@@ -106,13 +106,13 @@ void Joueur::ajouter_inferieurs(int* recap, int valeur)
 }
 
 /*Affiche les possibilite, propose de :
-        - sélectionner une possibilité
-        - relancer certains dés
-        - ou abandonner une possibilité
+        - sï¿½lectionner une possibilitï¿½
+        - relancer certains dï¿½s
+        - ou abandonner une possibilitï¿½
 */
 void Joueur::tour_joueur(Lancer& l)
 {
-    std::cout << "Début du tour " << this->nom << std::endl;
+    std::cout << "Dï¿½but du tour " << this->nom << std::endl;
     std::string selected;
     int choice = -1;
     bool garde = false;
@@ -122,25 +122,25 @@ void Joueur::tour_joueur(Lancer& l)
     
     while (!garde || cpt_tour < 3)
     {
-        // a voir ici il fait un choix d'un numéro mais quel choix le 1 pour le brelan? comment sait ton que c'est le brelan
+        // a voir ici il fait un choix d'un numï¿½ro mais quel choix le 1 pour le brelan? comment sait ton que c'est le brelan
         std::vector<const Figure f*> all_possibilites = l.possibilite(this);
         afficher_possibilite(all_possibilites);
-        std::cout << (all_possibilites.size() + 1) << ". Relancer les dés" << std::endl;
-        std::cout << (all_possibilites.size() + 2) << ". Abandonné une possibilité" << std::endl;
+        std::cout << (all_possibilites.size() + 1) << ". Relancer les dï¿½s" << std::endl;
+        std::cout << (all_possibilites.size() + 2) << ". Abandonnï¿½ une possibilitï¿½" << std::endl;
         while (choice == -1)
         {
             std::scanf("%s", &selected);
             choice = choix_correct(selected, all_possibilites.size() + 2);
         }
-        if (choice <= 6) //combinaison supérieur
+        if (choice <= 6) //combinaison supï¿½rieur
         {
             this->ajouter_superieurs(this->get_recapitulatif(l.get_des()),choice);
         }
-        else if(choice <= 13)//combinaison inférieur
+        else if(choice <= 13)//combinaison infï¿½rieur
         {
             this->ajouter_inferieurs(this->get_recapitulatif(l.get_des()), choice);
         }
-        else if (choice <= 13)//Relancer les dés
+        else if (choice <= 13)//Relancer les dï¿½s
         {
             choice = this->relancer_des(l);
             if (choice == -1)
@@ -158,7 +158,7 @@ void Joueur::tour_joueur(Lancer& l)
     std::cout << "End of turn for " << this->nom << std::endl;
 }
 
-//affiche les possibilités en fonction des dés
+//affiche les possibilitï¿½s en fonction des dï¿½s
 // a modifier
 void Joueur::afficher_possibilite(std::vector<Figure*>& possibilite)
 {
@@ -174,19 +174,32 @@ std::string Joueur::get_nom()
     return this->nom;
 }
 
-// retourne les figure superieurs encore disponible pour le joueur
-std::vector<Figure*>& Joueur::superieurs_restante()
+// remplis le vecteurs d'indexs passï¿½ en paramï¿½re apres les indexs des figures  
+// supï¿½rieurs non rï¿½alisï¿½
+void Joueur::superieurs_restante(std::vector<int>* indexs)
 {
-    //retourne les figure encore disponible pour le joueur
+    for (int index = 0; index < superieurs.size(); index++) {
+        if (!superieurs.at(index)->is_assigner())
+            indexs->push_back(index);
+    }
+
+    indexs->shrink_to_fit();
+
 }
 
-// retourne les figure inferieurs encore disponible pour le joueur
-std::vector<Figure*>& Joueur::inferieurs_restante()
+// remplis le vecteurs d'indexs passï¿½ en paramï¿½re apres les indexs des figures  
+// infï¿½rieurs non rï¿½alisï¿½
+void Joueur::inferieurs_restante(std::vector<int>* indexs)
 {
-    return std::vector<const Figure*>();
+    for (int index = 0; index < inferieurs.size(); index++) {
+        if (!inferieurs.at(index)->is_assigner())
+            indexs->push_back(index);
+    }
+
+    indexs->shrink_to_fit();
 }
 
-// Vérifie que le joueur ne rentre pas n'importe quoi dans ces choix, on veux un int entre 1 et max
+// Vï¿½rifie que le joueur ne rentre pas n'importe quoi dans ces choix, on veux un int entre 1 et max
 int Joueur::choix_correct(std::string selected, int max)
 {
     int number = -1;
@@ -203,34 +216,39 @@ int Joueur::choix_correct(std::string selected, int max)
     return number;
 }
 
-int Joueur::abandonne()
+int Joueur::abandonne(int *recap)
 {
+    // afficher ce qu'il peut abandonner
     int choice = -1;
     std::string selected;
 
-    std::cout << "Selectionner ce que vous voulez abandonner :" << std::endl;
-    std::vector<const Figure*> fig_restante = this->figure_restante();
-
-    for (int i = 0; i < fig_restante.size(); i++)
-    {
-        std::cout << i << ". " << fig_restante.at(i) << std::endl;
+    std::cout << "Voici toutes les figures que vous pouvez abandonnï¿½ (stop pour revenir en arriï¿½re):" << std::endl;
+    std::vector<int> indexAbandonner;
+    indexAbandonner.reserve(7);
+    for (int index = 0; index < inferieurs.size(); index++) {
+        Figure* current = inferieurs.at(index);
+        if (!current->is_figure(recap)) {
+            indexAbandonner.push_back(index);
+            std::cout << index << ": " << current->get_name() << " ";
+        }
     }
-    std::cout << (fig_restante.size() + 1) << ". revenir en arrière" << std::endl;
+    indexAbandonner.shrink_to_fit();
+
+    // il n'y a plus combinaison infï¿½rieur a abandonnï¿½
+    if (indexAbandonner.size() == 0) {
+        std::cout << "Vous ne pouvez plus abandonner de combinaison" << std::endl;
+        return choice;
+    }
 
     while (choice == -1)
     {
         std::scanf("%s", &selected);
-        choice = choix_correct(selected, (fig_restante.size() + 1));
+        if (std::strcmp(selected.c_str(), "stop"))
+            return -1;
+        choice = choix_correct(selected, indexAbandonner.size());
     }
-    if (choice == fig_restante.size() + 1)
-        return -1;
-    else
-    {
-        //drop the selected figure
-        //ici on set_figure
 
-    }
-    return choice;
+    return indexAbandonner.at(choice);
 }
 
 int Joueur::relancer_des(Lancer &l)
@@ -239,12 +257,12 @@ int Joueur::relancer_des(Lancer &l)
     int* des_r = nullptr;
     std::string selected;
 
-    std::cout << "Sélectionner quel dés pour voulez relancer, format attendu (123456) : " << std::endl;
-    for (int i = 1; i <= 6 ; i++) //boucle sur les dés pour les affichés
+    std::cout << "Sï¿½lectionner quel dï¿½s pour voulez relancer, format attendu (123456) : " << std::endl;
+    for (int i = 1; i <= 6 ; i++) //boucle sur les dï¿½s pour les affichï¿½s
     {
-        std::cout << "Dé " << i << " : " << l.get_des()[i].to_String() << std::endl;
+        std::cout << "Dï¿½ " << i << " : " << l.get_des()[i].to_String() << std::endl;
     }
-    std::cout << 7 << ". revenir en arrière" << std::endl;
+    std::cout << 7 << ". revenir en arriï¿½re" << std::endl;
 
     //si 7 alors sort sinon test le string en entier et boucle jusqu'a obtenir une bonne valeur
     do
@@ -271,14 +289,14 @@ int Joueur::relancer_des(Lancer &l)
     return 0;
 }
 
-//fonction pour avoir un tableau de int avec tout les dés et vérifié que leur formats est correct
+//fonction pour avoir un tableau de int avec tout les dï¿½s et vï¿½rifiï¿½ que leur formats est correct
 int* Joueur::des_relance(std::string des_r)
 {
     int relance[sizeof(des_r)];
-    // pas de doublon, pas de dés > 5 et < 1 et pas de lettres
+    // pas de doublon, pas de dï¿½s > 5 et < 1 et pas de lettres
     if (des_r.size() > 5)
     {
-        std::cout << "Erreur dans la chaine envoyé, taille trop grande" << std::endl;
+        std::cout << "Erreur dans la chaine envoyï¿½, taille trop grande" << std::endl;
         return nullptr;
     }
     else
@@ -293,7 +311,7 @@ int* Joueur::des_relance(std::string des_r)
                 relance[i] = number;
         }
 
-        //vérifie les doublons
+        //vï¿½rifie les doublons
         for (int i = 0; i < des_r.size(); i++)
         {
             number = relance[i];

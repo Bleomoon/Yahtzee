@@ -40,9 +40,9 @@ public:
     void tour_joueur(Lancer& l);
     void afficher_possibilite(std::vector<Figure*>& possibilite);
     std::string get_nom();
-    std::vector<Figure*>& superieurs_restante();
-    std::vector<Figure*>& inferieurs_restante();
-    int abandonne();
+    void superieurs_restante(std::vector<int>* indexs);
+    void inferieurs_restante(std::vector<int>* indexs);
+    int abandonne(int* recap);
     int relancer_des(Lancer& l);
     int* get_recapitulatif(De* des);
 
