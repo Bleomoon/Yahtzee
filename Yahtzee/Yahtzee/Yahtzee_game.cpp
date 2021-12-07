@@ -7,7 +7,8 @@ Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
 	joueurs = new std::vector<Joueur*>;
 
 	for (int i = 0; i < nb_joueur; i++) {
-		joueurs->push_back(new Joueur(this, nom_joueurs[i]));
+		Joueur j = Joueur(this, nom_joueurs[i]);
+		joueurs->push_back(&j);
 	}
 	numero_tour = 0;
 	lancer = new Lancer(NB_DE);
@@ -33,11 +34,12 @@ Yahtzee_game::Yahtzee_game(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_to
 	std::string nom_joueur;
 	for (int i = 0; i < nb_joueur; i++) {
 		std::cin >> nom_joueur;
-		joueurs->push_back(new Joueur(this, nom_joueur));
+		Joueur* j = new Joueur(this, nom_joueur);
+		joueurs->push_back(j);
 	}
 
 	numero_tour = 0;
-	lancer = new Lancer;
+	lancer = new Lancer(NB_DE);
 }
 
 //Constructeur par copie
@@ -46,7 +48,7 @@ Yahtzee_game::Yahtzee_game(const Yahtzee_game& copy)
 {
 	joueurs = copy.joueurs;
 	numero_tour = copy.numero_tour;
-	lancer = new Lancer;
+	lancer = new Lancer(NB_DE);
 }
 
 // destructeur

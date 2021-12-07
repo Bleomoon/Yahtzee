@@ -18,6 +18,7 @@ public:
     {
 		score = valeur * recap[valeur - 1];
 		assigner = true;
+		return assigner;
     }
 
     bool is_figure(int* recap)

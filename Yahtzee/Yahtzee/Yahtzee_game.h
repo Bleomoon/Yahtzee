@@ -17,8 +17,8 @@ class Yahtzee_game
     int numero_tour;
     Lancer* lancer;
 public:
-    Yahtzee_game(int nb_joueurs, std::string nom_joueurs[], int nb_lancer_par_tours);
     Yahtzee_game(int nb_lancer_par_tours); // constructeur
+    Yahtzee_game(int nb_joueurs, std::string nom_joueurs[], int nb_lancer_par_tours);
     Yahtzee_game(const Yahtzee_game& copy); // constructeur par copy
     ~Yahtzee_game(); // desctructeur
     Yahtzee_game& operator=(const Yahtzee_game& copy); // 

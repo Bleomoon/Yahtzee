@@ -16,6 +16,7 @@ Lancer& Lancer::operator=(const Lancer& copy)
 {
 	if (this != &copy)
 		this->des = copy.des;
+	return *this;
 }
 
 void Lancer::lance(int* indiceslances) const

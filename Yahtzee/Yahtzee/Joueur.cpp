@@ -31,7 +31,6 @@ Joueur::Joueur(Yahtzee_game* jeu, std::string nom)
     superieurs.shrink_to_fit(); // on enl�ve le surplus en m�moire
 }
 
-//a refaire
 Joueur::Joueur(const Joueur& copy)
 {
     if(this != &copy)
@@ -52,7 +51,6 @@ Joueur::~Joueur()
     delete this->yahtzee_g;
 }
 
-// a refaire aussi
 Joueur& Joueur::operator=(const Joueur& copy)
 {
     if (this != &copy)
@@ -63,6 +61,7 @@ Joueur& Joueur::operator=(const Joueur& copy)
         this->totalScore = copy.totalScore;
         this->yahtzee_g = copy.yahtzee_g;
     }
+    return *this;
 }
 
 int Joueur::get_total_score()
