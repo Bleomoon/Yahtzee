@@ -36,7 +36,6 @@ Joueur::Joueur(const Joueur& copy)
 {
     if(this != &copy)
     {
-        this->inferieurs = copy.inferieurs;
         this->superieurs = copy.superieurs;
         this->nom = copy.nom;
         this->totalScore = copy.totalScore;
@@ -58,10 +57,6 @@ Joueur& Joueur::operator=(const Joueur& copy)
 {
     if (this != &copy)
     {
-        std::cout << "Supprime toute les anciennes donn�es du joueur pour �vit� la fuite m�moire" << std::endl;
-        this->inferieurs.clear();
-        this->superieurs.clear();
-
         this->inferieurs = copy.inferieurs;
         this->superieurs = copy.superieurs;
         this->nom = copy.nom;
@@ -115,19 +110,24 @@ void Joueur::tour_joueur(Lancer& l)
     std::cout << "D�but du tour de " << this->nom << std::endl;
     std::string selected;
     int choice = -1, cpt_tour = 0, nb_possibilite;
-    int valD[5] = { 1, 2, 3, 4, 5 };
-    int* des =  l.lance(valD);
+    int valD[5];
     int* recap = this->get_recapitulatif(l.get_des());
     bool garde = false;
   
     
+    //initialise des
+    for (int i = 1; i < 6; i++)
+        valD[i] = i;
+    int* des = l.lance(valD);
+
     while (!garde && cpt_tour < 3)
     {
         nb_possibilite = afficher_possibilite(recap, cpt_tour);
         
         while (choice == -1)
         {
-            std::scanf("%s", &selected);
+            std::cin >> selected;
+            //std::scanf("%s", &selected);
             choice = choix_correct(selected, nb_possibilite);
         }
         if (choice <= 6) //combinaison sup�rieur
@@ -271,7 +271,8 @@ int Joueur::abandonne(int *recap)
 
     while (choice == -1)
     {
-        std::scanf("%s", &selected);
+        //std::scanf("%s", &selected);
+        std::cin >> selected;
         if (std::strcmp(selected.c_str(), "stop"))
             return -1;
         choice = choix_correct(selected, indexAbandonner.size());
@@ -310,7 +311,8 @@ int Joueur::relancer_des(Lancer &l)
 
         }
         des_r = this->des_relance(selected);
-        std::scanf("%s", &selected);
+        std::cin >> selected;
+        //std::scanf("%s", &selected);
     } while (des_r == nullptr);
 
     if(des_r != nullptr)

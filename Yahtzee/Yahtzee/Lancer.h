@@ -13,7 +13,8 @@ class Lancer
 public:
     Lancer();
     ~Lancer();
-    std::vector<Figure*>& possibilite(Joueur *j);
+    Lancer& operator=(const Lancer& copy);
+    //std::vector<Figure*>& possibilite(Joueur* j);
     void lance(int* indiceslances);
     De* get_des();
 };

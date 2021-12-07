@@ -12,6 +12,16 @@ Lancer::~Lancer()
 	delete[] des;
 }
 
+Lancer& Lancer::operator=(const Lancer& copy)
+{
+	if (this != &copy)
+	{
+		for (int i = 0; i < sizeof(copy.des); i++)
+			this->des[i] = copy.des[i];
+	}
+}
+
+/* ça sert à quelquechose maintenant? non 
 std::vector<Figure*>& Lancer::possibilite(Joueur* j)
 {
 	std::vector<Figure*> toutes_possibilites;
@@ -35,15 +45,14 @@ std::vector<Figure*>& Lancer::possibilite(Joueur* j)
 	}
 
 	return toutes_possibilites;
-}
+}*/
 
 void Lancer::lance(int* indiceslances)
 {
 	// on lance seulement les des d'ont l'indice est dans le tableau 
-	int nb_des_lance = sizeof(indiceslances);
-	for (int index_de = 0; index_de < nb_des_lance; index_de++)
+	for (int index_de = 0; index_de < sizeof(indiceslances); index_de++)
 	{
-		des[indiceslances[index_de]].lance();
+		this->des[indiceslances[index_de]].lance();
 	}
 }
 

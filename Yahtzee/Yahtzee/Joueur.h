@@ -1,7 +1,6 @@
 #ifndef _JOUEUR_H_
 #define _JOUEUR_H_
 
-
 #include <iostream>
 #include <string>
 #include <vector>
