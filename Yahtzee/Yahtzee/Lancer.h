@@ -12,7 +12,7 @@ public:
     Lancer(const int NB_DE);
     ~Lancer();
     Lancer& operator=(const Lancer& copy);
-    void lance(int* indiceslances) const;
+    void lance(int* indiceslances);
     De** get_des();
 };
 #endif

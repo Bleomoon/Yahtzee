@@ -107,7 +107,7 @@ void Joueur::tour_joueur(Lancer& l)
     std::cout << "Debut du tour de " << this->nom << std::endl;
     std::string selected;
     int choice = -1, cpt_tour = 0, nb_possibilite;
-    int des[5];
+    int des[5] = { 1, 2, 3, 4, 5 };
     l.lance(des);;
     int* recap = this->get_recapitulatif(l.get_des());
     bool garde = false;
@@ -117,6 +117,10 @@ void Joueur::tour_joueur(Lancer& l)
 
     while (!garde && cpt_tour < 3)
     {
+        // affichage des des    
+        for (unsigned int i = 0; i < sizeof(recap); i++)
+            std::cout << recap[i] << " " << std::endl;
+
         nb_possibilite = afficher_possibilite(recap, cpt_tour);
         
         while (choice == -1)
@@ -177,18 +181,18 @@ int Joueur::afficher_possibilite(int* recap, int cpt_tour)
 
     //boucle sur les indexs_superieurs pour essayer de set_figure des cpy avec les dés existant
     //si le joueur décide de faire un indexs superieur en exemple de 6 alors qu'il n'a aucun dés de 6 ça met 0 dedans
-    for (unsigned int i = indexs_superieurs.size(); i < (indexs_inferieurs.size()+ indexs_superieurs.size()); i++)
+    for (unsigned int i = 0; i < indexs_inferieurs.size(); i++)
     {
         if (this->inferieurs.at(indexs_inferieurs.at(i))->is_figure(recap))
         {
-            std::cout << i << ". " << this->inferieurs.at(indexs_superieurs.at(i))->get_name() << std::endl;
+            std::cout << val << ". " << this->inferieurs.at(indexs_inferieurs.at(i))->get_name() << std::endl;
             val++;
         }
     }
     
-    std::cout << (val + 1) << ". Abandonn� une possibilit�" << std::endl; // a voir
+    std::cout << (val) << ". Abandonn� une possibilit�" << std::endl; // a voir
     if (cpt_tour < 2)
-        std::cout << (val + 2) << ". Relancer les d�s" << std::endl;
+        std::cout << (val + 1) << ". Relancer les des" << std::endl;
     return val;
 }
 

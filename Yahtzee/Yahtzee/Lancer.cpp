@@ -26,12 +26,14 @@ Lancer& Lancer::operator=(const Lancer& copy)
 	return *this;
 }
 
-void Lancer::lance(int* indiceslances) const
+void Lancer::lance(int* indiceslances)
 {
+	std::cout << "function lance sizeof(indiceslances) " << sizeof(indiceslances) << std::endl;
+
 	// on lance seulement les des d'ont l'indice est dans le tableau 
 	for (int index_de = 0; index_de < sizeof(indiceslances); index_de++)
 	{
-		this->des[indiceslances[index_de]]->lance();
+		this->des[(indiceslances[index_de]-1)]->lance();
 	}
 }
 
