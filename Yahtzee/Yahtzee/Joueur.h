@@ -28,7 +28,7 @@ public:
     ~Joueur();
     Joueur& operator=(const Joueur& copy);
     int get_total_score();
-    void ajouter_superieurs(int valeur_de);
+    void ajouter_superieurs(int* valeur_de);
     void ajouter_inferieurs(std::string nom);
     void tour_joueur(Lancer& l);
     void afficher_possibilite(std::vector<Figure*>& possibilite);

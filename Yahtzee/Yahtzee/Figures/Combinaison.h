@@ -14,9 +14,9 @@ public:
 		repetitions = 0; 
 	}
 
-    bool set_figure(int* recap) 
+    bool set_figure(int* recap)
     {
-		score = recap[valeur - 1];
+		score = valeur * recap[valeur - 1];
 		assigner = true;
     }
 

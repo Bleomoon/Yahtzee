@@ -72,17 +72,35 @@ Joueur& Joueur::operator=(const Joueur& copy)
 
 int Joueur::get_total_score()
 {
+    // si le total a déjà été calculé
+    if (totalScore != 0)
+        return totalScore;
+
+    // compter les points pour supérieur;
+    for (auto it : superieurs) {
+        totalScore += it->get_score();
+    }
+
+    // si le le total des combinaison est égale a 63 le score passe 98
+    if (totalScore == 63)
+        totalScore == 98;
+
+    // compter les points pour les combinaison supérieurs
+    for (auto it : inferieurs) {
+        totalScore += it->get_score();
+    }
+
     return this->totalScore;
 }
 
 //ajout d'une figure de type combinaison donc les 6 ou 5 etc
-void Joueur::ajouter_superieurs(const Combinaison<De*> *c)
+void Joueur::ajouter_superieurs(int* valeur_de)
 {
-    this->superieurs.push_back(c);
+    this->superieurs.at(valeur_de)->set_figure();
 }
 
 //ajout d'une figure carre, brelan etc
-void Joueur::ajouter_inferieurs(const Figure *f)
+void Joueur::ajouter_inferieurs(std::string nom)
 {
     this->inferieurs.push_back(f);
 }
@@ -119,6 +137,7 @@ void Joueur::tour_joueur(Lancer& l)
         if (choice <= 6) //combinaison supérieur
         {
             //ici on modifie en set_figure de la figure en question
+            //ici je dois récap avant
             this->ajouter_superieurs(all_possibilites.at(choice));
         }
         else if(choice <= 13)//combinaison inférieur
@@ -145,7 +164,7 @@ void Joueur::tour_joueur(Lancer& l)
 }
 
 //affiche les possibilités en fonction des dés
-void Joueur::afficher_possibilite(std::vector<std::string> possibilite)
+void Joueur::afficher_possibilite(std::vector<Figure*>& possibilite)
 {
     std::cout << "Selectionnez ce que vous voulez valider : " << std::endl;
     for (int i = 0; i < possibilite.size(); i++)
@@ -159,10 +178,16 @@ std::string Joueur::get_nom()
     return this->nom;
 }
 
-// retourne les figure encore disponible pour le joueur
-std::vector<const Figure*> Joueur::figure_restante()
+// retourne les figure superierus encore disponible pour le joueur
+std::vector<Figure*>& Joueur::superieurs_restante()
 {
     //retourne les figure encore disponible pour le joueur
+}
+
+// retourne les figure inferieurs encore disponible pour le joueur
+std::vector<Figure*>& Joueur::inferieurs_restante()
+{
+    return std::vector<const Figure*>();
 }
 
 // Vérifie que le joueur ne rentre pas n'importe quoi dans ces choix, on veux un int entre 1 et max
@@ -246,4 +271,17 @@ int Joueur::relancer_des(Lancer &l)
         l.lance();//les dés en question relancé
     }
     return choice;
+}
+
+int* get_recapitulatif()
+{
+    // on fait le recapitulatif des valeurs obtenues
+    int recap[6];
+    for (int current : recap) {
+        current = 0;
+    }
+
+    for (int index = 0; index < 6; index++) {
+        recap[des[index].get_val() - 1] ++;
+    }
 }
