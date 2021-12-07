@@ -5,10 +5,185 @@
   Full.cpp
   Grande_suite.cpp
   Petite_suite.cpp
-  Joueur.cpp
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Lancer.h(4,10): fatal error C1083: Impossible d'ouvrir le fichier include : 'Valeur.h' : No such file or directory
-  De.cpp
   Yahtzee.cpp
-c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : 'Yahtzee.cpp' : No such file or directory
+  Joueur.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Lancer.h(16,39): error C2061: erreur de syntaxe : identificateur 'Joueur'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.h(14,11): error C2143: erreur de syntaxe : absence de ';' avant '*'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.h(14,11): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.h(14,21): error C2238: jetons inattendus avant ';'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(62,2): error C2678: '<<' binaire : aucun opérateur trouvé qui accepte un opérande de partie gauche de type 'const std::ostream' (ou il n'existe pas de conversion acceptable)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(465,39): message : est peut-être 'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(440,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(422,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(404,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(386,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(368,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(350,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(332,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(314,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(295,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(269,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(250,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(216,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(198,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(193,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(188,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(183,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Chance.h(16,26): message : ou       'std::ostream &operator <<(std::ostream &,Chance &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Carre.h(16,15): message : ou       'std::ostream &operator <<(std::ostream &,Carre &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Brelan.h(17,15): message : ou       'std::ostream &operator <<(std::ostream &,Brelan &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Figure.h(23,26): message : ou       'std::ostream &operator <<(std::ostream &,Figure &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(653,32): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(733,31): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(816,32): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const _Elem *)'
+          with
+          [
+              _Elem=char
+          ]
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(69,1): message : lors de la tentative de mise en correspondance de la liste des arguments '(const std::ostream, const char [16])'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(29,30): error C2061: erreur de syntaxe : identificateur 'Yathzee'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(86,20): warning C4553: '==' : résultat de l'expression non utilisé ; souhaitiez-vous utiliser '=' ?
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(119,31): error C2440: 'initialisation' : impossible de convertir de 'void' en 'int *'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(119,14): message : Les expressions de type void ne peuvent pas être converties en d'autres types
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(130,24): warning C4477: 'scanf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 1 est de type 'std::string *'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(130,18): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(178,23): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(186,46): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(210,31): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(223,31): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(257,31): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(274,20): warning C4477: 'scanf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 1 est de type 'std::string *'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(274,14): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(313,20): warning C4477: 'scanf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 1 est de type 'std::string *'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(313,14): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(334,27): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(344,27): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(347,31): warning C4018: '<' : incompatibilité signed/unsigned
+  De.cpp
+  Lancer.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.h(14,11): error C2143: erreur de syntaxe : absence de ';' avant '*'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.h(14,11): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.h(14,21): error C2238: jetons inattendus avant ';'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.h(17,11): error C2143: erreur de syntaxe : absence de ';' avant '*'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.h(17,11): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.h(17,19): error C2238: jetons inattendus avant ';'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(62,2): error C2678: '<<' binaire : aucun opérateur trouvé qui accepte un opérande de partie gauche de type 'const std::ostream' (ou il n'existe pas de conversion acceptable)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(465,39): message : est peut-être 'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(440,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(422,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(404,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(386,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(368,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(350,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(332,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(314,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(295,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(269,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(250,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(216,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(198,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(193,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(188,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(183,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Chance.h(16,26): message : ou       'std::ostream &operator <<(std::ostream &,Chance &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Carre.h(16,15): message : ou       'std::ostream &operator <<(std::ostream &,Carre &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Brelan.h(17,15): message : ou       'std::ostream &operator <<(std::ostream &,Brelan &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Figure.h(23,26): message : ou       'std::ostream &operator <<(std::ostream &,Figure &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(653,32): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(733,31): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(816,32): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const _Elem *)'
+          with
+          [
+              _Elem=char
+          ]
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(69,1): message : lors de la tentative de mise en correspondance de la liste des arguments '(const std::ostream, const char [16])'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(40,22): error C2061: erreur de syntaxe : identificateur 'Lancer'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(46,22): error C2061: erreur de syntaxe : identificateur 'Lancer'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Lancer.cpp(34,71): error C2975: 'valeur' : argument template non valide pour 'Combinaison', expression constante évaluée au moment de la compilation attendue
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(7): message : voir la déclaration de 'valeur'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Lancer.cpp(34,79): error C2664: 'Combinaison<0>::Combinaison(const Combinaison<0> &)' : impossible de convertir l'argument 1 de 'bool' en 'const Combinaison<0> &'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Lancer.cpp(34,79): message : Raison : impossible de convertir de 'bool' en 'const Combinaison<0>'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Lancer.cpp(34,79): message : Aucun constructeur n'a pu prendre le type de source, ou la résolution de la surcharge du constructeur était ambiguë
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(57,1): message : voir la déclaration de 'Combinaison<0>::Combinaison'
+  main.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(62,2): error C2678: '<<' binaire : aucun opérateur trouvé qui accepte un opérande de partie gauche de type 'const std::ostream' (ou il n'existe pas de conversion acceptable)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(465,39): message : est peut-être 'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(440,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(422,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(404,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(386,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(368,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(350,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(332,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(314,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(295,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(269,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(250,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(216,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(198,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(193,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(188,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(183,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Chance.h(16,26): message : ou       'std::ostream &operator <<(std::ostream &,Chance &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Carre.h(16,15): message : ou       'std::ostream &operator <<(std::ostream &,Carre &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Brelan.h(17,15): message : ou       'std::ostream &operator <<(std::ostream &,Brelan &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Figure.h(23,26): message : ou       'std::ostream &operator <<(std::ostream &,Figure &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(653,32): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(733,31): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(816,32): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const _Elem *)'
+          with
+          [
+              _Elem=char
+          ]
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(69,1): message : lors de la tentative de mise en correspondance de la liste des arguments '(const std::ostream, const char [16])'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Lancer.h(16,39): error C2061: erreur de syntaxe : identificateur 'Joueur'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(31,17): error C2143: erreur de syntaxe : absence de ';' avant '*'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(31,17): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(31,28): error C2238: jetons inattendus avant ';'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(33,12): error C2061: erreur de syntaxe : identificateur 'Yahtzee_game'
+  Yahtzee_game.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(62,2): error C2678: '<<' binaire : aucun opérateur trouvé qui accepte un opérande de partie gauche de type 'const std::ostream' (ou il n'existe pas de conversion acceptable)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(465,39): message : est peut-être 'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(440,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(422,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(404,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(386,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(368,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(350,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(332,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(314,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(295,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(269,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(250,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(216,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(198,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(193,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(188,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(183,39): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Chance.h(16,26): message : ou       'std::ostream &operator <<(std::ostream &,Chance &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Carre.h(16,15): message : ou       'std::ostream &operator <<(std::ostream &,Carre &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Brelan.h(17,15): message : ou       'std::ostream &operator <<(std::ostream &,Brelan &)'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Figure.h(23,26): message : ou       'std::ostream &operator <<(std::ostream &,Figure &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(653,32): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(733,31): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\ostream(816,32): message : ou       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const _Elem *)'
+          with
+          [
+              _Elem=char
+          ]
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(69,1): message : lors de la tentative de mise en correspondance de la liste des arguments '(const std::ostream, const char [16])'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Lancer.h(16,39): error C2061: erreur de syntaxe : identificateur 'Joueur'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(31,17): error C2143: erreur de syntaxe : absence de ';' avant '*'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(31,17): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(31,28): error C2238: jetons inattendus avant ';'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(33,12): error C2061: erreur de syntaxe : identificateur 'Yahtzee_game'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(10,48): error C2661: 'Joueur::Joueur' : aucune fonction surchargée ne nécessite 2 arguments
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(34,9): warning C4477: 'scanf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 1 est de type 'std::string *'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(35,44): error C2661: 'Joueur::Joueur' : aucune fonction surchargée ne nécessite 2 arguments
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(25,3): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(34,3): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(48,60): error C2661: 'Joueur::Joueur' : aucune fonction surchargée ne nécessite 2 arguments
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(98,45): error C2664: 'void Joueur::tour_joueur(Lancer &)' : impossible de convertir l'argument 1 de 'Lancer *' en 'Lancer &'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(40,10): message : voir la déclaration de 'Joueur::tour_joueur'
   Génération de code en cours...
 E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\De.cpp(40): warning C4715: 'De::to_String' : les chemins de contrôle ne retournent pas tous une valeur

@@ -34,7 +34,6 @@ std::vector<Figure*>& Lancer::possibilite(Joueur* j)
 		auto current_combi = new Combinaison<const_cast<int&>(values[value])>(false);
 	}
 
-
 	return toutes_possibilites;
 }
 

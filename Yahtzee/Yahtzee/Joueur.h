@@ -38,7 +38,7 @@ public:
     void ajouter_superieurs(int* recap, int valeur);
     void ajouter_inferieurs(int* recap, int valeur);
     void tour_joueur(Lancer& l);
-    void afficher_possibilite(std::vector<Figure*>& possibilite);
+    int afficher_possibilite(int* recap, int cpt_tour);
     std::string get_nom();
     void superieurs_restante(std::vector<int>* indexs);
     void inferieurs_restante(std::vector<int>* indexs);

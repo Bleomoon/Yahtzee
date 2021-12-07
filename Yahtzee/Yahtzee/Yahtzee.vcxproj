@@ -150,6 +150,7 @@
     <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="De.cpp" />
     <ClCompile Include="Lancer.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Yahtzee_game.cpp" />
   </ItemGroup>
   <ItemGroup>

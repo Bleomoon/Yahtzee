@@ -26,7 +26,7 @@ Joueur::Joueur(Yahtzee_game* jeu, std::string nom)
     inferieurs.push_back(new Grande_suite());
     inferieurs.push_back(new Full());
     inferieurs.push_back(new Carre());
-    inferieurs.push_back(new Yathzee());
+    inferieurs.push_back(new Yahtzee());
     inferieurs.push_back(new Chance());
     superieurs.shrink_to_fit(); // on enl�ve le surplus en m�moire
 }
@@ -112,45 +112,47 @@ void Joueur::ajouter_inferieurs(int* recap, int valeur)
 */
 void Joueur::tour_joueur(Lancer& l)
 {
-    std::cout << "D�but du tour " << this->nom << std::endl;
+    std::cout << "D�but du tour de " << this->nom << std::endl;
     std::string selected;
-    int choice = -1;
-    bool garde = false;
-    int cpt_tour = 0;
+    int choice = -1, cpt_tour = 0, nb_possibilite;
     int valD[5] = { 1, 2, 3, 4, 5 };
-    int *des =  l.lance(valD) ;
+    int* des =  l.lance(valD) ;
+    int* recap = this->get_recapitulatif(l.get_des());
+    bool garde = false;
+  
     
-    while (!garde || cpt_tour < 3)
+    while (!garde && cpt_tour < 3)
     {
-        // a voir ici il fait un choix d'un num�ro mais quel choix le 1 pour le brelan? comment sait ton que c'est le brelan
-        std::vector<const Figure f*> all_possibilites = l.possibilite(this);
-        afficher_possibilite(all_possibilites);
-        std::cout << (all_possibilites.size() + 1) << ". Relancer les d�s" << std::endl;
-        std::cout << (all_possibilites.size() + 2) << ". Abandonn� une possibilit�" << std::endl;
+        nb_possibilite = afficher_possibilite(recap, cpt_tour);
+        
         while (choice == -1)
         {
             std::scanf("%s", &selected);
-            choice = choix_correct(selected, all_possibilites.size() + 2);
+            choice = choix_correct(selected, nb_possibilite);
         }
         if (choice <= 6) //combinaison sup�rieur
         {
-            this->ajouter_superieurs(this->get_recapitulatif(l.get_des()),choice);
+            this->ajouter_superieurs(recap,choice);
+            garde = true;
         }
-        else if(choice <= 13)//combinaison inf�rieur
+        else if(choice <= 13)//combinaison inf�rieur (-6 pour les inferieurs en moins)
         {
-            this->ajouter_inferieurs(this->get_recapitulatif(l.get_des()), choice);
+            this->ajouter_inferieurs(recap, choice-6);
+            garde = true;
         }
-        else if (choice <= 13)//Relancer les d�s
+        else if (choice == 15 && cpt_tour < 2)//Relancer les d�s si il peux encore les relancés max de 2
         {
             choice = this->relancer_des(l);
-            if (choice == -1)
-                cpt_tour--;
         }
         else // abandonner une combinaison
         {
-            choice = this->abandonne();
-            if (choice == -1)
-                cpt_tour--;
+            choice = this->abandonne(recap);
+            garde = true;
+        }
+        if (choice == -1)
+        {
+            cpt_tour--;
+            garde = false;
         }
         cpt_tour++;
     }
@@ -159,14 +161,41 @@ void Joueur::tour_joueur(Lancer& l)
 }
 
 //affiche les possibilit�s en fonction des d�s
-// a modifier
-void Joueur::afficher_possibilite(std::vector<Figure*>& possibilite)
+int Joueur::afficher_possibilite(int* recap, int cpt_tour)
 {
+    // calcul les figures restantes
+    std::vector<int> indexs_superieurs;
+    std::vector<int> indexs_inferieurs;
+    indexs_inferieurs.reserve(NB_INFERIEURS);
+    indexs_superieurs.reserve(NB_SUPERIEURS);
+    this->superieurs_restante(&indexs_superieurs);
+    this->inferieurs_restante(&indexs_inferieurs);
+    int val = 1;
+
+
     std::cout << "Selectionnez ce que vous voulez valider : " << std::endl;
-    for (int i = 0; i < possibilite.size(); i++)
+    //boucle sur les indexs_inferieurs pour l'affichage
+    for (int i = 0; i < indexs_superieurs.size(); i++)
     {
-        std::cout << i << ". " << possibilite.at(i) << std::endl;
+        std::cout << val << ". " << this->inferieurs.at(indexs_superieurs.at(i))->get_name() << std::endl;
+        val++;
     }
+
+    //boucle sur les indexs_superieurs pour essayer de set_figure des cpy avec les dés existant
+    //si le joueur décide de faire un indexs superieur en exemple de 6 alors qu'il n'a aucun dés de 6 ça met 0 dedans
+    for (int i = indexs_superieurs.size(); i < (indexs_inferieurs.size()+ indexs_superieurs.size()); i++)
+    {
+        if (this->inferieurs.at(indexs_inferieurs.at(i))->is_figure(recap))
+        {
+            std::cout << i << ". " << this->inferieurs.at(indexs_superieurs.at(i))->get_name() << std::endl;
+            val++;
+        }
+    }
+    
+    std::cout << (val + 1) << ". Abandonn� une possibilit�" << std::endl; // a voir
+    if (cpt_tour < 2)
+        std::cout << (val + 2) << ". Relancer les d�s" << std::endl;
+    return val;
 }
 
 std::string Joueur::get_nom()
