@@ -104,16 +104,16 @@ void Joueur::ajouter_inferieurs(int* recap, int valeur)
 */
 void Joueur::tour_joueur(Lancer& l)
 {
-    std::cout << "D�but du tour de " << this->nom << std::endl;
+    std::cout << "Debut du tour de " << this->nom << std::endl;
     std::string selected;
     int choice = -1, cpt_tour = 0, nb_possibilite;
-    int des[5] = {};
+    int des[5];
+    l.lance(des);;
     int* recap = this->get_recapitulatif(l.get_des());
     bool garde = false;
   
     
     //initialise des
-    l.lance(des);
 
     while (!garde && cpt_tour < 3)
     {
@@ -283,7 +283,7 @@ int Joueur::relancer_des(Lancer &l)
     std::cout << "S�lectionner quel d�s pour voulez relancer, format attendu (123456) : " << std::endl;
     for (int i = 1; i <= 6 ; i++) //boucle sur les d�s pour les affich�s
     {
-        std::cout << "D� " << i << " : " << l.get_des()[i].to_String() << std::endl;
+        std::cout << "D� " << i << " : " << l.get_des()[i]->to_String() << std::endl;
     }
     std::cout << 7 << ". revenir en arri�re" << std::endl;
 
@@ -349,16 +349,17 @@ int* Joueur::des_relance(std::string des_r)
     return relance;
 }
 
-int* Joueur::get_recapitulatif(De* des)
+int* Joueur::get_recapitulatif(De** des)
 {
     // on fait le recapitulatif des valeurs obtenues
     int recap[6];
-    for (int current : recap) {
-        current = 0;
+    for (unsigned int index = 0; index < 6; index++) {
+        recap[index] = 0;
     }
 
-    for (unsigned int index = 0; index < 6; index++) {
-        recap[des[index].get_val() - 1] ++;
+    std::cout << "function get_recapitulatif sizeof(des) " << sizeof(des) << std::endl;
+    for (unsigned int index = 0; index < sizeof(des); index++) {
+        recap[(des[index]->get_val() - 1)] ++;
     }
     return recap;
 }

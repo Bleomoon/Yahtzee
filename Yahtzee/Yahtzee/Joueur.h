@@ -45,7 +45,7 @@ private:
     void inferieurs_restante(std::vector<int>* indexs);
     int abandonne(int* recap);
     int relancer_des(Lancer& l);
-    int* get_recapitulatif(De* des);
+    int* get_recapitulatif(De** des);
     int choix_correct(std::string selected, int max);
     int* des_relance(std::string des_r);
 };

@@ -1,8 +1,10 @@
 ﻿  Joueur.cpp
+  Lancer.cpp
   Yahtzee_game.cpp
 C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(106,4): warning C4101: 'customLess' : variable locale non référencée
+  main.cpp
   Génération de code en cours...
-C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(363): warning C4172: retourne l'adresse d'une variable locale ou : recap temporaire
+C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(364): warning C4172: retourne l'adresse d'une variable locale ou : recap temporaire
 C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(349): warning C4172: retourne l'adresse d'une variable locale ou : relance temporaire
 C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(52): warning C4715: 'Combinaison<1>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
 C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(52): warning C4715: 'Combinaison<2>::get_name' : les chemins de contrôle ne retournent pas tous une valeur

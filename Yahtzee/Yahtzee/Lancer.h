@@ -7,12 +7,12 @@
 
 class Lancer
 {
-    De* des;
+    De** des;
 public:
     Lancer(const int NB_DE);
     ~Lancer();
     Lancer& operator=(const Lancer& copy);
     void lance(int* indiceslances) const;
-    De* get_des();
+    De** get_des();
 };
 #endif

@@ -7,7 +7,7 @@ De::De()
 
 void De::lance()
 {
-	this->val = rand() % 6 + 1;
+	this->val = (rand() % 6) + 1;
 }
 
 int De::get_val() { return val; }
