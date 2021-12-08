@@ -41,8 +41,8 @@ private:
     void afficher_possibilite(int* recap, int cpt_tour, std::vector<int> inferieurs_possible, std::vector<int> superieurs_restant);
     void ajouter_superieurs(int* recap, int valeur);
     void ajouter_inferieurs(int* recap, int valeur);
-    void superieurs_restante(std::vector<int>* indexs);
-    void inferieurs_restante(std::vector<int>* indexs);
+    void superieurs_restante(std::vector<int>* indexs); 
+    void inferieurs_restante(std::vector<int>* indexs_possible, std::vector<int>* indexs_impossible, int* recap);
     int abandonne(int* recap);
     int relancer_des(Lancer& l);
     int* get_recapitulatif(De** des);
