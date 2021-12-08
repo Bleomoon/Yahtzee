@@ -106,15 +106,13 @@ void Joueur::tour_joueur(Lancer& l)
 {
     std::cout << "Debut du tour de " << this->nom << std::endl;
     std::string selected;
-    int choice = -1, cpt_tour = 0, nb_possibilite;
+    int choice = -1, cpt_tour = 0;
+    std::vector<int> possibilites_index;
     int des[5] = { 1, 2, 3, 4, 5 };
     l.lance(des, NB_DE);
     int* recap = this->get_recapitulatif(l.get_des());
     bool garde = false;
   
-    
-    //initialise des
-
     while (!garde && cpt_tour < 3)
     {
         // affichage des des 
@@ -124,24 +122,25 @@ void Joueur::tour_joueur(Lancer& l)
 
         std::cout << std::endl;
 
-        nb_possibilite = afficher_possibilite(recap, cpt_tour);
+        possibilites_index = afficher_possibilite(recap, cpt_tour);
         
         while (choice == -1)
         {
             std::cin >> selected;
-            choice = choix_correct(selected, nb_possibilite);
+            choice = choix_correct(selected, possibilites_index.size());
         }
+        std::cout << "choice = " << choice << std::endl;
         if (choice <= 6) //combinaison sup�rieur
         {
-            this->ajouter_superieurs(recap,choice-1);// TODO changer il faut regarde la valeur corespondante dans le tableau d'index
+            this->ajouter_superieurs(recap, possibilites_index.at(choice)-1);// TODO changer il faut regarde la valeur corespondante dans le tableau d'index
             garde = true;
         }
         else if(choice <= 13)//combinaison inf�rieur (-6 pour les inferieurs en moins)
         {
-            this->ajouter_inferieurs(recap, choice-6); // TODO changer il faut regarde la valeur corespondante dans le tableau d'index
+            this->ajouter_inferieurs(recap, possibilites_index.at(choice) -7); // TODO changer il faut regarde la valeur corespondante dans le tableau d'index
             garde = true;
         }// changer pas vraiment choice a 15 ca depend de la taille 
-        else if (choice == 15 && cpt_tour < 2)//Relancer les d�s si il peux encore les relancés max de 2
+        else if (choice == possibilites_index.size() && cpt_tour < 2)//Relancer les d�s si il peux encore les relancés max de 2
         {
             choice = this->relancer_des(l);
         }
@@ -158,11 +157,11 @@ void Joueur::tour_joueur(Lancer& l)
         cpt_tour++;
     }
 
-    std::cout << "End of turn for " << this->nom << std::endl;
+    std::cout << "Fin du tour pour " << this->nom << "\n" << std::endl;
 }
 
 //affiche les possibilit�s en fonction des d�s
-int Joueur::afficher_possibilite(int* recap, int cpt_tour)
+std::vector<int> Joueur::afficher_possibilite(int* recap, int cpt_tour)
 {
     // calcul les figures restantes
     std::vector<int> indexs_superieurs;
@@ -171,32 +170,44 @@ int Joueur::afficher_possibilite(int* recap, int cpt_tour)
     indexs_superieurs.reserve(NB_SUPERIEURS);
     this->superieurs_restante(&indexs_superieurs);
     this->inferieurs_restante(&indexs_inferieurs);
+    
+    //on crée un vector de int,int pour référencé les positions des figures, on affiche 1.deux 2.trois mais on stocke [(1,2), (2,3)]
+    std::vector<int> ref;
     int val = 1;
+
+
+    ref.reserve(indexs_inferieurs.size() + indexs_superieurs.size() + 2);
 
 
     std::cout << "Selectionnez ce que vous voulez valider : " << std::endl;
     //boucle sur les indexs_inferieurs pour l'affichage
-    for (unsigned int i = 0; i < indexs_superieurs.size(); i++)
+    for (int i = 0; i < indexs_superieurs.size(); i++)
     {
         std::cout << val << ". " << this->superieurs.at(indexs_superieurs.at(i))->get_name() << std::endl;
         val++;
+        ref.push_back(indexs_superieurs.at(i)); // ici on a l'affichage du joueurs de 1 au nombre de figure restantes et en plus l'index de la figure
     }
+    std::cout << "index_sup=" << indexs_superieurs.size() << std::endl;
+    std::cout << "index_inf=" << indexs_inferieurs.size() << std::endl;
+    
 
     //boucle sur les indexs_superieurs pour essayer de set_figure des cpy avec les dés existant
     //si le joueur décide de faire un indexs superieur en exemple de 6 alors qu'il n'a aucun dés de 6 ça met 0 dedans
-    for (unsigned int i = 0; i < indexs_inferieurs.size(); i++)
+    for (int i = 0; i < indexs_inferieurs.size(); i++)
     {
         if (this->inferieurs.at(indexs_inferieurs.at(i))->is_figure(recap))
         {
             std::cout << val << ". " << this->inferieurs.at(indexs_inferieurs.at(i))->get_name() << std::endl;
             val++;
+            ref.push_back(indexs_inferieurs.at(i));
         }
     }
     
-    std::cout << (val) << ". Abandonn� une possibilit�" << std::endl; // a voir
+    std::cout << (ref.size() - 2) << ". Abandonn� une possibilit�" << std::endl;
     if (cpt_tour < 2)
-        std::cout << (val + 1) << ". Relancer les des" << std::endl;
-    return val;
+        std::cout << (ref.size() - 1) << ". Relancer les des" << std::endl;
+    std::cout << "index_max=" << ref.size() << std::endl;
+    return ref;
 }
 
 std::string Joueur::get_nom()
@@ -322,7 +333,7 @@ int Joueur::relancer_des(Lancer &l)
 //fonction pour avoir un tableau de int avec tout les d�s et v�rifi� que leur formats est correct
 int* Joueur::des_relance(std::string des_r)
 {
-    int relance[sizeof(des_r)];
+    int* relance = new int[std::strlen(des_r.c_str())]; // voila de la bonne allocation dynamique
     // pas de doublon, pas de d�s > 5 et < 1 et pas de lettres
     if (des_r.size() > 5)
     {
@@ -360,12 +371,11 @@ int* Joueur::get_recapitulatif(De** des)
 {
     // on fait le recapitulatif des valeurs obtenues
     int recap[6];
-    for (unsigned int index = 0; index < 6; index++) {
+    for (unsigned int index = 0; index < 5; index++) {
         recap[index] = 0;
     }
 
-    std::cout << "function get_recapitulatif sizeof(des) " << sizeof(des) << std::endl;
-    for (unsigned int index = 0; index < sizeof(des); index++) {
+    for (unsigned int index = 0; index < 5; index++) {
         recap[(des[index]->get_val() - 1)] ++;
     }
     return recap;

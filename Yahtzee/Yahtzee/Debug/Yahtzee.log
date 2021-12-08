@@ -1,1 +1,10 @@
-﻿  Yahtzee.vcxproj -> C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Debug\Yahtzee.exe
+﻿  Brelan.cpp
+  Carre.cpp
+  Chance.cpp
+  Full.cpp
+  Grande_suite.cpp
+  Petite_suite.cpp
+  Yahtzee.cpp
+  Génération de code en cours...
+Carre.obj : warning LNK4020: un enregistrement de type dans 'e:\users\bleomoon\desktop\everything\cours\2021\coo\yahtzee\yahtzee\yahtzee\debug\vc142.pdb' est endommagé ; certains symboles et types ne sont peut-être pas accessibles à partir du débogueur
+  Yahtzee.vcxproj -> E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Debug\Yahtzee.exe

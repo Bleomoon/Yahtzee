@@ -6,7 +6,7 @@ bool Chance::set_figure(int* des)
 {
 	if (is_figure(des)) {
 		int somme = 0;
-		for (int index = 0; index < sizeof(des); index++) {
+		for (int index = 0; index < 5; index++) {
 			somme += des[index];
 		}
 

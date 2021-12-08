@@ -17,7 +17,7 @@ bool Petite_suite::is_figure(int* recap)
 {
 	int cpt_suite = 0;
 	// TODO refaire
-	for (int i = 0; i < sizeof(recap); i++) {
+	for (int i = 0; i < 5; i++) {
 		if (recap[i] >= 1)
 			cpt_suite++;
 		else if (recap[i] == 0 && (i == 0 || i == 1))

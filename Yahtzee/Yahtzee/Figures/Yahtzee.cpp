@@ -15,7 +15,7 @@ bool Yahtzee::set_figure(int* recap)
 
 bool Yahtzee::is_figure(int* recap)
 {
-    for (int i = 0; i < sizeof(recap); i++) {
+    for (int i = 0; i < 5; i++) {
         if (recap[i] == 5)
             return true;
     }

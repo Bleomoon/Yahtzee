@@ -18,7 +18,7 @@ bool Full::is_figure(int* recap)
 {
 	bool trois = false, deux = false;
 
-	for (int i = 0; i < sizeof(recap); i++) {
+	for (int i = 0; i < 5; i++) {
 		if (recap[i] == 2)
 			deux = true;
 
