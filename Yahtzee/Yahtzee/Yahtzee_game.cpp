@@ -7,8 +7,7 @@ Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
 	joueurs = new std::vector<Joueur*>;
 
 	for (int i = 0; i < nb_joueur; i++) {
-		Joueur j = Joueur(this, nom_joueurs[i]);
-		joueurs->push_back(&j);
+		joueurs->push_back((new Joueur(this, nom_joueurs[i])));
 	}
 	numero_tour = 0;
 	lancer = new Lancer(NB_DE);
@@ -34,8 +33,7 @@ Yahtzee_game::Yahtzee_game(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_to
 	std::string nom_joueur;
 	for (int i = 0; i < nb_joueur; i++) {
 		std::cin >> nom_joueur;
-		Joueur* j = new Joueur(this, nom_joueur);
-		joueurs->push_back(j);
+		joueurs->push_back((new Joueur(this, nom_joueur)));
 	}
 
 	numero_tour = 0;

@@ -2,7 +2,6 @@
 #define _COMBINAISON_H_
 
 #include "Figure.h"
-#include "../Yahtzee_game.h"
 
 template<int valeur>
 class Combinaison : public Figure

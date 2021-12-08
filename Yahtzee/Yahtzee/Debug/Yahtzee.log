@@ -20,8 +20,7 @@ E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joue
 E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(30,17): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
 E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(30,28): error C2238: jetons inattendus avant ';'
 E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.h(32,12): error C2061: erreur de syntaxe : identificateur 'Yahtzee_game'
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(10,41): error C2440: '<function-style-cast>' : impossible de convertir de 'initializer list' en 'Joueur'
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(10,41): message : Aucun constructeur n'a pu prendre le type de source, ou la résolution de la surcharge du constructeur était ambiguë
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(37,43): error C2661: 'Joueur::Joueur' : aucune fonction surchargée ne nécessite 2 arguments
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(111,28): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(10,55): error C2661: 'Joueur::Joueur' : aucune fonction surchargée ne nécessite 2 arguments
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(36,51): error C2661: 'Joueur::Joueur' : aucune fonction surchargée ne nécessite 2 arguments
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(109,28): warning C4018: '<' : incompatibilité signed/unsigned
   Génération de code en cours...

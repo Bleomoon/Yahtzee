@@ -37,5 +37,6 @@ std::string De::to_String()
 	default:
 		break;
 	}
+	return "Dice value error";
 };
 
