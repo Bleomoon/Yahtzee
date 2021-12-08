@@ -24,6 +24,11 @@ bool Yahtzee::is_figure(int* recap)
     return false;
 }
 
+int Yahtzee::score_possible(int* recap)
+{
+    return 50;
+}
+
 std::string Yahtzee::get_name()
 {
     return "Yathzee";

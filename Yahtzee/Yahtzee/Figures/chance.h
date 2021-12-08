@@ -10,6 +10,7 @@ public:
     Chance();
     bool set_figure(int* des);
     bool is_figure(int* des);
+    int score_possible(int* recap);
 
     std::string get_name();
 
