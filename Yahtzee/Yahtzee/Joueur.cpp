@@ -134,12 +134,12 @@ void Joueur::tour_joueur(Lancer& l)
             std::cin >> selected;
             choice = choix_correct(selected, inferieurs_possible.size() + superieurs_restant.size() + 2);
         }
-        if (choice <= 6) //combinaison sup�rieur
+        if (choice <= superieurs_restant.size()) //combinaison sup�rieur
         {
             this->ajouter_superieurs(recap, superieurs_restant.at(choice)-1);
             garde = true;
         }
-        else if(choice <= 13)//combinaison inf�rieur (-6 pour les inferieurs en moins)
+        else if(choice <= inferieurs_possible.size() + superieurs_restant.size())//combinaison inf�rieur (-6 pour les inferieurs en moins)
         {
             this->ajouter_inferieurs(recap, inferieurs_possible.at(choice) -7);
             garde = true;
