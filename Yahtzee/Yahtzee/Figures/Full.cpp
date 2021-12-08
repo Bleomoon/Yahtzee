@@ -18,7 +18,7 @@ bool Full::is_figure(int* recap)
 {
 	bool trois = false, deux = false;
 
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 6; i++) {
 		if (recap[i] == 2)
 			deux = true;
 
@@ -30,6 +30,11 @@ bool Full::is_figure(int* recap)
 	}
 
 	return false;
+}
+
+int Full::score_possible(int* recap)
+{
+	return 25;
 }
 
 std::string Full::get_name()

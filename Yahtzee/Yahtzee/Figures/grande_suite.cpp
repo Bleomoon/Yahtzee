@@ -29,6 +29,11 @@ bool Grande_suite::is_figure(int* recap)
 	return cpt_suite == 5;
 }
 
+int Grande_suite::score_possible(int* recap)
+{
+	return 40;
+}
+
 std::string Grande_suite::get_name()
 {
 	return "Grande Suite";

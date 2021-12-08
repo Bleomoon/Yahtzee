@@ -9,6 +9,7 @@ class Yahtzee : public Figure
 public:
     bool set_figure(int* recap);
     bool is_figure(int* recap);
+    int score_possible(int* recap);
 
     std::string get_name();
 };

@@ -25,6 +25,11 @@ public:
         return true;
     }
 
+	int score_possible(int* recap)
+	{
+		return valeur * recap[valeur - 1];
+	}
+
     std::string get_name()
     {
 		switch (valeur)
