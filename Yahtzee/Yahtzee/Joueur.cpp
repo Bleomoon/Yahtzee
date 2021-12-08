@@ -230,14 +230,21 @@ void Joueur::superieurs_restante(std::vector<int>* indexs)
 
 // remplis le vecteurs d'indexs pass� en param�re apres les indexs des figures  
 // inf�rieurs non r�alis�
-void Joueur::inferieurs_restante(std::vector<int>* indexs)
+void Joueur::inferieurs_restante(std::vector<int>* indexs_possible, std::vector<int>* indexs_impossible,
+    int* recap)
 {
     for (unsigned int index = 0; index < inferieurs.size(); index++) {
-        if (!inferieurs.at(index)->is_assigner())
-            indexs->push_back(index);
+        if (!inferieurs.at(index)->is_assigner()) {
+            if (inferieurs.at(index)->is_figure(recap)
+                indexs_possible->push_back(index);
+            else
+                indexs_impossible->push_back(index);
+
+        }
     }
 
-    indexs->shrink_to_fit();
+    indexs_possible->shrink_to_fit();
+    indexs_impossible->shrink_to_fit();
 }
 
 // V�rifie que le joueur ne rentre pas n'importe quoi dans ces choix, on veux un int entre 1 et max
