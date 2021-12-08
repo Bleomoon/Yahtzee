@@ -1,1 +1,12 @@
-﻿  Yahtzee.vcxproj -> E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Debug\Yahtzee.exe
+﻿  Joueur.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(142,20): warning C4018: '<=' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(147,24): warning C4018: '<=' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(189,23): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(198,23): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(56): warning C4715: 'Combinaison<2>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(56): warning C4715: 'Combinaison<3>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(56): warning C4715: 'Combinaison<4>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(56): warning C4715: 'Combinaison<5>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(56): warning C4715: 'Combinaison<6>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(56): warning C4715: 'Combinaison<1>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
+  Yahtzee.vcxproj -> E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Debug\Yahtzee.exe

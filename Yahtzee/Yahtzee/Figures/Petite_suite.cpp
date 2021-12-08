@@ -16,15 +16,16 @@ bool Petite_suite::set_figure(int* recap)
 bool Petite_suite::is_figure(int* recap)
 {
 	int cpt_suite = 0;
-	// TODO refaire
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 6; i++) {
 		if (recap[i] >= 1)
 			cpt_suite++;
-		else if (recap[i] == 0 && (i == 0 || i == 1))
+		else
 			cpt_suite = 0;
+		if (cpt_suite == 4)
+			return true;
 	}
 
-	return cpt_suite >= 4;
+	return false;
 }
 
 int Petite_suite::score_possible(int* recap)

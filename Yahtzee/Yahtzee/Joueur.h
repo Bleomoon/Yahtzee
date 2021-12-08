@@ -43,7 +43,7 @@ private:
     void ajouter_inferieurs(int* recap, int valeur);
     void superieurs_restante(std::vector<int>* indexs); 
     void inferieurs_restante(std::vector<int>* indexs_possible, std::vector<int>* indexs_impossible, int* recap);
-    int abandonne(int* recap);
+    int abandonne(int* recap, std::vector<int>* inferieurs_impossible);
     int relancer_des(Lancer& l);
     void get_recapitulatif(De** des, int* recap);
     int choix_correct(std::string selected, int max);

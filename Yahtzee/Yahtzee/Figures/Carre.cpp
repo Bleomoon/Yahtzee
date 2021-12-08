@@ -19,7 +19,7 @@ bool Carre::set_figure(int* recap)
 bool Carre::is_figure(int* recap)
 {
 	// pour qu'il y est un carré il faut minimun 4 dés identiques
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 6; i++) {
 		if (recap[i] >= 4) {
 			return true;
 		}

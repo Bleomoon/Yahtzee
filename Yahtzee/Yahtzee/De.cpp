@@ -1,12 +1,14 @@
 #include "De.h"
+#include <ctime>
 
 De::De()
 {
 	this->val = 0;
 }
 
-void De::lance()
+void De::lance(int indice)
 {
+	srand(time(NULL)-indice);
 	this->val = (rand() % 6) + 1;
 }
 

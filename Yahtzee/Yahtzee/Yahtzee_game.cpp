@@ -1,5 +1,6 @@
 #include "Yahtzee_game.h"
 #include "Joueur.h"
+#include <algorithm>
 
 // constructeur ou on connais deja le nom de joureur a l'avance
 Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
@@ -55,11 +56,9 @@ Yahtzee_game::Yahtzee_game(const Yahtzee_game& copy)
 Yahtzee_game::~Yahtzee_game()
 {
 	// destruction de tous les joueur
-	while (!joueurs->empty()) {
-		delete &*joueurs->end();
-		joueurs->pop_back();
-	}
-	delete[] joueurs;
+	for (auto current : *joueurs)
+		delete current;
+	delete joueurs;
 
 	// destruction des d�s
 	delete lancer;
@@ -87,7 +86,6 @@ Yahtzee_game& Yahtzee_game::operator=(const Yahtzee_game& copy)
 	return *this;
 }
 
-#include <algorithm>
 
 void Yahtzee_game::jouer()
 {
@@ -101,10 +99,11 @@ void Yahtzee_game::jouer()
 
 	// on tri le tableau de joueurs par rapport a leurs socre
 	struct {
-		bool operator()(Joueur a, Joueur b) const { return (a.get_total_score() < b.get_total_score()); }
+		bool operator()(Joueur* a, Joueur* b) const { return (a->get_total_score() > b->get_total_score()); }
 	} customLess;
 	
-	//std::sort(joueurs->begin(), joueurs->end(), customLess);
+	//TODO WINNER TABLEAU
+	std::sort(joueurs->begin(), joueurs->end(), customLess);
 
 	// affichage des joueurs
 	std::cout << "rang : nom score" << std::endl;

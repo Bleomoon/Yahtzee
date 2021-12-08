@@ -23,7 +23,7 @@ bool Brelan::set_figure(int* recap)
 
 bool Brelan::is_figure(int* recap)
 {
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 6; i++) {
 		if (recap[i] >= 3) 
 			return true;
 	}

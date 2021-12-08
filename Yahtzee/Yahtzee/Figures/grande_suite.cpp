@@ -17,8 +17,8 @@ bool Grande_suite::is_figure(int* recap)
 {
 	int cpt_suite = 0;
 
-	for (int i = 0; i < 5; i++) {
-		if (recap[i] >= 1)
+	for (int i = 0; i < 6; i++) {
+		if (recap[i] > 1)
 			return false;
 		else if (recap[i] == 1)
 			cpt_suite++;

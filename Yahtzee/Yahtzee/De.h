@@ -9,7 +9,7 @@ class De
 public:
     De();
     int get_val();
-    void lance();
+    void lance(int indice);
     std::string to_String();
 };
 #endif
