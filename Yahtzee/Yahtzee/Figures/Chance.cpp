@@ -6,8 +6,8 @@ bool Chance::set_figure(int* des)
 {
 	if (is_figure(des)) {
 		int somme = 0;
-		for (int index = 0; index < 5; index++) {
-			somme += des[index];
+		for (int index = 0; index < 6; index++) {
+			somme += des[index] *  (index +1) ;
 		}
 
 		this->score = somme;
@@ -22,6 +22,16 @@ bool Chance::set_figure(int* des)
 bool Chance::is_figure(int* des)
 {
 	return true;
+}
+
+int Chance::score_possible(int* recap)
+{
+	int somme = 0;
+	for (int index = 0; index < 6; index++) {
+		somme += recap[index] * (index + 1);
+	}
+
+	return somme;
 }
 
 std::string Chance::get_name()

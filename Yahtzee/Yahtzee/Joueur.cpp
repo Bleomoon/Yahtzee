@@ -235,7 +235,7 @@ void Joueur::inferieurs_restante(std::vector<int>* indexs_possible, std::vector<
 {
     for (unsigned int index = 0; index < inferieurs.size(); index++) {
         if (!inferieurs.at(index)->is_assigner()) {
-            if (inferieurs.at(index)->is_figure(recap)
+            if (inferieurs.at(index)->is_figure(recap))
                 indexs_possible->push_back(index);
             else
                 indexs_impossible->push_back(index);

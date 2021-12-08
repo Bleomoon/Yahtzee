@@ -10,7 +10,7 @@ bool Brelan::set_figure(int* recap)
 	// trouver un brelan
 	if (is_figure(recap)) {
 		// faire la somme des dés
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 6; i++) {
 			score += recap[i] * (i + 1);
 		}
 		return true;
@@ -29,6 +29,15 @@ bool Brelan::is_figure(int* recap)
 	}
 
 	return false;
+}
+
+int Brelan::score_possible(int* recap)
+{
+	int ret = 0;
+	for (int i = 0; i < 6; i++) {
+		ret += recap[i] * (i + 1);
+	}
+	return ret;
 }
 
 std::string Brelan::get_name()

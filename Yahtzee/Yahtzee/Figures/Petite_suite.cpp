@@ -27,6 +27,11 @@ bool Petite_suite::is_figure(int* recap)
 	return cpt_suite >= 4;
 }
 
+int Petite_suite::score_possible(int* recap)
+{
+	return 30;
+}
+
 std::string Petite_suite::get_name()
 {
 	return "Petite Suite";

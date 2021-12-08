@@ -5,7 +5,7 @@ bool Carre::set_figure(int* recap)
 	assigner = true; 
 
 	if (is_figure(recap)) {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 6; i++) {
 			score += recap[i] * (i + 1);
 		}
 
@@ -26,6 +26,16 @@ bool Carre::is_figure(int* recap)
 	}
 
 	return false;
+}
+
+int Carre::score_possible(int* recap)
+{
+	int ret = 0;
+	for (int i = 0; i < 6; i++) {
+		ret += recap[i] * (i + 1);
+	}
+
+	return ret;
 }
 
 std::string Carre::get_name()
