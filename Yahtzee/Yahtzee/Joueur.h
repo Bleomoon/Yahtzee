@@ -14,12 +14,12 @@
 #include "Figures/Grande_suite.h"
 #include "Figures/Petite_suite.h"
 #include "Figures/Yahtzee.h"
-#include "Yahtzee_game.h"
 #include "Lancer.h"
 #include "De.h"
 
 const int NB_SUPERIEURS = 6;
 const int NB_INFERIEURS = 7;
+class Yahtzee_game;
 
 class Joueur
 {
@@ -45,7 +45,7 @@ private:
     void inferieurs_restante(std::vector<int>* indexs);
     int abandonne(int* recap);
     int relancer_des(Lancer& l);
-    int* get_recapitulatif(De* des);
+    int* get_recapitulatif(De** des);
     int choix_correct(std::string selected, int max);
     int* des_relance(std::string des_r);
 };

@@ -7,7 +7,7 @@ De::De()
 
 void De::lance()
 {
-	this->val = rand() % 6 + 1;
+	this->val = (rand() % 6) + 1;
 }
 
 int De::get_val() { return val; }
@@ -35,7 +35,7 @@ std::string De::to_String()
 		return "6";
 		break;
 	default:
-		break;
+		return "";
 	}
 	return "Dice value error";
 };

@@ -1,4 +1,5 @@
 #include "Yahtzee_game.h"
+#include "Joueur.h"
 
 // constructeur ou on connais deja le nom de joureur a l'avance
 Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
@@ -7,7 +8,8 @@ Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
 	joueurs = new std::vector<Joueur*>;
 
 	for (int i = 0; i < nb_joueur; i++) {
-		joueurs->push_back((new Joueur(this, nom_joueurs[i])));
+		Joueur* j = new Joueur(this, nom_joueurs[i]);
+		joueurs->push_back(j);
 	}
 	numero_tour = 0;
 	lancer = new Lancer(NB_DE);
@@ -25,7 +27,7 @@ Yahtzee_game::Yahtzee_game(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_to
 		std::cin >> nb_joueur;
 	} while (nb_joueur < 2 || nb_joueur > 8);
 
-	// allocation de la mémoire pour le tableau de joueur
+	// allocation de la mï¿½moire pour le tableau de joueur
 	joueurs = new std::vector<Joueur*>;
 
 
@@ -59,21 +61,21 @@ Yahtzee_game::~Yahtzee_game()
 	}
 	delete[] joueurs;
 
-	// destruction des dés
+	// destruction des dï¿½s
 	delete lancer;
 }
 
 Yahtzee_game& Yahtzee_game::operator=(const Yahtzee_game& copy)
 {
 	if (this != &copy) {
-		// destruction de tous les joueur pour éviter la fuite mémoire
+		// destruction de tous les joueur pour ï¿½viter la fuite mï¿½moire
 		while (!joueurs->empty()) {
 			delete&* joueurs->end();
 			joueurs->pop_back();
 		}
 		delete[] joueurs;
 
-		// copy des joueurs et des propriétés
+		// copy des joueurs et des propriï¿½tï¿½s
 		nb_joueur = copy.nb_joueur;
 		nb_lancer = copy.nb_lancer;
 		numero_tour = copy.numero_tour;
@@ -102,11 +104,11 @@ void Yahtzee_game::jouer()
 		bool operator()(Joueur a, Joueur b) const { return (a.get_total_score() < b.get_total_score()); }
 	} customLess;
 	
-	std::sort(joueurs->begin(), joueurs->end(), customLess);
+	//std::sort(joueurs->begin(), joueurs->end(), customLess);
 
 	// affichage des joueurs
 	std::cout << "rang : nom score" << std::endl;
-	for (int index = 0; index < joueurs->size(); index++) {
+	for (unsigned int index = 0; index < joueurs->size(); index++) {
 		auto current = joueurs->at(index);
 		std::cout << (index + 1) << ": " << current->get_nom() << " " << current->get_total_score() << std::endl;
 	}
