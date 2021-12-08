@@ -107,11 +107,12 @@ void Joueur::tour_joueur(Lancer& l)
     std::cout << "Debut du tour de " << this->nom << std::endl;
     std::string selected;
     int choice = -1, cpt_tour = 0;
-    std::vector<int> possibilites_index;
+    std::vector<int> inferieurs_possible, inferieurs_impossible, superieurs_restant;
     int des[5] = { 1, 2, 3, 4, 5 };
     l.lance(des, NB_DE);
     int* recap = this->get_recapitulatif(l.get_des());
     bool garde = false;
+
   
     while (!garde && cpt_tour < 3)
     {
@@ -122,25 +123,24 @@ void Joueur::tour_joueur(Lancer& l)
 
         std::cout << std::endl;
 
-        possibilites_index = afficher_possibilite(recap, cpt_tour);
+        afficher_possibilite(recap, cpt_tour, inferieurs_possible, superieurs_restant);
         
         while (choice == -1)
         {
             std::cin >> selected;
-            choice = choix_correct(selected, possibilites_index.size());
+            choice = choix_correct(selected, inferieurs_possible.size() + superieurs_restant.size() + 2);
         }
-        std::cout << "choice = " << choice << std::endl;
         if (choice <= 6) //combinaison sup�rieur
         {
-            this->ajouter_superieurs(recap, possibilites_index.at(choice)-1);// TODO changer il faut regarde la valeur corespondante dans le tableau d'index
+            this->ajouter_superieurs(recap, superieurs_restant.at(choice)-1);// TODO changer il faut regarde la valeur corespondante dans le tableau d'index
             garde = true;
         }
         else if(choice <= 13)//combinaison inf�rieur (-6 pour les inferieurs en moins)
         {
-            this->ajouter_inferieurs(recap, possibilites_index.at(choice) -7); // TODO changer il faut regarde la valeur corespondante dans le tableau d'index
+            this->ajouter_inferieurs(recap, inferieurs_possible.at(choice) -7); // TODO changer il faut regarde la valeur corespondante dans le tableau d'index
             garde = true;
         }// changer pas vraiment choice a 15 ca depend de la taille 
-        else if (choice == possibilites_index.size() && cpt_tour < 2)//Relancer les d�s si il peux encore les relancés max de 2
+        else if (choice == (inferieurs_possible.size() + superieurs_restant.size() + 1) && cpt_tour < 2)//Relancer les d�s si il peux encore les relancés max de 2
         {
             choice = this->relancer_des(l);
         }
@@ -161,53 +161,31 @@ void Joueur::tour_joueur(Lancer& l)
 }
 
 //affiche les possibilit�s en fonction des d�s
-std::vector<int> Joueur::afficher_possibilite(int* recap, int cpt_tour)
+void Joueur::afficher_possibilite(int* recap, int cpt_tour, std::vector<int> inferieurs_possible, std::vector<int> superieurs_restant)
 {
-    // calcul les figures restantes
-    std::vector<int> indexs_superieurs;
-    std::vector<int> indexs_inferieurs;
-    indexs_inferieurs.reserve(NB_INFERIEURS);
-    indexs_superieurs.reserve(NB_SUPERIEURS);
-    this->superieurs_restante(&indexs_superieurs);
-    this->inferieurs_restante(&indexs_inferieurs);
-    
     //on crée un vector de int,int pour référencé les positions des figures, on affiche 1.deux 2.trois mais on stocke [(1,2), (2,3)]
-    std::vector<int> ref;
     int val = 1;
-
-
-    ref.reserve(indexs_inferieurs.size() + indexs_superieurs.size() + 2);
-
 
     std::cout << "Selectionnez ce que vous voulez valider : " << std::endl;
     //boucle sur les indexs_inferieurs pour l'affichage
-    for (int i = 0; i < indexs_superieurs.size(); i++)
+    for (int i = 0; i < superieurs_restant.size(); i++)
     {
-        std::cout << val << ". " << this->superieurs.at(indexs_superieurs.at(i))->get_name() << std::endl;
+        std::cout << val << ". " << this->superieurs.at(superieurs_restant.at(i))->get_name() << std::endl;
         val++;
-        ref.push_back(indexs_superieurs.at(i)); // ici on a l'affichage du joueurs de 1 au nombre de figure restantes et en plus l'index de la figure
     }
-    std::cout << "index_sup=" << indexs_superieurs.size() << std::endl;
-    std::cout << "index_inf=" << indexs_inferieurs.size() << std::endl;
     
 
     //boucle sur les indexs_superieurs pour essayer de set_figure des cpy avec les dés existant
     //si le joueur décide de faire un indexs superieur en exemple de 6 alors qu'il n'a aucun dés de 6 ça met 0 dedans
-    for (int i = 0; i < indexs_inferieurs.size(); i++)
+    for (int i = 0; i < inferieurs_possible.size(); i++)
     {
-        if (this->inferieurs.at(indexs_inferieurs.at(i))->is_figure(recap))
-        {
-            std::cout << val << ". " << this->inferieurs.at(indexs_inferieurs.at(i))->get_name() << std::endl;
-            val++;
-            ref.push_back(indexs_inferieurs.at(i));
-        }
+        std::cout << val << ". " << this->inferieurs.at(inferieurs_possible.at(i))->get_name() << std::endl;
+        val++;
     }
     
-    std::cout << (ref.size() - 2) << ". Abandonn� une possibilit�" << std::endl;
+    std::cout << (val + 2) << ". Abandonn� une possibilit�" << std::endl;
     if (cpt_tour < 2)
-        std::cout << (ref.size() - 1) << ". Relancer les des" << std::endl;
-    std::cout << "index_max=" << ref.size() << std::endl;
-    return ref;
+        std::cout << (val + 1) << ". Relancer les des" << std::endl;
 }
 
 std::string Joueur::get_nom()
@@ -230,7 +208,7 @@ void Joueur::superieurs_restante(std::vector<int>* indexs)
 
 // remplis le vecteurs d'indexs pass� en param�re apres les indexs des figures  
 // inf�rieurs non r�alis�
-void Joueur::inferieurs_restante(std::vector<int>* indexs)
+void Joueur::inferieurs_restante(std::vector<int>* indexs, int* recap)
 {
     for (unsigned int index = 0; index < inferieurs.size(); index++) {
         if (!inferieurs.at(index)->is_assigner())
