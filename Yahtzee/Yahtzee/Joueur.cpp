@@ -113,7 +113,11 @@ void Joueur::tour_joueur(Lancer& l)
     int* recap = this->get_recapitulatif(l.get_des());
     bool garde = false;
 
-  
+    this->superieurs_restante(&superieurs_restant);
+    this->inferieurs_restante(&inferieurs_possible, &inferieurs_impossible, recap);
+
+    // TODO grille avec récap des points
+
     while (!garde && cpt_tour < 3)
     {
         // affichage des des 
@@ -132,22 +136,23 @@ void Joueur::tour_joueur(Lancer& l)
         }
         if (choice <= 6) //combinaison sup�rieur
         {
-            this->ajouter_superieurs(recap, superieurs_restant.at(choice)-1);// TODO changer il faut regarde la valeur corespondante dans le tableau d'index
+            this->ajouter_superieurs(recap, superieurs_restant.at(choice)-1);
             garde = true;
         }
         else if(choice <= 13)//combinaison inf�rieur (-6 pour les inferieurs en moins)
         {
-            this->ajouter_inferieurs(recap, inferieurs_possible.at(choice) -7); // TODO changer il faut regarde la valeur corespondante dans le tableau d'index
+            this->ajouter_inferieurs(recap, inferieurs_possible.at(choice) -7);
             garde = true;
         }// changer pas vraiment choice a 15 ca depend de la taille 
-        else if (choice == (inferieurs_possible.size() + superieurs_restant.size() + 1) && cpt_tour < 2)//Relancer les d�s si il peux encore les relancés max de 2
-        {
-            choice = this->relancer_des(l);
-        }
-        else // abandonner une combinaison
+        else if (choice == (inferieurs_possible.size() + superieurs_restant.size()) && cpt_tour < 2)// abandonner une combinaison
         {
             choice = this->abandonne(recap);
             garde = true;
+            
+        }
+        else //Relancer les d�s si il peux encore les relancés max de 2
+        {
+            choice = this->relancer_des(l);
         }
         if (choice == -1)
         {
@@ -183,7 +188,7 @@ void Joueur::afficher_possibilite(int* recap, int cpt_tour, std::vector<int> inf
         val++;
     }
     
-    std::cout << (val + 2) << ". Abandonn� une possibilit�" << std::endl;
+    std::cout << (val) << ". Abandonn� une possibilit�" << std::endl;
     if (cpt_tour < 2)
         std::cout << (val + 1) << ". Relancer les des" << std::endl;
 }
@@ -213,7 +218,7 @@ void Joueur::inferieurs_restante(std::vector<int>* indexs_possible, std::vector<
 {
     for (unsigned int index = 0; index < inferieurs.size(); index++) {
         if (!inferieurs.at(index)->is_assigner()) {
-            if (inferieurs.at(index)->is_figure(recap)
+            if (inferieurs.at(index)->is_figure(recap))
                 indexs_possible->push_back(index);
             else
                 indexs_impossible->push_back(index);

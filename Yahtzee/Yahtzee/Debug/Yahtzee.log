@@ -1,11 +1,1 @@
-﻿  Joueur.cpp
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(183,23): warning C4018: '<' : incompatibilité signed/unsigned
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(193,23): warning C4018: '<' : incompatibilité signed/unsigned
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(378): warning C4172: retourne l'adresse d'une variable locale ou : recap temporaire
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(51): warning C4715: 'Combinaison<1>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(51): warning C4715: 'Combinaison<3>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(51): warning C4715: 'Combinaison<4>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(51): warning C4715: 'Combinaison<5>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(51): warning C4715: 'Combinaison<6>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Combinaison.h(51): warning C4715: 'Combinaison<2>::get_name' : les chemins de contrôle ne retournent pas tous une valeur
-  Yahtzee.vcxproj -> E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Debug\Yahtzee.exe
+﻿  Yahtzee.vcxproj -> E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Debug\Yahtzee.exe
