@@ -109,10 +109,12 @@ void Joueur::tour_joueur(Lancer& l)
     int choice = -1, cpt_tour = 0;
     std::vector<int> inferieurs_possible, inferieurs_impossible, superieurs_restant;
     int des[5] = { 1, 2, 3, 4, 5 };
-    l.lance(des, NB_DE);
-    int* recap = this->get_recapitulatif(l.get_des());
+    int recap[6];
     bool garde = false;
 
+    //we get our values
+    l.lance(des, NB_DE);
+    this->get_recapitulatif(l.get_des(), recap);
     this->superieurs_restante(&superieurs_restant);
     this->inferieurs_restante(&inferieurs_possible, &inferieurs_impossible, recap);
 
@@ -129,11 +131,11 @@ void Joueur::tour_joueur(Lancer& l)
 
         afficher_possibilite(recap, cpt_tour, inferieurs_possible, superieurs_restant);
         
-        while (choice == -1)
+        do
         {
             std::cin >> selected;
             choice = choix_correct(selected, inferieurs_possible.size() + superieurs_restant.size() + 2);
-        }
+        }while (choice == -1);
         if (choice <= superieurs_restant.size()) //combinaison sup�rieur
         {
             this->ajouter_superieurs(recap, superieurs_restant.at(choice)-1);
@@ -291,34 +293,34 @@ int Joueur::relancer_des(Lancer &l)
     std::string selected;
 
     std::cout << "S�lectionner quel d�s pour voulez relancer, format attendu (123456) : " << std::endl;
-    for (int i = 1; i <= 6 ; i++) //boucle sur les d�s pour les affich�s
+    for (int i = 0; i < NB_DE ; i++) //boucle sur les d�s pour les affich�s
     {
-        std::cout << "D� " << i << " : " << l.get_des()[i]->to_String() << std::endl;
+        std::cout << "D� " << i+1 << " : " << l.get_des()[i]->to_String() << std::endl;
     }
-    std::cout << 7 << ". revenir en arri�re" << std::endl;
+    std::cout << NB_DE+1 << ". revenir en arri�re" << std::endl;
 
     //si 7 alors sort sinon test le string en entier et boucle jusqu'a obtenir une bonne valeur
     do
     {
+        std::cin >> selected;
         try
         {
             int n = std::stoi(selected);
-            if (n == 7)
-            {
+            if (n == NB_DE+1)
                 return -1;
-                break;
-            }
         }
         catch (...)
         {
             // TODO
         }
         des_r = this->des_relance(selected);
-        std::cin >> selected;
     } while (des_r == nullptr);
 
-    if(des_r != nullptr)
+    if (des_r != nullptr)
+    {
         l.lance(des_r, std::strlen(selected.c_str()));
+        delete des_r;
+    }
     return 0;
 }
 
@@ -327,7 +329,7 @@ int* Joueur::des_relance(std::string des_r)
 {
     int* relance = new int[std::strlen(des_r.c_str())]; // voila de la bonne allocation dynamique
     // pas de doublon, pas de d�s > 5 et < 1 et pas de lettres
-    if (des_r.size() > 5)
+    if (des_r.size() > NB_DE)
     {
         std::cout << "Erreur dans la chaine envoy�, taille trop grande" << std::endl;
         return nullptr;
@@ -337,7 +339,7 @@ int* Joueur::des_relance(std::string des_r)
         int number;
         for (unsigned int i = 0; i < des_r.size(); i++)
         {
-            number = this->choix_correct(std::string(1, des_r[i]), 5);
+            number = this->choix_correct(std::string(1, des_r[i]), NB_DE);
             if (number == -1)
                 return nullptr;
             else
@@ -348,7 +350,7 @@ int* Joueur::des_relance(std::string des_r)
         for (unsigned int i = 0; i < des_r.size(); i++)
         {
             number = relance[i];
-            for (unsigned int j = i; j < des_r.size(); j++)
+            for (unsigned int j = i+1; j < des_r.size(); j++)
             {
                 if (number == relance[j])
                     return nullptr;
@@ -359,16 +361,14 @@ int* Joueur::des_relance(std::string des_r)
     return relance;
 }
 
-int* Joueur::get_recapitulatif(De** des)
+void Joueur::get_recapitulatif(De** des, int* recap)
 {
     // on fait le recapitulatif des valeurs obtenues
-    int recap[6];
-    for (unsigned int index = 0; index < 5; index++) {
+    for (unsigned int index = 0; index < 6; index++) {
         recap[index] = 0;
     }
 
     for (unsigned int index = 0; index < 5; index++) {
         recap[(des[index]->get_val() - 1)] ++;
     }
-    return recap;
 }
