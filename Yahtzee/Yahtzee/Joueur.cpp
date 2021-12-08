@@ -270,7 +270,7 @@ int Joueur::abandonne(int *recap, std::vector<int>* inferieurs_impossible)
     int choice = -1;
     std::string selected;
 
-    std::cout << "Voici toutes les figures que vous pouvez abandonn� :" << std::endl;
+    std::cout << "Voici toutes les figures que vous pouvez abandonnez :" << std::endl;
 
     for (unsigned int index = 0; index < inferieurs_impossible->size(); index++) {
         std::cout << index+1 << ": " << inferieurs.at(inferieurs_impossible->at(index))->get_name() << " ";
