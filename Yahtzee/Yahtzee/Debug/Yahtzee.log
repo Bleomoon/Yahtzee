@@ -1,1 +1,36 @@
-﻿  Yahtzee.vcxproj -> E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Debug\Yahtzee.exe
+﻿  Chance.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Chance.cpp(28,1): error C2509: 'score_possible' : fonction membre non déclarée dans 'Chance'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Chance.h(7): message : voir la déclaration de 'Chance'
+  Figure.cpp
+  Petite_suite.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Petite_suite.cpp(31,1): error C2509: 'score_possible' : fonction membre non déclarée dans 'Petite_suite'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Petite_suite.h(6): message : voir la déclaration de 'Petite_suite'
+  Yahtzee.cpp
+  Joueur.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(23): error C2259: 'Petite_suite' : impossible d'instancier une classe abstraite
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Petite_suite.h(6): message : voir la déclaration de 'Petite_suite'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(23): message : à cause des membres suivants :
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(23): message : 'int Figure::score_possible(int *)' : est abstrait
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Figure.h(18): message : voir la déclaration de 'Figure::score_possible'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(23,42): error C2259: 'Petite_suite' : impossible d'instancier une classe abstraite
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Petite_suite.h(6): message : voir la déclaration de 'Petite_suite'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(23,42): message : à cause des membres suivants :
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(23,42): message : 'int Figure::score_possible(int *)' : est abstrait
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Figure.h(18): message : voir la déclaration de 'Figure::score_possible'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(28): error C2259: 'Chance' : impossible d'instancier une classe abstraite
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Chance.h(7): message : voir la déclaration de 'Chance'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(28): message : à cause des membres suivants :
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(28): message : 'int Figure::score_possible(int *)' : est abstrait
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Figure.h(18): message : voir la déclaration de 'Figure::score_possible'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(28,36): error C2259: 'Chance' : impossible d'instancier une classe abstraite
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Chance.h(7): message : voir la déclaration de 'Chance'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(28,36): message : à cause des membres suivants :
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(28,36): message : 'int Figure::score_possible(int *)' : est abstrait
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Figures\Figure.h(18): message : voir la déclaration de 'Figure::score_possible'
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(137,20): warning C4018: '<=' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(142,24): warning C4018: '<=' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(176,23): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Joueur.cpp(186,23): warning C4018: '<' : incompatibilité signed/unsigned
+  Yahtzee_game.cpp
+E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Yahtzee\Yahtzee_game.cpp(105,4): warning C4101: 'customLess' : variable locale non référencée
+  Génération de code en cours...

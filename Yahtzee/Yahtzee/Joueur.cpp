@@ -175,7 +175,8 @@ void Joueur::afficher_possibilite(int* recap, int cpt_tour, std::vector<int> inf
     //boucle sur les indexs_inferieurs pour l'affichage
     for (int i = 0; i < superieurs_restant.size(); i++)
     {
-        std::cout << val << ". " << this->superieurs.at(superieurs_restant.at(i))->get_name() << std::endl;
+        std::cout << val << ". " << this->superieurs.at(superieurs_restant.at(i))->get_name() << " : "
+            << this->inferieurs.at(superieurs_restant.at(i))->score_possible(recap) << std::endl;
         val++;
     }
     
@@ -184,7 +185,8 @@ void Joueur::afficher_possibilite(int* recap, int cpt_tour, std::vector<int> inf
     //si le joueur décide de faire un indexs superieur en exemple de 6 alors qu'il n'a aucun dés de 6 ça met 0 dedans
     for (int i = 0; i < inferieurs_possible.size(); i++)
     {
-        std::cout << val << ". " << this->inferieurs.at(inferieurs_possible.at(i))->get_name() << std::endl;
+        std::cout << val << ". " << this->inferieurs.at(inferieurs_possible.at(i))->get_name() << " : " 
+            << this->inferieurs.at(inferieurs_possible.at(i))->score_possible(recap) << std::endl;
         val++;
     }
     
