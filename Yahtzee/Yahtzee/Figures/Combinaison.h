@@ -6,11 +6,9 @@
 template<int valeur>
 class Combinaison : public Figure
 {
-	int repetitions;
 public:
 	Combinaison() : Figure() 
 	{ 
-		repetitions = 0; 
 	}
 
     bool set_figure(int* recap)

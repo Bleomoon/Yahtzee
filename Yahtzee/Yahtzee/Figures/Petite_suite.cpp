@@ -30,7 +30,10 @@ bool Petite_suite::is_figure(int* recap)
 
 int Petite_suite::score_possible(int* recap)
 {
-	return 30;
+	if(is_figure(recap))
+		return 30;
+	
+	return 0;
 }
 
 std::string Petite_suite::get_name()

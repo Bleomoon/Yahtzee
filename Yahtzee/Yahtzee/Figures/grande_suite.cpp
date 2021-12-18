@@ -31,7 +31,10 @@ bool Grande_suite::is_figure(int* recap)
 
 int Grande_suite::score_possible(int* recap)
 {
-	return 40;
+	if (is_figure(recap))
+		return 40;
+	
+	return 0;
 }
 
 std::string Grande_suite::get_name()

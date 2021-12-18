@@ -26,17 +26,20 @@ bool Yahtzee::is_figure(int* recap)
 
 int Yahtzee::score_possible(int* recap)
 {
-    return 50;
+    if (is_figure(recap))
+        return 50;
+
+    return 0;
 }
 
 std::string Yahtzee::get_name()
 {
-    return "Yathzee";
+    return "Yahtzee";
 }
 
 std::ostream& operator<<(std::ostream& out, const Yahtzee& figure)
 {
-    out << "Yathzee";
+    out << "Yahtzee";
 
     return out;
 }

@@ -33,11 +33,15 @@ bool Brelan::is_figure(int* recap)
 
 int Brelan::score_possible(int* recap)
 {
-	int ret = 0;
-	for (int i = 0; i < 6; i++) {
-		ret += recap[i] * (i + 1);
+
+	if (is_figure(recap)) {
+		int ret = 0;
+		for (int i = 0; i < 6; i++) {
+			ret += recap[i] * (i + 1);
+		}
+		return ret;
 	}
-	return ret;
+	return 0;
 }
 
 std::string Brelan::get_name()
