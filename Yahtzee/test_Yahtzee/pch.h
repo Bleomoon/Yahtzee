@@ -7,6 +7,19 @@
 #ifndef PCH_H
 #define PCH_H
 
-// ajouter les en-têtes à précompiler ici
+#include "../Yahtzee/Yahtzee_game.h"
+#include "../Yahtzee/Joueur.h"
+#include "../Yahtzee/Lancer.h"
+#include "../Yahtzee/De.h"
+
+#include "../Yahtzee/Figures/Figure.h"
+#include "../Yahtzee/Figures/brelan.h"
+#include "../Yahtzee/Figures/carre.h"
+#include "../Yahtzee/Figures/chance.h"
+#include "../Yahtzee/Figures/Combinaison.h"
+#include "../Yahtzee/Figures/Full.h"
+#include "../Yahtzee/Figures/Grande_suite.h"
+#include "../Yahtzee/Figures/Petite_suite.h"
+#include "../Yahtzee/Figures/Yahtzee.h"
 
 #endif //PCH_H

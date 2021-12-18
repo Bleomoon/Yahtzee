@@ -19,13 +19,13 @@ Joueur::Joueur(Yahtzee_game* jeu, std::string nom) : nom(nom), yahtzee_g(jeu), t
     superieurs.shrink_to_fit(); // on enl�ve le surplus en m�moire
 
     // initialisation de inf�rieure
+    inferieurs.push_back(new Chance());
     inferieurs.push_back(new Brelan());
     inferieurs.push_back(new Petite_suite());
     inferieurs.push_back(new Grande_suite());
     inferieurs.push_back(new Full());
     inferieurs.push_back(new Carre());
     inferieurs.push_back(new Yahtzee());
-    inferieurs.push_back(new Chance());
     superieurs.shrink_to_fit(); // on enl�ve le surplus en m�moire
 }
 

@@ -36,8 +36,6 @@ public:
     int get_total_score();
     void tour_joueur(Lancer& l);
     std::string get_nom();
-
-private:
     void afficher_possibilite(int* recap, int cpt_tour, std::vector<int> inferieurs_possible, std::vector<int> superieurs_restant);
     void ajouter_superieurs(int* recap, int valeur);
     void ajouter_inferieurs(int* recap, int valeur);

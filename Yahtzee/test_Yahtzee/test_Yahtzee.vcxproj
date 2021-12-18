@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{E3B779C2-28AD-4FFD-9577-71D5E2DD064F}</ProjectGuid>
+    <ProjectGuid>{0371FF93-424D-4A87-B791-559EA62BE4AC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>testYahtzee</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -162,10 +162,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="test_Yahtzee.cpp" />
+    <ClCompile Include="test_Joueur.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Yahtzee\Yahtzee.vcxproj">
+      <Project>{9bd81d46-ac68-40d2-af69-b57e0904cb2c}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
