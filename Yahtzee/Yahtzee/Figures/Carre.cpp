@@ -30,12 +30,16 @@ bool Carre::is_figure(int* recap)
 
 int Carre::score_possible(int* recap)
 {
-	int ret = 0;
-	for (int i = 0; i < 6; i++) {
-		ret += recap[i] * (i + 1);
-	}
 
-	return ret;
+	if (is_figure(recap)) {
+		int ret = 0;
+		for (int i = 0; i < 6; i++) {
+			ret += recap[i] * (i + 1);
+		}
+
+		return ret;
+	}
+	return 0;
 }
 
 std::string Carre::get_name()

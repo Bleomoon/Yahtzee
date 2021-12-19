@@ -34,7 +34,10 @@ bool Full::is_figure(int* recap)
 
 int Full::score_possible(int* recap)
 {
-	return 25;
+	if (is_figure(recap))
+		return 25;
+
+	return 0;
 }
 
 std::string Full::get_name()

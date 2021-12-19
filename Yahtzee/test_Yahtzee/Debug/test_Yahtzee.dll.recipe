@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Debug\Yahtzee.exe</FullPath>
+      <FullPath>C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Debug\Yahtzee.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>E:\Users\Bleomoon\Desktop\EVERYTHING\Cours\2021\Coo\Yahtzee\Yahtzee\Debug\test_Yahtzee.dll</FullPath>
+      <FullPath>C:\Users\Thibault\Desktop\Faculté\M1\COO\Projet\Yahtzee\Yahtzee\Debug\test_Yahtzee.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

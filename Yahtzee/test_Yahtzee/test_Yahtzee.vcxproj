@@ -162,7 +162,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="test_brelan.cpp" />
+    <ClCompile Include="test_Carre.cpp" />
+    <ClCompile Include="test_Chance.cpp" />
+    <ClCompile Include="test_Combinaison.cpp" />
+    <ClCompile Include="test_Full.cpp" />
+    <ClCompile Include="test_Grande_Suite.cpp" />
     <ClCompile Include="test_Joueur.cpp" />
+    <ClCompile Include="test_Petite_suite.cpp" />
+    <ClCompile Include="test_Yahtzee.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
