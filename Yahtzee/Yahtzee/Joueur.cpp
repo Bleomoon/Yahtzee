@@ -135,9 +135,9 @@ void Joueur::tour_joueur(Lancer& l)
         {
             std::cin >> selected;
             if(cpt_tour < 2) //dégoutant oui
-                choice = choix_correct(selected, inferieurs_possible.size() + superieurs_restant.size() + 2);
+                choice = choix_correct(selected, inferieurs_possible.size() + superieurs_restant.size() + 2, 1);
             else
-                choice = choix_correct(selected, inferieurs_possible.size() + superieurs_restant.size() + 1);
+                choice = choix_correct(selected, inferieurs_possible.size() + superieurs_restant.size() + 1, 1);
         }while (choice == -1);
         if (choice <= superieurs_restant.size()) //combinaison sup�rieur
         {
@@ -245,7 +245,7 @@ void Joueur::inferieurs_restante(std::vector<int>* indexs_possible, std::vector<
 }
 
 // V�rifie que le joueur ne rentre pas n'importe quoi dans ces choix, on veux un int entre 1 et max
-int Joueur::choix_correct(std::string selected, int max)
+int choix_correct(std::string selected, int max, int min)
 {
     int number = -1;
     try
@@ -254,11 +254,11 @@ int Joueur::choix_correct(std::string selected, int max)
     }
     catch (std::invalid_argument)
     {
-        std::cout << "Please enter a number !" << std::endl;
+        std::cout << "Entrez un chiffre !" << std::endl;
     }
-    if (number < 1 || number > max)
+    if (number < min || number > max)
     {
-        std::cout << "Please enter a number between 1 and " << max << std::endl;
+        std::cout << "Entre un chiffre entre " << min << " et " << max << std::endl;
         return -1;
     }
     return number;
@@ -288,7 +288,7 @@ int Joueur::abandonne(int *recap, std::vector<int>* inferieurs_impossible)
         std::cin >> selected;
         if (std::strcmp(selected.c_str(), "stop") == 0)
             return -1;
-        choice = choix_correct(selected, inferieurs_impossible->size());
+        choice = choix_correct(selected, inferieurs_impossible->size(), 1);
     }
     std::cout << "Figure : " << this->inferieurs.at(inferieurs_impossible->at(choice-1))->get_name() << " a bien ete abandonnez" << std::endl;
     this->inferieurs.at(inferieurs_impossible->at(choice-1))->set_figure(recap);
@@ -348,7 +348,7 @@ int* Joueur::des_relance(std::string des_r)
         int number;
         for (unsigned int i = 0; i < des_r.size(); i++)
         {
-            number = this->choix_correct(std::string(1, des_r[i]), NB_DE);
+            number = choix_correct(std::string(1, des_r[i]), NB_DE, 1);
             if (number == -1)
                 return nullptr;
             else

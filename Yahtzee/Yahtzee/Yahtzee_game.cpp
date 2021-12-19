@@ -20,13 +20,14 @@ Yahtzee_game::Yahtzee_game(int nb_joueurs, std::string nom_joueurs[],
 Yahtzee_game::Yahtzee_game(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_tours)
 {
 	nb_joueur = 0;
-
+	std::string selected;
 
 	// demande le nombre de joueur
 	do {
 		std::cout << "A combien voulez-vous jouer ? (entre 2 et 8)" << std::endl;
-		std::cin >> nb_joueur;
-	} while (nb_joueur < 2 || nb_joueur > 8);
+		std::cin >> selected;
+		nb_joueur = choix_correct(selected, 8, 2);
+	} while (nb_joueur == -1);
 
 	// allocation de la m�moire pour le tableau de joueur
 	joueurs = new std::vector<Joueur*>;
@@ -35,6 +36,7 @@ Yahtzee_game::Yahtzee_game(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_to
 	// demande tous les noms de joueurs
 	std::string nom_joueur;
 	for (int i = 0; i < nb_joueur; i++) {
+		std::cout << "Nom du joueur " << i << std::endl;
 		std::cin >> nom_joueur;
 		joueurs->push_back((new Joueur(this, nom_joueur)));
 	}

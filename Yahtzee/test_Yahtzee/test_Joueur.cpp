@@ -163,18 +163,18 @@ namespace testJoueur
 
 			//une lettre
 			selected = "bed";
-			Assert::AreEqual(j.choix_correct(selected, 10), -1);
+			Assert::AreEqual(choix_correct(selected, 10, 1), -1);
 
 			//un int trop grand
 			selected = "11";
-			Assert::AreEqual(j.choix_correct(selected, 10), -1);
+			Assert::AreEqual(choix_correct(selected, 10, 1), -1);
 
 			//un int trop petit
 			selected = "0";
-			Assert::AreEqual(j.choix_correct(selected, 10), -1);
+			Assert::AreEqual(choix_correct(selected, 10, 1), -1);
 
 			selected = "5";
-			Assert::AreEqual(j.choix_correct(selected, 10), 5);
+			Assert::AreEqual(choix_correct(selected, 10, 1), 5);
 		}
 
 		// test de dés > 5, de lettres et de doublons

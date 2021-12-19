@@ -20,6 +20,7 @@
 const int NB_SUPERIEURS = 6;
 const int NB_INFERIEURS = 7;
 class Yahtzee_game;
+int choix_correct(std::string selected, int max, int min);
 
 class Joueur
 {
@@ -44,7 +45,6 @@ public:
     int abandonne(int* recap, std::vector<int>* inferieurs_impossible);
     int relancer_des(Lancer& l);
     void get_recapitulatif(De** des, int* recap);
-    int choix_correct(std::string selected, int max);
     int* des_relance(std::string des_r);
 };
 
