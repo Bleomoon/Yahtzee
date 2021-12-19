@@ -1,0 +1,39 @@
+Projet COO M1 info 
+Remi Orveau
+Thibault Rucher
+
+Architecture :
+ -UML.png // capture d'écran de notre diagramme UML de la solution
+ -test_Yahtzee // dossier contenant tous les tests du jeu
+ -Yahtzee // dossier contenant tous les fichiers sources du jeu 
+ -Yahtzee.exe // l'exécutable du jeu
+ -test.webmp // vidéo d'une partie rapide
+
+
+Choix de conception :
+Nous avons décidé de réaliser le projet avec tout le code en français, afin d'être en accord avec le sujet.
+Dans le jeu du Yahtzee il y a deux types de combinaison, supérieur et inférieur. Nous avons donc fait pareil pour représenter les figures du joueur. 
+Pour les figures il y avait deux choix possibles lors de sa validation, d'envoyé en paramètre le jet de dés trié, ou d'envoyer un récapitulatif des dés. Nous avons fait le deuxième choix car nous avons trouvé plus simple de vérifier si le jet correspond à la combinaison ou pas.
+Dans l'objet joueur certaines fonctions renvoyées ou rempli un vecteur d'int. Le contenu de ces vecteurs correspond aux index des vecteurs du joueur que cela soit les combinaisons inférieures ou supérieures.
+
+Jeu_Yahtzee : Le nombre de lancer par tour peut se modifier lors de l'appel du constructeur.
+	Le jeu peut se jouer jusqu'à 8 joueurs.
+	La fonction jouée permet de planer la partie qui est composée de 13 tours. À chaque tour une figure est assignée à chaque joueur.
+
+Joueur : le joueur possède deux vecteurs de figures qui représentent les combinaison supérieur et inférieur. Ces vecteurs sont initialisé  et remplis au préalable avec toutes les combinaisons du jeu lors de l'appel du constructeur.
+	Le joueur a une fonction tour joueur qui effectue un tour complet, il pourra relancer les dés afin de faire des meilleures figures.
+
+Lancer : Lancer est initialisé lors de l'appel du constructeur de Yahtzee gamme, lancer représente les 5 des. On peut décider de relancer tous les dés ou seulement en relancer une partie.
+
+
+Figures : Les figures sont par non assignées c'est-à-dire qu'elles n'ont pas été validées. Afin de valider la figure il faut appeler la fonction set figure avec le tableau récapitulatif des dés. Si la figure n'est pas realisable alors elle sera abandonnée donc son score sera égal à 0.
+	
+Les figures sont : 
+	- Combinaison est un patron de classe qui représentre toutes les combinaisons supérieurs de 1 à 6.
+	- Full
+	- Brelan
+	- Carre
+	- Yahtzee
+	- Chance
+	- Petite_Suite
+	- Grande_Suite
