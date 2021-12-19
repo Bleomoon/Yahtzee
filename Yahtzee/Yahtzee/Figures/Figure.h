@@ -15,7 +15,7 @@ public:
     Figure();
     virtual bool valider_figure(int* recap) = 0; // recap = le récapitulatif des dés 
     virtual bool est_figure(int* recap) = 0; // recap = le récapitulatif des dés 
-    virtual int score_possible(int* recap) = 0; // ne verifie pas si la figure est possible on suppose que c'est fait en amont
+    virtual int score_possible(int* recap) = 0;
 
     virtual std::string avoir_nom() = 0;
     int avoir_score();

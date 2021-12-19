@@ -32,7 +32,6 @@ Yahtzee_jeux::Yahtzee_jeux(int nb_lancer_par_tours) : nb_lancer(nb_lancer_par_to
 	// allocation de la m�moire pour le tableau de joueur
 	joueurs = new std::vector<Joueur*>;
 
-
 	// demande tous les noms de joueurs
 	std::string nom_joueur;
 	for (int i = 0; i < nb_joueur; i++) {
@@ -84,7 +83,6 @@ Yahtzee_jeux& Yahtzee_jeux::operator=(const Yahtzee_jeux& copy)
 
 		// on ne copie pas lancer car elle son contenue nous interesse pas TODO
 	}
-
 	return *this;
 }
 
