@@ -7,14 +7,14 @@
 
 class Lancer
 {
+    int nb_de;
     De** des;
-    int indice_rand; //pour un random plus juste !!
 public:
     Lancer(const int NB_DE);
     Lancer(const Lancer& copy);
     ~Lancer();
     Lancer& operator=(const Lancer& copy);
-    void lance(int* indiceslances, int nb_de);
+    void lance(int* indiceslances, int nb_indice);
     De** avoir_des();
 };
 #endif

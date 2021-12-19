@@ -8,8 +8,9 @@ class De
     int val;
 public:
     De();
+    De(const De& copy);
+    void lance();
     int avoir_val();
-    void lance(int indice);
     std::string to_String();
 };
 #endif

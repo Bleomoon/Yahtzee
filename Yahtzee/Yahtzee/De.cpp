@@ -1,14 +1,20 @@
 #include "De.h"
 #include <ctime>
 
+// constructeur qui met la valeur du de a 0
 De::De()
 {
 	this->val = 0;
 }
 
-void De::lance(int indice)
+// constructeur par copier les deux valeurs de des sont identiques
+De::De(const De& copy) : val(copy.val)
 {
-	srand(time(NULL)-indice);
+}
+
+// lance le de avec une valueur aleatoire entre 1 et 6 
+void De::lance()
+{
 	this->val = (rand() % 6) + 1;
 }
 

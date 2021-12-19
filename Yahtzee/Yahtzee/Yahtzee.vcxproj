@@ -163,6 +163,7 @@
     <ClInclude Include="Figures\Grande_suite.h" />
     <ClInclude Include="Figures\Petite_suite.h" />
     <ClInclude Include="Figures\Yahtzee.h" />
+    <ClInclude Include="Invalid_index_exception.h" />
     <ClInclude Include="Joueur.h" />
     <ClInclude Include="Lancer.h" />
     <ClInclude Include="De.h" />
