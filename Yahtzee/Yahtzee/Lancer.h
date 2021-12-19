@@ -15,6 +15,6 @@ public:
     ~Lancer();
     Lancer& operator=(const Lancer& copy);
     void lance(int* indiceslances, int nb_de);
-    De** get_des();
+    De** avoir_des();
 };
 #endif

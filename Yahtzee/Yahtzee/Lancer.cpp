@@ -1,5 +1,5 @@
 #include "Lancer.h"
-#include "Yahtzee_game.h"
+#include "Yahtzee_jeux.h"
 #include <thread>
 #include <chrono>
 
@@ -53,7 +53,7 @@ void Lancer::lance(int* indiceslances, int nb_de)
 	}
 }
 
-De** Lancer::get_des()
+De** Lancer::avoir_des()
 {
 	return this->des;
 }

@@ -1,7 +1,7 @@
-#include "Yahtzee_game.h"
+#include "Yahtzee_jeux.h"
 
 int main(int argc, char** argv) {
-	Yahtzee_game yahtzee_game(3);
+	Yahtzee_jeux yahtzee_jeux(3);
 
-	yahtzee_game.jouer();
+	yahtzee_jeux.jouer();
 }

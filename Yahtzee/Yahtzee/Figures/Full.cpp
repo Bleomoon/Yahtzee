@@ -1,10 +1,10 @@
 #include "Full.h"
 
-bool Full::set_figure(int* recap)
+bool Full::valider_figure(int* recap)
 {
 	assigner = true;
 
-	if (is_figure(recap)) {
+	if (est_figure(recap)) {
 		score = 25;
 
 		return true;
@@ -14,7 +14,7 @@ bool Full::set_figure(int* recap)
 	return false;
 }
 
-bool Full::is_figure(int* recap)
+bool Full::est_figure(int* recap)
 {
 	bool trois = false, deux = false;
 
@@ -34,13 +34,13 @@ bool Full::is_figure(int* recap)
 
 int Full::score_possible(int* recap)
 {
-	if (is_figure(recap))
+	if (est_figure(recap))
 		return 25;
 
 	return 0;
 }
 
-std::string Full::get_name()
+std::string Full::avoir_nom()
 {
 	return "Full";
 }

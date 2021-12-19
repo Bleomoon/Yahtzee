@@ -8,7 +8,7 @@ class De
     int val;
 public:
     De();
-    int get_val();
+    int avoir_val();
     void lance(int indice);
     std::string to_String();
 };

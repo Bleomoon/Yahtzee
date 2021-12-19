@@ -7,12 +7,12 @@
 class Carre: public Figure
 {
 public:
-    bool set_figure(int* recap);
-    bool is_figure(int* recap);
+    bool valider_figure(int* recap);
+    bool est_figure(int* recap);
     int score_possible(int* recap);
 
 
-    std::string get_name();
+    std::string avoir_nom();
 };
 
 std::ostream& operator<<(std::ostream& out, const Carre& figure);

@@ -27,9 +27,9 @@ namespace testYahtzee
 	public:
 		TEST_METHOD(is_figure)
 		{
-			Assert::IsFalse(yahtzee.is_figure(recap1));
-			Assert::IsTrue(yahtzee.is_figure(recap2));
-			Assert::IsTrue(yahtzee.is_figure(recap3));
+			Assert::IsFalse(yahtzee.est_figure(recap1));
+			Assert::IsTrue(yahtzee.est_figure(recap2));
+			Assert::IsTrue(yahtzee.est_figure(recap3));
 		}
 		TEST_METHOD(score_possible)
 		{
@@ -37,24 +37,24 @@ namespace testYahtzee
 			Assert::IsTrue(yahtzee.score_possible(recap2) == 50);
 			Assert::IsTrue(yahtzee.score_possible(recap3) == 50);
 		}
-		TEST_METHOD(get_name)
+		TEST_METHOD(avoir_nom)
 		{
-			Assert::IsTrue(std::strcmp(yahtzee.get_name().c_str(), "Yahtzee") == 0);
+			Assert::IsTrue(std::strcmp(yahtzee.avoir_nom().c_str(), "Yahtzee") == 0);
 		}
 		TEST_METHOD(set_figure)
 		{
-			Assert::IsFalse(yahtzee.set_figure(recap1));
-			Assert::IsTrue(yahtzee2.set_figure(recap2));
-			Assert::IsTrue(yahtzee3.set_figure(recap3));
+			Assert::IsFalse(yahtzee.valider_figure(recap1));
+			Assert::IsTrue(yahtzee2.valider_figure(recap2));
+			Assert::IsTrue(yahtzee3.valider_figure(recap3));
 		}
-		TEST_METHOD(get_score)
+		TEST_METHOD(avoir_score)
 		{
-			yahtzee.set_figure(recap1);
-			Assert::IsTrue(yahtzee.get_score() == 0);
-			yahtzee2.set_figure(recap2);
-			Assert::IsTrue(yahtzee2.get_score() == 50);
-			yahtzee3.set_figure(recap3);
-			Assert::IsTrue(yahtzee3.get_score() == 50);
+			yahtzee.valider_figure(recap1);
+			Assert::IsTrue(yahtzee.avoir_score() == 0);
+			yahtzee2.valider_figure(recap2);
+			Assert::IsTrue(yahtzee2.avoir_score() == 50);
+			yahtzee3.valider_figure(recap3);
+			Assert::IsTrue(yahtzee3.avoir_score() == 50);
 		}
 	};
 }

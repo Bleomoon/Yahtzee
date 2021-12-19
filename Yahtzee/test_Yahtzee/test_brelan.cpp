@@ -25,11 +25,11 @@ namespace testBrelan
 	TEST_CLASS(testBrelan)
 	{
 	public:
-		TEST_METHOD(is_figure)
+		TEST_METHOD(est_figure)
 		{
-			Assert::IsFalse(brelan.is_figure(recap1));
-			Assert::IsTrue(brelan.is_figure(recap2));
-			Assert::IsTrue(brelan.is_figure(recap3));
+			Assert::IsFalse(brelan.est_figure(recap1));
+			Assert::IsTrue(brelan.est_figure(recap2));
+			Assert::IsTrue(brelan.est_figure(recap3));
 		}
 		TEST_METHOD(score_possible)
 		{
@@ -37,24 +37,24 @@ namespace testBrelan
 			Assert::IsTrue(brelan.score_possible(recap2) == 18);
 			Assert::IsTrue(brelan.score_possible(recap3) == 17);
 		}
-		TEST_METHOD(get_name)
+		TEST_METHOD(avoir_nom)
 		{
-			Assert::IsTrue(std::strcmp(brelan.get_name().c_str(), "Brelan") == 0);
+			Assert::IsTrue(std::strcmp(brelan.avoir_nom().c_str(), "Brelan") == 0);
 		}
-		TEST_METHOD(set_figure)
+		TEST_METHOD(valider_figure)
 		{
-			Assert::IsFalse(brelan.set_figure(recap1));
-			Assert::IsTrue(brelan2.set_figure(recap2));
-			Assert::IsTrue(brelan3.set_figure(recap3));
+			Assert::IsFalse(brelan.valider_figure(recap1));
+			Assert::IsTrue(brelan2.valider_figure(recap2));
+			Assert::IsTrue(brelan3.valider_figure(recap3));
 		}
-		TEST_METHOD(get_score)
+		TEST_METHOD(avoir_score)
 		{
-			brelan.set_figure(recap1);
-			Assert::IsTrue(brelan.get_score() == 0);
-			brelan2.set_figure(recap2);
-			Assert::IsTrue(brelan2.get_score() == 18);
-			brelan3.set_figure(recap3);
-			Assert::IsTrue(brelan3.get_score() == 17);
+			brelan.valider_figure(recap1);
+			Assert::IsTrue(brelan.avoir_score() == 0);
+			brelan2.valider_figure(recap2);
+			Assert::IsTrue(brelan2.avoir_score() == 18);
+			brelan3.valider_figure(recap3);
+			Assert::IsTrue(brelan3.avoir_score() == 17);
 		}
 	};
 }

@@ -1,10 +1,10 @@
 #include "Carre.h"
 
-bool Carre::set_figure(int* recap)
+bool Carre::valider_figure(int* recap)
 {
 	assigner = true; 
 
-	if (is_figure(recap)) {
+	if (est_figure(recap)) {
 		for (int i = 0; i < 6; i++) {
 			score += recap[i] * (i + 1);
 		}
@@ -16,7 +16,7 @@ bool Carre::set_figure(int* recap)
 	return false;
 }
 
-bool Carre::is_figure(int* recap)
+bool Carre::est_figure(int* recap)
 {
 	// pour qu'il y est un carré il faut minimun 4 dés identiques
 	for (int i = 0; i < 6; i++) {
@@ -31,7 +31,7 @@ bool Carre::is_figure(int* recap)
 int Carre::score_possible(int* recap)
 {
 
-	if (is_figure(recap)) {
+	if (est_figure(recap)) {
 		int ret = 0;
 		for (int i = 0; i < 6; i++) {
 			ret += recap[i] * (i + 1);
@@ -42,7 +42,7 @@ int Carre::score_possible(int* recap)
 	return 0;
 }
 
-std::string Carre::get_name()
+std::string Carre::avoir_nom()
 {
 	return "Carre";
 }

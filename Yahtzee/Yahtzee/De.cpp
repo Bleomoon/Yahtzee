@@ -12,7 +12,7 @@ void De::lance(int indice)
 	this->val = (rand() % 6) + 1;
 }
 
-int De::get_val() { return val; }
+int De::avoir_val() { return val; }
 
 std::string De::to_String()
 {

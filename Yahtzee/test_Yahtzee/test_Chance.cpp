@@ -25,11 +25,11 @@ namespace testChance
 	TEST_CLASS(testChance)
 	{
 	public:
-		TEST_METHOD(is_figure)
+		TEST_METHOD(est_figure)
 		{
-			Assert::IsTrue(chance.is_figure(recap1));
-			Assert::IsTrue(chance.is_figure(recap2));
-			Assert::IsTrue(chance.is_figure(recap3));
+			Assert::IsTrue(chance.est_figure(recap1));
+			Assert::IsTrue(chance.est_figure(recap2));
+			Assert::IsTrue(chance.est_figure(recap3));
 		}
 		TEST_METHOD(score_possible)
 		{
@@ -37,24 +37,24 @@ namespace testChance
 			Assert::IsTrue(chance.score_possible(recap2) == 15);
 			Assert::IsTrue(chance.score_possible(recap3) == 22);
 		}
-		TEST_METHOD(get_name)
+		TEST_METHOD(avoir_nom)
 		{
-			Assert::IsTrue(std::strcmp(chance.get_name().c_str(), "Chance") == 0);
+			Assert::IsTrue(std::strcmp(chance.avoir_nom().c_str(), "Chance") == 0);
 		}
-		TEST_METHOD(set_figure)
+		TEST_METHOD(valider_figure)
 		{
-			Assert::IsTrue(chance.set_figure(recap1));
-			Assert::IsTrue(chance2.set_figure(recap2));
-			Assert::IsTrue(chance3.set_figure(recap3));
+			Assert::IsTrue(chance.valider_figure(recap1));
+			Assert::IsTrue(chance2.valider_figure(recap2));
+			Assert::IsTrue(chance3.valider_figure(recap3));
 		}
-		TEST_METHOD(get_score)
+		TEST_METHOD(avoir_score)
 		{
-			chance.set_figure(recap1);
-			Assert::IsTrue(chance.get_score() == 20);
-			chance2.set_figure(recap2);
-			Assert::IsTrue(chance2.get_score() == 15);
-			chance3.set_figure(recap3);
-			Assert::IsTrue(chance3.get_score() == 22);
+			chance.valider_figure(recap1);
+			Assert::IsTrue(chance.avoir_score() == 20);
+			chance2.valider_figure(recap2);
+			Assert::IsTrue(chance2.avoir_score() == 15);
+			chance3.valider_figure(recap3);
+			Assert::IsTrue(chance3.avoir_score() == 22);
 		}
 	};
 }

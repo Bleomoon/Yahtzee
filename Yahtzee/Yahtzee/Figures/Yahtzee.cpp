@@ -1,10 +1,10 @@
 #include "Yahtzee.h"
 
-bool Yahtzee::set_figure(int* recap)
+bool Yahtzee::valider_figure(int* recap)
 {
     assigner = true;
 
-    if (is_figure(recap)) {
+    if (est_figure(recap)) {
         score = 50;
         return true;
     }
@@ -13,7 +13,7 @@ bool Yahtzee::set_figure(int* recap)
     return false;
 }
 
-bool Yahtzee::is_figure(int* recap)
+bool Yahtzee::est_figure(int* recap)
 {
     for (int i = 0; i < 6; i++) {
         if (recap[i] == 5)
@@ -26,13 +26,13 @@ bool Yahtzee::is_figure(int* recap)
 
 int Yahtzee::score_possible(int* recap)
 {
-    if (is_figure(recap))
+    if (est_figure(recap))
         return 50;
 
     return 0;
 }
 
-std::string Yahtzee::get_name()
+std::string Yahtzee::avoir_nom()
 {
     return "Yahtzee";
 }

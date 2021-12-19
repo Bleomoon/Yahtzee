@@ -1,10 +1,10 @@
 #include "Petite_suite.h"
 
-bool Petite_suite::set_figure(int* recap)
+bool Petite_suite::valider_figure(int* recap)
 {
 	assigner = true; 
 
-	if (is_figure(recap)) {
+	if (est_figure(recap)) {
 		score = 30;
 		return true;
 	}
@@ -13,7 +13,7 @@ bool Petite_suite::set_figure(int* recap)
 	return false;
 }
 
-bool Petite_suite::is_figure(int* recap)
+bool Petite_suite::est_figure(int* recap)
 {
 	int cpt_suite = 0;
 	for (int i = 0; i < 6; i++) {
@@ -30,13 +30,13 @@ bool Petite_suite::is_figure(int* recap)
 
 int Petite_suite::score_possible(int* recap)
 {
-	if(is_figure(recap))
+	if(est_figure(recap))
 		return 30;
 	
 	return 0;
 }
 
-std::string Petite_suite::get_name()
+std::string Petite_suite::avoir_nom()
 {
 	return "Petite Suite";
 }

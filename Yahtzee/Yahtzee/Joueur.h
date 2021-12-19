@@ -19,7 +19,7 @@
 
 const int NB_SUPERIEURS = 6;
 const int NB_INFERIEURS = 7;
-class Yahtzee_game;
+class Yahtzee_jeux;
 int choix_correct(std::string selected, int max, int min);
 
 class Joueur
@@ -28,15 +28,15 @@ class Joueur
     std::string nom;
     std::vector<Figure*> superieurs;
     std::vector<Figure*> inferieurs;
-    Yahtzee_game* yahtzee_g;
+    Yahtzee_jeux* yahtzee_g;
 public:
-    Joueur(Yahtzee_game* jeu, std::string nom);
+    Joueur(Yahtzee_jeux* jeu, std::string nom);
     Joueur(const Joueur& copy);
     ~Joueur();
     Joueur& operator=(const Joueur& copy);
-    int get_total_score();
+    int avoir_total_score();
     void tour_joueur(Lancer& l);
-    std::string get_nom();
+    std::string avoir_nom();
     void afficher_possibilite(int* recap, int cpt_tour, std::vector<int> inferieurs_possible, std::vector<int> superieurs_restant);
     void ajouter_superieurs(int* recap, int valeur);
     void ajouter_inferieurs(int* recap, int valeur);
@@ -44,7 +44,7 @@ public:
     void inferieurs_restante(std::vector<int>* indexs_possible, std::vector<int>* indexs_impossible, int* recap);
     int abandonne(int* recap, std::vector<int>* inferieurs_impossible);
     int relancer_des(Lancer& l);
-    void get_recapitulatif(De** des, int* recap);
+    void avoir_recapitulatif(De** des, int* recap);
     int* des_relance(std::string des_r);
 };
 

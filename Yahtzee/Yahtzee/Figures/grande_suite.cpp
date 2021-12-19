@@ -1,10 +1,10 @@
 #include "Grande_suite.h"
 
-bool Grande_suite::set_figure(int* recap)
+bool Grande_suite::valider_figure(int* recap)
 {
 	assigner = true;
 
-	if (is_figure(recap)) {
+	if (est_figure(recap)) {
 		score = 40;
 		return true;
 	}
@@ -13,7 +13,7 @@ bool Grande_suite::set_figure(int* recap)
 	return false;
 }
 
-bool Grande_suite::is_figure(int* recap)
+bool Grande_suite::est_figure(int* recap)
 {
 	int cpt_suite = 0;
 
@@ -31,13 +31,13 @@ bool Grande_suite::is_figure(int* recap)
 
 int Grande_suite::score_possible(int* recap)
 {
-	if (is_figure(recap))
+	if (est_figure(recap))
 		return 40;
 	
 	return 0;
 }
 
-std::string Grande_suite::get_name()
+std::string Grande_suite::avoir_nom()
 {
 	return "Grande Suite";
 }

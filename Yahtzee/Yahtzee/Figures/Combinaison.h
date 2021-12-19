@@ -11,14 +11,14 @@ public:
 	{ 
 	}
 
-    bool set_figure(int* recap)
+    bool valider_figure(int* recap)
     {
 		score = valeur * recap[valeur - 1];
 		assigner = true;
 		return assigner;
     }
 
-    bool is_figure(int* recap)
+    bool est_figure(int* recap)
     {
         return true;
     }
@@ -28,7 +28,7 @@ public:
 		return valeur * recap[valeur - 1];
 	}
 
-    std::string get_name()
+    std::string avoir_nom()
     {
 		switch (valeur)
 		{
@@ -53,7 +53,7 @@ public:
 		}
     }
     
-    int get_score()
+    int avoir_score()
     {
         return this->score;
     }
