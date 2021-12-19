@@ -151,7 +151,7 @@
     <ClCompile Include="De.cpp" />
     <ClCompile Include="Lancer.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Yahtzee_game.cpp" />
+    <ClCompile Include="Yahtzee_jeux.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Figures\Brelan.h" />
@@ -167,7 +167,7 @@
     <ClInclude Include="Joueur.h" />
     <ClInclude Include="Lancer.h" />
     <ClInclude Include="De.h" />
-    <ClInclude Include="Yahtzee_game.h" />
+    <ClInclude Include="Yahtzee_jeux.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

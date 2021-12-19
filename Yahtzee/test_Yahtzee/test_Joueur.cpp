@@ -28,12 +28,12 @@ namespace testJoueur
 		TEST_METHOD(TestConstructeur)
 		{
 			std::string noms_joueurs[2] = { "Abel", "Jean" };
-			Yahtzee_game *yahtzee_game = new Yahtzee_game(2, noms_joueurs, 3);
+			Yahtzee_jeux *yahtzee_game = new Yahtzee_jeux(2, noms_joueurs, 3);
 			Joueur j = Joueur(yahtzee_game, noms_joueurs[0]);
 			Joueur j2 = Joueur(yahtzee_game, noms_joueurs[0]);
 
-			Assert::AreEqual(j.get_nom(), noms_joueurs[0]);
-			Assert::AreEqual(j.get_total_score(), 0);
+			Assert::AreEqual(j.avoir_nom(), noms_joueurs[0]);
+			Assert::AreEqual(j.avoir_total_score(), 0);
 			
 			bool same = false;
 			if (&j == &j2)
@@ -43,12 +43,12 @@ namespace testJoueur
 		TEST_METHOD(constructeurCopie)
 		{
 			std::string noms_joueurs[2] = { "Abel", "Jean" };
-			Yahtzee_game yahtzee_game(2, noms_joueurs, 3);
+			Yahtzee_jeux yahtzee_game(2, noms_joueurs, 3);
 			Joueur j = Joueur(&yahtzee_game, noms_joueurs[0]);
 
 			Joueur j2 = Joueur(j);
-			Assert::AreEqual(j.get_nom(), j2.get_nom());
-			Assert::AreEqual(j.get_total_score(), j2.get_total_score());
+			Assert::AreEqual(j.avoir_nom(), j2.avoir_nom());
+			Assert::AreEqual(j.avoir_total_score(), j2.avoir_total_score());
 			
 			bool same = false;
 			if (&j == &j2)
@@ -58,13 +58,13 @@ namespace testJoueur
 		TEST_METHOD(operatorEqual)
 		{
 			std::string noms_joueurs[2] = { "Abel", "Jean" };
-			Yahtzee_game yahtzee_game(2, noms_joueurs, 3);
+			Yahtzee_jeux yahtzee_game(2, noms_joueurs, 3);
 			Joueur j = Joueur(&yahtzee_game, noms_joueurs[0]);
 
 			Joueur j2 = j;
 
-			Assert::AreEqual(j.get_nom(), j2.get_nom());
-			Assert::AreEqual(j.get_total_score(), j2.get_total_score());
+			Assert::AreEqual(j.avoir_nom(), j2.avoir_nom());
+			Assert::AreEqual(j.avoir_total_score(), j2.avoir_total_score());
 
 			bool same = false;
 			if (&j == &j2)
@@ -76,7 +76,7 @@ namespace testJoueur
 		{
 			//On initialise notre environnement (pas possible dans un before ALL) ? 
 			std::string noms_joueurs[2] = { "Abel", "Jean" };
-			Yahtzee_game yahtzee_game(2, noms_joueurs, 3);
+			Yahtzee_jeux yahtzee_game(2, noms_joueurs, 3);
 			Joueur j = Joueur(&yahtzee_game, noms_joueurs[0]);
 			Joueur j2 = Joueur(&yahtzee_game, noms_joueurs[1]);
 
@@ -85,21 +85,21 @@ namespace testJoueur
 			int recap[6];
 
 			// 0 == 0
-			Assert::AreEqual(j.get_total_score(), j2.get_total_score());
+			Assert::AreEqual(j.avoir_total_score(), j2.avoir_total_score());
 
 			//On lance les dés et on ajoute la chance au 0 car toujours en 0 au début de la partie
 			l->lance(des, 5);
-			j.get_recapitulatif(l->get_des(), recap);
+			j.avoir_recapitulatif(l->avoir_des(), recap);
 			j.ajouter_inferieurs(recap, 0);//on ajoute le 0
 
 			//qqchose == 0
-			Assert::AreNotEqual(j.get_total_score(), j2.get_total_score());
+			Assert::AreNotEqual(j.avoir_total_score(), j2.avoir_total_score());
 		}
 		TEST_METHOD(TestFiguresRestantesEtFiguresAjout)
 		{
 			//On initialise notre environnement (pas possible dans un before ALL) ? 
 			std::string noms_joueurs[2] = { "Abel", "Jean" };
-			Yahtzee_game yahtzee_game(2, noms_joueurs, 3);
+			Yahtzee_jeux yahtzee_game(2, noms_joueurs, 3);
 			Joueur j = Joueur(&yahtzee_game, noms_joueurs[0]);
 			Joueur j2 = Joueur(&yahtzee_game, noms_joueurs[1]);
 			std::vector<int> inferieurs_possible1, inferieurs_impossible1, superieurs_restant1;
@@ -110,7 +110,7 @@ namespace testJoueur
 
 			//On lance les dés 
 			l->lance(des, 5);
-			j.get_recapitulatif(l->get_des(), recap);
+			j.avoir_recapitulatif(l->avoir_des(), recap);
 
 			//on obtiens nos tableaux
 			j.superieurs_restante(&superieurs_restant1);
@@ -147,16 +147,16 @@ namespace testJoueur
 		TEST_METHOD(getNom)
 		{
 			std::string noms_joueurs[2] = { "Abel", "Jean" };
-			Yahtzee_game yahtzee_game(2, noms_joueurs, 3);
+			Yahtzee_jeux yahtzee_game(2, noms_joueurs, 3);
 			Joueur j = Joueur(&yahtzee_game, noms_joueurs[0]);
 
-			Assert::AreEqual(j.get_nom(), noms_joueurs[0]);
-			Assert::AreNotEqual(j.get_nom(), noms_joueurs[1]);
+			Assert::AreEqual(j.avoir_nom(), noms_joueurs[0]);
+			Assert::AreNotEqual(j.avoir_nom(), noms_joueurs[1]);
 		}
 		TEST_METHOD(choixCorrect)
 		{
 			std::string noms_joueurs[2] = { "Abel", "Jean" };
-			Yahtzee_game yahtzee_game(2, noms_joueurs, 3);
+			Yahtzee_jeux yahtzee_game(2, noms_joueurs, 3);
 			Joueur j = Joueur(&yahtzee_game, noms_joueurs[0]);
 			//int Joueur::choix_correct(std::string selected, int max)
 			std::string selected;
@@ -181,7 +181,7 @@ namespace testJoueur
 		TEST_METHOD(TestDesRelance)
 		{
 			std::string noms_joueurs[2] = { "Abel", "Jean" };
-			Yahtzee_game yahtzee_game(2, noms_joueurs, 3);
+			Yahtzee_jeux yahtzee_game(2, noms_joueurs, 3);
 			Joueur j = Joueur(&yahtzee_game, noms_joueurs[0]);
 			bool same = true;
 			int* verif = nullptr;
@@ -217,7 +217,7 @@ namespace testJoueur
 		{
 
 			std::string noms_joueurs[2] = { "Abel", "Jean" };
-			Yahtzee_game yahtzee_game(2, noms_joueurs, 3);
+			Yahtzee_jeux yahtzee_game(2, noms_joueurs, 3);
 			Joueur j = Joueur(&yahtzee_game, noms_joueurs[0]);
 			bool same = true;
 			int vals[6];
@@ -230,21 +230,21 @@ namespace testJoueur
 			l->lance(des, 5);
 			for (int i = 0; i < 5; i++)
 			{
-				if ((l->get_des()[i]->get_val()) == 1)
+				if ((l->avoir_des()[i]->avoir_val()) == 1)
 					vals[0]++;
-				else if ((l->get_des()[i]->get_val()) == 2)
+				else if ((l->avoir_des()[i]->avoir_val()) == 2)
 					vals[1]++;
-				else if ((l->get_des()[i]->get_val()) == 3)
+				else if ((l->avoir_des()[i]->avoir_val()) == 3)
 					vals[2]++;
-				else if ((l->get_des()[i]->get_val()) == 4)
+				else if ((l->avoir_des()[i]->avoir_val()) == 4)
 					vals[3]++;
-				else if ((l->get_des()[i]->get_val()) == 5)
+				else if ((l->avoir_des()[i]->avoir_val()) == 5)
 					vals[4]++;
-				else if ((l->get_des()[i]->get_val()) == 6)
+				else if ((l->avoir_des()[i]->avoir_val()) == 6)
 					vals[5]++;
 			}
 
-			j.get_recapitulatif(l->get_des(), recap);
+			j.avoir_recapitulatif(l->avoir_des(), recap);
 			for (int i = 0; i < 5; i++)
 				if (vals[i] != recap[i])
 					same = false;

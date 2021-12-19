@@ -13,13 +13,13 @@ protected:
     int score;
 public:
     Figure();
-    virtual bool set_figure(int* recap) = 0; // recap = le récapitulatif des dés 
-    virtual bool is_figure(int* recap) = 0; // recap = le récapitulatif des dés 
-    virtual int score_possible(int* recap) = 0; // ne verifie pas si la figure est possible on suppose que c'est fait en amont
+    virtual bool valider_figure(int* recap) = 0; // recap = le récapitulatif des dés 
+    virtual bool est_figure(int* recap) = 0; // recap = le récapitulatif des dés 
+    virtual int score_possible(int* recap) = 0;
 
-    virtual std::string get_name() = 0;
-    int get_score();
-    bool is_assigner();
+    virtual std::string avoir_nom() = 0;
+    int avoir_score();
+    bool est_assigner();
 
     friend std::ostream& operator<<(std::ostream& out, const Figure& figure);
 };

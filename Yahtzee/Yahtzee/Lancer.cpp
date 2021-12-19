@@ -1,10 +1,10 @@
 #include "Lancer.h"
-#include "Yahtzee_game.h"
+#include "Yahtzee_jeux.h"
 #include <thread>
 #include <chrono>
 #include "Invalid_index_exception.h"
 
-// fit une allocation mémoire de NB_DE, tous les des sont a initialisé a valeur = 0
+// fit une allocation mï¿½moire de NB_DE, tous les des sont a initialisï¿½ a valeur = 0
 Lancer::Lancer(const int NB_DE): nb_de(NB_DE)
 {
 	srand(time(NULL));
@@ -32,7 +32,7 @@ Lancer::~Lancer()
 	delete[] des;
 }
 
-// surcharge de l'opérateur égale
+// surcharge de l'opï¿½rateur ï¿½gale
 Lancer& Lancer::operator=(const Lancer& copy)
 {
 	if (this != &copy)
@@ -52,7 +52,7 @@ Lancer& Lancer::operator=(const Lancer& copy)
 	return *this;
 }
 
-// lances les dés qui pour on leur indice contenue dans le tableau
+// lances les dï¿½s qui pour on leur indice contenue dans le tableau
 void Lancer::lance(int* indiceslances, int nb_indice)
 {
 	// on lance seulement les des d'ont l'indice est dans le tableau 
@@ -66,8 +66,7 @@ void Lancer::lance(int* indiceslances, int nb_indice)
 	}
 }
 
-// revois le tableau de dé
-De** Lancer::get_des()
+De** Lancer::avoir_des()
 {
 	return this->des;
 }

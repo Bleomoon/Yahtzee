@@ -7,12 +7,12 @@ Figure::Figure()
 	score = 0;
 }
 
-int Figure::get_score()
+int Figure::avoir_score()
 {
 	return score;
 }
 
-bool Figure::is_assigner()
+bool Figure::est_assigner()
 {
 	return assigner;
 }

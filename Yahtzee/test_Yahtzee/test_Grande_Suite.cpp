@@ -27,9 +27,9 @@ namespace testGrandeSuite
 	public:
 		TEST_METHOD(is_figure)
 		{
-			Assert::IsFalse(grande_suite.is_figure(recap1));
-			Assert::IsTrue(grande_suite.is_figure(recap2));
-			Assert::IsTrue(grande_suite.is_figure(recap3));
+			Assert::IsFalse(grande_suite.est_figure(recap1));
+			Assert::IsTrue(grande_suite.est_figure(recap2));
+			Assert::IsTrue(grande_suite.est_figure(recap3));
 		}
 		TEST_METHOD(score_possible)
 		{
@@ -37,24 +37,24 @@ namespace testGrandeSuite
 			Assert::IsTrue(grande_suite.score_possible(recap2) == 40);
 			Assert::IsTrue(grande_suite.score_possible(recap3) == 40);
 		}
-		TEST_METHOD(get_name)
+		TEST_METHOD(avoir_nom)
 		{
-			Assert::IsTrue(std::strcmp(grande_suite.get_name().c_str(), "Grande Suite") == 0);
+			Assert::IsTrue(std::strcmp(grande_suite.avoir_nom().c_str(), "Grande Suite") == 0);
 		}
 		TEST_METHOD(set_figure)
 		{
-			Assert::IsFalse(grande_suite.set_figure(recap1));
-			Assert::IsTrue(grande_suite2.set_figure(recap2));
-			Assert::IsTrue(grande_suite3.set_figure(recap3));
+			Assert::IsFalse(grande_suite.valider_figure(recap1));
+			Assert::IsTrue(grande_suite2.valider_figure(recap2));
+			Assert::IsTrue(grande_suite3.valider_figure(recap3));
 		}
-		TEST_METHOD(get_score)
+		TEST_METHOD(avoir_score)
 		{
-			grande_suite.set_figure(recap1);
-			Assert::IsTrue(grande_suite.get_score() == 0);
-			grande_suite2.set_figure(recap2);
-			Assert::IsTrue(grande_suite2.get_score() == 40);
-			grande_suite3.set_figure(recap3);
-			Assert::IsTrue(grande_suite3.get_score() == 40);
+			grande_suite.valider_figure(recap1);
+			Assert::IsTrue(grande_suite.avoir_score() == 0);
+			grande_suite2.valider_figure(recap2);
+			Assert::IsTrue(grande_suite2.avoir_score() == 40);
+			grande_suite3.valider_figure(recap3);
+			Assert::IsTrue(grande_suite3.avoir_score() == 40);
 		}
 	};
 }

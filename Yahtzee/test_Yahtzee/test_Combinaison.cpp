@@ -38,33 +38,33 @@ namespace testCombinaison
 	public:
 		TEST_METHOD(is_figure_un)
 		{
-			Assert::AreEqual(comb1.is_figure(recap1_1), true);
-			Assert::AreEqual(comb1.is_figure(recap1_2), true);
+			Assert::AreEqual(comb1.est_figure(recap1_1), true);
+			Assert::AreEqual(comb1.est_figure(recap1_2), true);
 		}
 		TEST_METHOD(is_figure_deux)
 		{
-			Assert::AreEqual(comb2.is_figure(recap2_1), true);
-			Assert::AreEqual(comb2.is_figure(recap2_2), true);
+			Assert::AreEqual(comb2.est_figure(recap2_1), true);
+			Assert::AreEqual(comb2.est_figure(recap2_2), true);
 		}
 		TEST_METHOD(is_figure_trois)
 		{
-			Assert::AreEqual(comb3.is_figure(recap3_1), true);
-			Assert::AreEqual(comb3.is_figure(recap3_2), true);
+			Assert::AreEqual(comb3.est_figure(recap3_1), true);
+			Assert::AreEqual(comb3.est_figure(recap3_2), true);
 		}
 		TEST_METHOD(is_figure_quatre)
 		{
-			Assert::AreEqual(comb4.is_figure(recap4_1), true);
-			Assert::AreEqual(comb4.is_figure(recap4_2), true);
+			Assert::AreEqual(comb4.est_figure(recap4_1), true);
+			Assert::AreEqual(comb4.est_figure(recap4_2), true);
 		}
 		TEST_METHOD(is_figure_cinq)
 		{
-			Assert::AreEqual(comb5.is_figure(recap5_1), true);
-			Assert::AreEqual(comb5.is_figure(recap5_2), true);
+			Assert::AreEqual(comb5.est_figure(recap5_1), true);
+			Assert::AreEqual(comb5.est_figure(recap5_2), true);
 		}
 		TEST_METHOD(is_figure_six)
 		{
-			Assert::AreEqual(comb6.is_figure(recap6_1), true);
-			Assert::AreEqual(comb6.is_figure(recap6_2), true);
+			Assert::AreEqual(comb6.est_figure(recap6_1), true);
+			Assert::AreEqual(comb6.est_figure(recap6_2), true);
 		}
 		TEST_METHOD(score_possible_zero)
 		{
@@ -84,62 +84,62 @@ namespace testCombinaison
 			Assert::IsTrue(comb5.score_possible(recap5_2) == 25);
 			Assert::IsTrue(comb6.score_possible(recap6_2) == 30);
 		}
-		TEST_METHOD(get_name)
+		TEST_METHOD(avoir_nom)
 		{
-			Assert::IsTrue(std::strcmp(comb1.get_name().c_str(), "un")== 0);
-			Assert::IsTrue(std::strcmp(comb2.get_name().c_str(), "deux") == 0);
-			Assert::IsTrue(std::strcmp(comb3.get_name().c_str(), "trois") == 0);
-			Assert::IsTrue(std::strcmp(comb4.get_name().c_str(), "quatre") == 0);
-			Assert::IsTrue(std::strcmp(comb5.get_name().c_str(), "cinq") == 0);
-			Assert::IsTrue(std::strcmp(comb6.get_name().c_str(), "six") == 0);
+			Assert::IsTrue(std::strcmp(comb1.avoir_nom().c_str(), "un")== 0);
+			Assert::IsTrue(std::strcmp(comb2.avoir_nom().c_str(), "deux") == 0);
+			Assert::IsTrue(std::strcmp(comb3.avoir_nom().c_str(), "trois") == 0);
+			Assert::IsTrue(std::strcmp(comb4.avoir_nom().c_str(), "quatre") == 0);
+			Assert::IsTrue(std::strcmp(comb5.avoir_nom().c_str(), "cinq") == 0);
+			Assert::IsTrue(std::strcmp(comb6.avoir_nom().c_str(), "six") == 0);
 		}
 		TEST_METHOD(set_figure_zero)
 		{
-			Assert::IsTrue(comb1.set_figure(recap1_1));
-			Assert::IsTrue(comb2.set_figure(recap2_1));
-			Assert::IsTrue(comb3.set_figure(recap3_1));
-			Assert::IsTrue(comb4.set_figure(recap4_1));
-			Assert::IsTrue(comb5.set_figure(recap5_1));
-			Assert::IsTrue(comb6.set_figure(recap6_1));
+			Assert::IsTrue(comb1.valider_figure(recap1_1));
+			Assert::IsTrue(comb2.valider_figure(recap2_1));
+			Assert::IsTrue(comb3.valider_figure(recap3_1));
+			Assert::IsTrue(comb4.valider_figure(recap4_1));
+			Assert::IsTrue(comb5.valider_figure(recap5_1));
+			Assert::IsTrue(comb6.valider_figure(recap6_1));
 		}
 		TEST_METHOD(set_figure_cinq)
 		{
-			Assert::IsTrue(comb1.set_figure(recap1_2));
-			Assert::IsTrue(comb2.set_figure(recap2_2));
-			Assert::IsTrue(comb3.set_figure(recap3_2));
-			Assert::IsTrue(comb4.set_figure(recap4_2));
-			Assert::IsTrue(comb5.set_figure(recap5_2));
-			Assert::IsTrue(comb6.set_figure(recap6_2));
+			Assert::IsTrue(comb1.valider_figure(recap1_2));
+			Assert::IsTrue(comb2.valider_figure(recap2_2));
+			Assert::IsTrue(comb3.valider_figure(recap3_2));
+			Assert::IsTrue(comb4.valider_figure(recap4_2));
+			Assert::IsTrue(comb5.valider_figure(recap5_2));
+			Assert::IsTrue(comb6.valider_figure(recap6_2));
 		}
 		TEST_METHOD(get_score_zero)
 		{
-			comb1.set_figure(recap1_1);
-			Assert::IsTrue(comb1.get_score() == 0);
-			comb2.set_figure(recap2_1);
-			Assert::IsTrue(comb2.get_score() == 0);
-			comb3.set_figure(recap3_1);
-			Assert::IsTrue(comb3.get_score() == 0);
-			comb4.set_figure(recap4_1);
-			Assert::IsTrue(comb4.get_score() == 0);
-			comb5.set_figure(recap5_1);
-			Assert::IsTrue(comb5.get_score() == 0);
-			comb6.set_figure(recap6_1);
-			Assert::IsTrue(comb6.get_score() == 0);
+			comb1.valider_figure(recap1_1);
+			Assert::IsTrue(comb1.avoir_score() == 0);
+			comb2.valider_figure(recap2_1);
+			Assert::IsTrue(comb2.avoir_score() == 0);
+			comb3.valider_figure(recap3_1);
+			Assert::IsTrue(comb3.avoir_score() == 0);
+			comb4.valider_figure(recap4_1);
+			Assert::IsTrue(comb4.avoir_score() == 0);
+			comb5.valider_figure(recap5_1);
+			Assert::IsTrue(comb5.avoir_score() == 0);
+			comb6.valider_figure(recap6_1);
+			Assert::IsTrue(comb6.avoir_score() == 0);
 		}
 		TEST_METHOD(get_score_cinq)
 		{
-			comb1.set_figure(recap1_2);
-			Assert::IsTrue(comb1.get_score() == 5);
-			comb2.set_figure(recap2_2);
-			Assert::IsTrue(comb2.get_score() == 10);
-			comb3.set_figure(recap3_2);
-			Assert::IsTrue(comb3.get_score() == 15);
-			comb4.set_figure(recap4_2);
-			Assert::IsTrue(comb4.get_score() == 20);
-			comb5.set_figure(recap5_2);
-			Assert::IsTrue(comb5.get_score() == 25);
-			comb6.set_figure(recap6_2);
-			Assert::IsTrue(comb6.get_score() == 30);
+			comb1.valider_figure(recap1_2);
+			Assert::IsTrue(comb1.avoir_score() == 5);
+			comb2.valider_figure(recap2_2);
+			Assert::IsTrue(comb2.avoir_score() == 10);
+			comb3.valider_figure(recap3_2);
+			Assert::IsTrue(comb3.avoir_score() == 15);
+			comb4.valider_figure(recap4_2);
+			Assert::IsTrue(comb4.avoir_score() == 20);
+			comb5.valider_figure(recap5_2);
+			Assert::IsTrue(comb5.avoir_score() == 25);
+			comb6.valider_figure(recap6_2);
+			Assert::IsTrue(comb6.avoir_score() == 30);
 		}
 	};
 }

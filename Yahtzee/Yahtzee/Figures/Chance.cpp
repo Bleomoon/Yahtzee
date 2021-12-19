@@ -2,9 +2,9 @@
 
 Chance::Chance() : Figure() { }
 
-bool Chance::set_figure(int* des)
+bool Chance::valider_figure(int* des)
 {
-	if (is_figure(des)) {
+	if (est_figure(des)) {
 		int somme = 0;
 		for (int index = 0; index < 6; index++) {
 			somme += des[index] *  (index +1) ;
@@ -19,7 +19,7 @@ bool Chance::set_figure(int* des)
 	return false;
 }
 
-bool Chance::is_figure(int* des)
+bool Chance::est_figure(int* des)
 {
 	return true;
 }
@@ -34,7 +34,7 @@ int Chance::score_possible(int* recap)
 	return somme;
 }
 
-std::string Chance::get_name()
+std::string Chance::avoir_nom()
 {
 	return "Chance";
 }

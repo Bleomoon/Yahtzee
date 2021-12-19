@@ -45,7 +45,7 @@
     <ClCompile Include="Figures\Petite_suite.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Yahtzee_game.cpp">
+    <ClCompile Include="Yahtzee_jeux.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Lancer.cpp">
@@ -59,7 +59,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Yahtzee_game.h">
+    <ClInclude Include="Yahtzee_jeux.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Lancer.h">

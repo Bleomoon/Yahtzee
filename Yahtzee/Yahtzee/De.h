@@ -9,8 +9,8 @@ class De
 public:
     De();
     De(const De& copy);
-    int get_val();
     void lance();
+    int avoir_val();
     std::string to_String();
 };
 #endif

@@ -18,8 +18,7 @@ void De::lance()
 	this->val = (rand() % 6) + 1;
 }
 
-// retourne la valeur du dé
-int De::get_val() { return val; }
+int De::avoir_val() { return val; }
 
 std::string De::to_String()
 {
