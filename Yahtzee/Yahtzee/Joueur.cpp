@@ -120,7 +120,7 @@ void Joueur::tour_joueur(Lancer& l)
 
     // TODO grille avec récap des points
 
-    while (!garde && cpt_tour < 3)
+    while (!garde && cpt_tour < this->yahtzee_g->avoir_nb_lancer())
     {
         // affichage des des 
         De** des = l.avoir_des();
