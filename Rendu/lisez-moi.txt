@@ -37,3 +37,7 @@ Les figures sont :
 	- Chance
 	- Petite_Suite
 	- Grande_Suite
+
+Bonus:
+IA: Nous avons commencé à coder une IA pour le jeux, elle se base sur les plus hautes probabilités d'obtenir une figure, malheuresement nous n'avons pas terminé cette IA.
+Nous mettons tout de même le code à disposition, cet IA hérite de Joueur.
